@@ -87,7 +87,7 @@ public class DefaultMod implements
 
     //This is for the in-game mod settings panel.
     private static final String MODNAME = "Ranger Mod";
-    private static final String AUTHOR = "Yamezhor"; // And pretty soon - You!
+    private static final String AUTHOR = "TorTime"; // And pretty soon - You!
     private static final String DESCRIPTION = "A base for Slay the Spire to start your own mod from, feat. the Default.";
     
     // =============== INPUT TEXTURE LOCATION =================
