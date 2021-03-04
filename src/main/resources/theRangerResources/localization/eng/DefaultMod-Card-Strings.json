@@ -49,5 +49,13 @@
   "theRanger:OrbSkill": {
     "NAME": "Get Orb",
     "DESCRIPTION": "Channel 1 Default Orb."
+  },
+  "theRanger:RangerBasicStrike": {
+    "NAME" : "Strike",
+    "DESCRIPTION": "Deal !D! damage"
+  },
+  "theRanger:RangerBasicDefend": {
+    "NAME" : "Defend",
+    "DESCRIPTION": "Gain !B! block"
   }
 }
