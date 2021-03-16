@@ -41,6 +41,8 @@ public class RangerBasicStrike extends AbstractDynamicCard {
     public RangerBasicStrike() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         baseDamage = DAMAGE;
+
+        this.tags.add(CardTags.STARTER_STRIKE);
     }
 
 
@@ -48,7 +50,7 @@ public class RangerBasicStrike extends AbstractDynamicCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.actionManager.addToBottom(
-                new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
+                new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
     }
 
 

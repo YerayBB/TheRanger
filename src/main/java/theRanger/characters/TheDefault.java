@@ -156,7 +156,7 @@ public class TheDefault extends CustomPlayer {
 
         logger.info("Begin loading starter Deck Strings");
 
-        retVal.add(DefaultCommonAttack.ID);
+        /*retVal.add(DefaultCommonAttack.ID);
         retVal.add(DefaultUncommonAttack.ID);
         retVal.add(DefaultRareAttack.ID);
 
@@ -170,7 +170,15 @@ public class TheDefault extends CustomPlayer {
 
         retVal.add(DefaultAttackWithVariable.ID);
         retVal.add(DefaultSecondMagicNumberSkill.ID);
-        retVal.add(OrbSkill.ID);
+        retVal.add(OrbSkill.ID);*/
+        retVal.add(RangerBasicStrike.ID);
+        retVal.add(RangerBasicStrike.ID);
+        retVal.add(RangerBasicStrike.ID);
+        retVal.add(RangerBasicStrike.ID);
+        retVal.add(RangerBasicDefend.ID);
+        retVal.add(RangerBasicDefend.ID);
+        retVal.add(RangerBasicDefend.ID);
+        retVal.add(RangerBasicDefend.ID);
         return retVal;
     }
 

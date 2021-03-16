@@ -57,5 +57,9 @@
   "theRanger:RangerBasicDefend": {
     "NAME" : "Defend",
     "DESCRIPTION": "Gain !B! block"
+  },
+  "theRanger:DirectShot": {
+    "NAME": "Direct Shot",
+    "DESCRIPTION": "SHOT "
   }
 }
