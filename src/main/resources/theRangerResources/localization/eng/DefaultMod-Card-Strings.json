@@ -60,6 +60,7 @@
   },
   "theRanger:DirectShot": {
     "NAME": "Direct Shot",
-    "DESCRIPTION": "SHOT "
+    "DESCRIPTION": "SHOT 1. NL Each deals !D! damage to the target",
+    "UPGRADE_DESCRIPTION": "SHOT 1. NL Each deals !D! damage to the target NL and apply !M! !theranger:keyword!"
   }
 }
