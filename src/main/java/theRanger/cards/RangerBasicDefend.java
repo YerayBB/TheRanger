@@ -16,7 +16,7 @@ public class RangerBasicDefend extends AbstractDynamicCard {
     // TEXT DECLARATION
 
     public static final String ID = DefaultMod.makeID(RangerBasicDefend.class.getSimpleName());
-    public static final String IMG = makeCardPath("Defend.png");
+    public static final String IMG = makeCardPath("Skill.png");
 
     // /TEXT DECLARATION/
 
