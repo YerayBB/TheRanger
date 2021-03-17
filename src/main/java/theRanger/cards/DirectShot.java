@@ -19,7 +19,7 @@ public class DirectShot extends AbstractDynamicCard {
     // TEXT DECLARATION
 
     public static final String ID = DefaultMod.makeID(DirectShot.class.getSimpleName());
-    public static final String IMG = makeCardPath("DirectShot.png");
+    public static final String IMG = makeCardPath("Attack.png");
 
     // /TEXT DECLARATION/
 
@@ -53,8 +53,8 @@ public class DirectShot extends AbstractDynamicCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         //TODO
-        //AbstractDungeon.actionManager.addToBottom(
-        //        new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));*/
+        AbstractDungeon.actionManager.addToBottom(
+                new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
     }
 
 
