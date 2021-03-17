@@ -50,6 +50,12 @@
     "NAME": "Get Orb",
     "DESCRIPTION": "Channel 1 Default Orb."
   },
+  "theRanger:EmptySpace": {
+    "NAME": "NOTHING",
+    "DESCRIPTION": "HERE STARTS THE RANGER CARDS"
+
+
+  },
   "theRanger:RangerBasicStrike": {
     "NAME" : "Strike",
     "DESCRIPTION": "Deal !D! damage"
@@ -61,6 +67,6 @@
   "theRanger:DirectShot": {
     "NAME" : "Direct Shot",
     "DESCRIPTION": "SHOT 1. NL Each deals !D! damage to the target",
-    "UPGRADE_DESCRIPTION": "SHOT 1. NL Each deals !D! damage to the target NL and apply somevalue !theranger:keyword!"
+    "UPGRADE_DESCRIPTION": "Shot 1. NL Each deals !D! damage to the target NL and apply somevalue Infused"
   }
 }
