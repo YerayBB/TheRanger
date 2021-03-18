@@ -59,7 +59,6 @@ public class RangerBasicDefend extends AbstractDynamicCard {
         if (!upgraded) {
             upgradeName();
             upgradeBlock(UPGRADE_PLUS_BLOCK);
-            upgradeBaseCost(UPGRADED_COST);
             initializeDescription();
         }
     }

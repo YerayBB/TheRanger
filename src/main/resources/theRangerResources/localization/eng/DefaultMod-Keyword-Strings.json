@@ -21,10 +21,17 @@
     "PROPER_NAME": "Shot",
     "NAMES": [
       "Shot",
-      "Shots"
+      "Shot",
+      "Shots",
+      "shot",
+      "shots"
     ],
-    "DESCRIPTION": "Uses #yEssence to activate its effects"
+    "DESCRIPTION": "Uses #yEssence to activate its effects."
+  },
+  {
+    "NAMES": [
+      "infused"
+    ],
+    "DESCRIPTION": "Infused enemies take damage when their HP is lower than their Infused stacks."
   }
-
-
 ]

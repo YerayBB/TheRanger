@@ -62,11 +62,11 @@
   },
   "theRanger:RangerBasicDefend": {
     "NAME" : "Defend",
-    "DESCRIPTION": "Gain !B! block"
+    "DESCRIPTION": "Gain !B! Block"
   },
   "theRanger:DirectShot": {
     "NAME" : "Direct Shot",
-    "DESCRIPTION": "SHOT 1. NL Each deals !D! damage to the target",
-    "UPGRADE_DESCRIPTION": "Shot 1. NL Each deals !D! damage to the target NL and apply somevalue Infused"
+    "DESCRIPTION": "theranger:Shot 1. NL Each deals !D! damage to the target",
+    "UPGRADE_DESCRIPTION": "theranger:Shot 1. NL Each deals !D! damage and apply somevalue theranger:Infused to the target"
   }
 }
