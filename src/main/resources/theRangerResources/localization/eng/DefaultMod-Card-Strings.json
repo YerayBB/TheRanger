@@ -125,6 +125,128 @@
   },
   "theRanger:Trap": {
     "NAME": "Trap",
-    "DESCRIPTION": "Prevent te next time you will lose HP from an enemy attack. NL ranger:Stealth: Next turn, Stun the enemy who triggered it."
+    "DESCRIPTION": "Prevent the next time you will lose HP from an enemy attack. NL theranger:Stealth: Next turn, Stun the enemy who triggered it."
+  },
+  "theRanger:ExplosiveShot": {
+    "NAME": "Explosive Shot",
+    "DESCRIPTION": "theranger:Shot 1. NL Deal !D! damage. Consume all the theranger:Infused of the enemy and deal that amount as damage to ALL enemies."
+  },
+  "theRanger:Apollo'sFavor": {
+    "NAME": "Apollo's Favor",
+    "DESCRIPTION": "theranger:Shot 5. NL Next turn deal !D! + !M! times your theranger:Density. NL (Currently deals !M2!)"
+  },
+  "theRanger:Volley": {
+    "NAME": "Volley",
+    "DESCRIPTION": "theranger:Shot 1 3 times. NL Each deals !D! and applies !M! theranger:Infused to a random enemy."
+  },
+  "theRanger:LightRain": {
+    "NAME": "Light Rain",
+    "DESCRIPTION": "theranger:Shot 1 per each enemy. NL Deal !D! and apply !M! theranger:Infused to ALL enemies.",
+    "EXTENDED_DESCRIPTION": [
+      " NL (theranger:Shots ",
+      " .)"]
+  },
+  "theRanger:SoulReap": {
+    "NAME": "Soul Reap",
+    "DESCRIPTION": "Deal !D! damage. NL Gain theranger:Essence equal to the unblocked damage."
+  },
+  "theRanger:LastDitchEffort": {
+    "NAME": "Last Ditch Effort",
+    "DESCRIPTION": "Deal !M! theranger:True_Damage + !D! damage. NL Became theranger:Exposed. NL theranger:Empty_Handed: Deal !M2! extra theranger:True_Damage. NL Exhaust."
+  },
+  "theRanger:CondensedShot": {
+    "NAME": "Condensed Shot",
+    "DESCRIPTION": "theranger:Shot 1. NL Consume ALL theranger:Essence deal that amount multiplied by your theranger:Density as damage. ",
+    "EXTENDED_DESCRIPTION": [
+      "NL (Deals ",
+      " damage.)"]
+  },
+  "theRanger:ArrowHell": {
+    "NAME": "Arrow Hell",
+    "DESCRIPTION": "theranger:Shot 1 until you run out of theranger:Essence. NL Each theranger:Shot deals !D! damage and applies !M! theranger:Infused to a random enemy."
+  },
+  "theRanger:Snipe": {
+    "NAME": "Snipe",
+    "DESCRIPTION": "theranger:Shot 1. NL Deal !D! damage. NL theranger:Stealth: Deal !M! extra damage"
+  },
+  "theRanger:UnseenStrike": {
+    "NAME": "Unseen Strike",
+    "DESCRIPTION": "Deal damage equal to your theranger:Camouflage."
+  },
+  "theRanger:Retrieve": {
+    "NAME": "Retrieve",
+    "DESCRIPTION": "Deal !D! damage. NL If the enemy is theranger:Heavy_Wounded, gain 1 theranger:Kukri."
+  },
+  "theRanger:HitandRun": {
+    "NAME": "Hit and Run",
+    "DESCRIPTION": "Deal !D! damage.Nl Gain !M! theranger:Camouflage."
+  },
+  "theRanger:PlannedAttack": {
+    "NAME": "Planned Attack",
+    "DESCRIPTION": "Deal !D! damage for each Skill played this turn.",
+    "EXTENDED_DESCRIPTION": [
+      "NL (",
+      "Skill played.)",
+      "Skills played.)"
+    ]
+  },
+  "theRanger:SoulThieve": {
+    "NAME": "Soul Thieve",
+    "DESCRIPTION": "Deal !D! damage. NL theranger:Empty_Handed: Gain !M! theranger:Essence."
+  },
+  "theRanger:EssenceBlast": {
+    "NAME": "Essence Blast",
+    "DESCRIPTION": "Deal !D! damage. NL theranger:Overcharge: Return this from the discard pile to your hand."
+  },
+  "theRanger:DryFire": {
+    "NAME": "Dry Fire",
+    "DESCRIPTION": "Deal !D! damage.NL Whenever you run out of theranger:Essence, return this from the discard pile to your hand"
+  },
+  "theRanger:OutOfNowhere": {
+    "NAME": "Out Of Nowhere",
+    "DESCRIPTION": "Deal !D! damage. NL theranger:Stealth: Double the damage."
+  },
+  "theRanger:BlindShot": {
+    "NAME": "Blind Shot",
+    "DESCRIPTION": "theranger:Shot 1. NL Deal !D! damage and apply !M! theranger:Infused to a random enemy."
+  },
+  "theRanger:Bloodlust": {
+    "NAME": "Bloodlust",
+    "DESCRIPTION": "Use ALL theranger:Kukris. NL Each deals !D! to a random enemy."
+  },
+  "theRanger:Bloodbath": {
+    "NAME": "Bloodbath",
+    "DESCRIPTION": "Use 1 theranger:Kukri. NL Deal !D! damage to ALL enemies."
+  },
+  "theRanger:DriveBy": {
+    "NAME": "Drive By",
+    "DESCRIPTION": "Deal !D! damage. NL Next !M! turns draw 1 more card."
+  },
+  "theRanger:Bloodshed": {
+    "NAME": "Bloodshed",
+    "DESCRIPTION": "Use 1 theranger:Kukri for each enemy. NL Deal !D! damage to ALL enemies."
+  },
+  "theRanger:AntiAir": {
+    "NAME": "Anti Air",
+    "DESCRIPTION": "Deal !D! damage. NL Remove Flight from the enemy."
+  },
+  "theRanger:CrossUp": {
+    "NAME": "Cross-Up",
+    "DESCRIPTION": "Deal !D! damage. NL theranger:Stealth: Apply !M! Vulnerable."
+  },
+  "theRanger:RawPunch": {
+    "NAME": "RawPunch",
+    "DESCRIPTION": "Deal !D! damage. NL Get !M! Weak. NL theranger:Empty_Handed: Vigor affects this card !M2! times."
+  },
+  "theRanger:HeavyRain": {
+    "NAME": "Heavy Rain",
+    "DESCRIPTION": "theranger:Shot 3 for each enemy. NL Deal !D! damage and apply !M! theranger:Infused to ALL enemies.",
+    "EXTENDED_DESCRIPTION": [
+      " NL (theranger:Shots ",
+      " .)"]
+  },
+  "theRanger:SpinKick": {
+    "NAME": "Spin Kick",
+    "DESCRIPTION": "Deal !D! damage X times."
   }
 }
