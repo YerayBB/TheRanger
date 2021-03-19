@@ -23,6 +23,8 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import theRanger.DefaultMod;
 import theRanger.cards.*;
+import theRanger.cards.Attacks.RangerBasicStrike;
+import theRanger.cards.Skills.RangerBasicDefend;
 import theRanger.relics.DefaultClickableRelic;
 import theRanger.relics.PlaceholderRelic;
 import theRanger.relics.PlaceholderRelic2;

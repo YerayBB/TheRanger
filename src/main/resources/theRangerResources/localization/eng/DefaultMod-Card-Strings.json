@@ -44,7 +44,7 @@
   },
   "theRanger:DefaultSecondMagicNumberSkill": {
     "NAME": "Cool HEY Number Card",
-    "DESCRIPTION": "Apply !M! Vulnerable and !theranger:SecondMagic! poison to an enemy."
+    "DESCRIPTION": "Apply !M! Vulnerable and !theranger:M2! poison to an enemy."
   },
   "theRanger:OrbSkill": {
     "NAME": "Get Orb",
@@ -68,5 +68,63 @@
     "NAME" : "Direct Shot",
     "DESCRIPTION": "theranger:Shot 1. NL Each deals !D! damage to the target",
     "UPGRADE_DESCRIPTION": "theranger:Shot 1. NL Each deals !D! damage and apply somevalue theranger:Infused to the target"
+  },
+  "theRanger:NimbleReload": {
+    "NAME": "Nimble Reload",
+    "DESCRIPTION": "Gain !M! theranger:Essence. NL Draw !theRanger:M2! cards."
+  },
+  "theRanger:ShadowForm": {
+    "NAME": "Shadow Form",
+    "DESCRIPTION": "You no longer lose theranger:Camouflage when Attack. NL Gain !M! theranger:Camouflage at start turn."
+  },
+  "theRanger:Vessel": {
+    "NAME": "Vessel",
+    "DESCRIPTION": "Gain !M! theranger:Spirit."
+  },
+  "theRanger:Transcendence": {
+    "NAME": "Transcendence",
+    "DESCRIPTION": "At Start of your turn gain !M! theranger:Spirit."
+  },
+  "theRanger:Arm-Guard": {
+    "NAME": "Arm-Guard",
+    "DESCRIPTION": "Everytime you theranger:Shot gain !M! Block."
+  },
+  "theRanger:Overdraw": {
+    "NAME": "Overdraw",
+    "DESCRIPTION": "The first time you theranger:Shot each turn does not consume theranger:Essence. NL Draw 1 less card."
+  },
+  "theRanger:Tuning": {
+    "NAME": "Tuning",
+    "DESCRIPTION": "Gain !M! theranger:Density."
+  },
+  "theRanger:Tenacity": {
+    "NAME": "Tenacity",
+    "DESCRIPTION": "Whenever you gain Vigor, gain !M! Block."
+  },
+  "theRanger:Forest Aid": {
+    "NAME": "Forest Aid",
+    "DESCRIPTION": "Add !M! *Will-o-Wisp to your Draw pile. NL Whenever you draw a *Will-o-Wisp, draw !M2! card.",
+    "UPGRADE_DESCRIPTION": "Add !M! *Will-o-Wisp to your Draw pile. NL Whenever you draw a *Will-o-Wisp, draw !M2! cards."
+  },
+  "theRanger:Sanctuary": {
+    "NAME": "Sanctuary",
+    "DESCRIPTION": "Whenever you gain theranger:Camouflage, gain !M! theranger:Essence."
+  },
+  "theRanger:Donation": {
+    "NAME": "Donation",
+    "DESCRIPTION": "Gain !M! theranger:Density. NL At the start of your turn lose 1 theranger:Spirit."
+  },
+  "theRanger:LeaveNoTrace": {
+    "NAME": "Leave No Trace",
+    "DESCRIPTION": "Whenever you gain theranger:Camouflage, draw !M! card.",
+    "UPGRADE_DESCRIPTION": "Whenever you gain theranger:Camouflage, draw !M! card."
+  },
+  "theRanger:Shelter": {
+    "NAME": "Shelter",
+    "DESCRIPTION": "Gain !M! Dexterity. NL Lose !M2! Strength."
+  },
+  "theRanger:Trap": {
+    "NAME": "Trap",
+    "DESCRIPTION": "Prevent te next time you will lose HP from an enemy attack. NL ranger:Stealth: Next turn, Stun the enemy who triggered it."
   }
 }
