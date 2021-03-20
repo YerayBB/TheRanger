@@ -236,7 +236,7 @@
   },
   "theRanger:RawPunch": {
     "NAME": "RawPunch",
-    "DESCRIPTION": "Deal !D! damage. NL Get !M! Weak. NL theranger:Empty_Handed: Vigor affects this card !M2! times."
+    "DESCRIPTION": "Deal !D! damage. NL Gain !M! Weak. NL theranger:Empty_Handed: Vigor affects this card !M2! times."
   },
   "theRanger:HeavyRain": {
     "NAME": "Heavy Rain",
@@ -248,5 +248,159 @@
   "theRanger:SpinKick": {
     "NAME": "Spin Kick",
     "DESCRIPTION": "Deal !D! damage X times."
+  },
+  "theRanger:Shooting Star": {
+  "NAME": "Shooting Star",
+  "DESCRIPTION": "theranger:Shot 3. NL Add a *Star *Fall to the bottom of your draw pile."
+  },
+  "theRanger:Star Fall": {
+    "NAME": "Star Fall",
+    "DESCRIPTION": "Ethereal. NL Deal damage equal to !M! times the amount of theranger:Shots you made since this card was created.",
+    "EXTENDED_DESCRIPTION": [
+      "NL (You made ",
+      " theranger:Shots.)",
+      "NL(Deals ",
+      " damage.)"
+    ]
+  },
+  "theRanger:BlendIn": {
+    "NAME": "Blend In",
+    "DESCRIPTION": "Gain !M! theranger:Camouflage for each enemy in combat."
+  },
+  "theRanger:Bluff": {
+    "NAME": "Bluff",
+    "DESCRIPTION": "Double your Vigor. NL During next turn lose the same amount of Strength."
+  },
+  "theRanger:SpiritDetonation": {
+    "NAME": "Spirit Detonation",
+    "DESCRIPTION": "Lose ALL your theranger:Spirit. NL Apply theranger:Infused to ALL enemies equal the amount lost."
+  },
+  "theRanger:Resonance": {
+    "NAME": "Resonance",
+    "DESCRIPTION": "Double the enemy's theranger:Infused. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Triple the enemy's theranger:Infused. NL Exhaust."
+  },
+  "theRanger:BloodHunt": {
+    "NAME": "BloodHunt",
+    "DESCRIPTION": "Gain !M! theranger:Kukri. NL Add 1 *Bloody *Cut to your hand. NL Exhaust."
+  },
+  "theRanger:BloodyCut": {
+    "NAME": "Bloody Cut",
+    "DESCRIPTION": "Use 1 theranger:Kukri. NL Deal !D! damage.NL theranger:Multiplay. NL Exhaust."
+  },
+  "theRanger:Arsenal": {
+    "NAME": "Arsenal",
+    "DESCRIPTION": "Gain X theranger:Kukri. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Gain X+1 theranger:Kukri. NL Exhaust."
+  },
+  "theRanger:Disguise": {
+    "NAME": "Disguise",
+    "DESCRIPTION": "Gain !M! theranger:Camouflage."
+  },
+  "theRanger:TravelLight": {
+    "NAME": "Travel Light",
+    "DESCRIPTION": "Lose ALL theranger:Essence, draw that amount of cards."
+  },
+  "theRanger:Decoy": {
+    "NAME": "Decoy",
+    "DESCRIPTION": "Convert ALL your Block into theranger:Camouflage."
+  },
+  "theRanger:Bait": {
+    "NAME": "Bait",
+    "DESCRIPTION": "Gain !M! theranger:Camouflage. NL Draw !M2! cards."
+  },
+  "theRanger:WarningShot": {
+    "NAME": "Warning Shot",
+    "DESCRIPTION": "theranger:Shot 1. NL Apply !M! Vulnerable to the target and !M2! Weak to ALL enemies."
+  },
+  "theRanger:Flare": {
+    "NAME": "Flare",
+    "DESCRIPTION": "Apply !M! theranger:Infused and !M2! Weak to ALL enemies. NL Exhaust."
+  },
+  "theRanger:ForestCommunion": {
+    "NAME": "Forest Communion",
+    "DESCRIPTION": "Gain your maximum amount of theranger:Essence.NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Gain your maximum amount of theranger:Essence."
+  },
+  "theRanger:Reminiscence": {
+    "NAME": "Reminiscence",
+    "DESCRIPTION": "Choose a card in your discard pile. NL Play the chosen card twice and exhaust it. NL Exhaust."
+  },
+  "theRanger:SuppressPresence": {
+    "NAME": "Suppress Presence",
+    "DESCRIPTION": "Lose ALL theranger:Essence. Gain theranger:Camouflage equal to !M! times that amount."
+  },
+  "theRanger:DrainIvy": {
+    "NAME": "Drain Ivy",
+    "DESCRIPTION": "Gain !B! Block. NL Whenever you are attacked this turn, Gain 1 theranger:Essence."
+  },
+  "theRanger:Mimicry": {
+    "NAME": "Mimicry",
+    "DESCRIPTION": "Gain !M! theranger:Camouflage. Permanently increase this card theranger:Camouflage by !M2!. NL Exhaust."
+  },
+  "theRanger:SoulWave": {
+    "NAME": "Soul Wave",
+    "DESCRIPTION": "Use M theranger:Essence.NL Each apply !M2! theranger:Infused to ALL enemies. NL Increase the amount of theranger:Essence used in this card by NEED MORE VARS this combat."
+  },
+  "theRanger:Overconfidence": {
+    "NAME": "Overconfidence",
+    "DESCRIPTION": "Gain !M! Vigor.NL Gain !M2! Vulnerable."
+  },
+  "theRanger:Blooming": {
+    "NAME": "Blooming",
+    "DESCRIPTION": "Enemy loses HP equal to its theranger:Infused. NL Remove ALL theranger:Infused from enemy.",
+    "UPGRADE_DESCRIPTION": "Enemy loses HP equal to its theranger:Infused."
+  },
+  "theRanger:ForestBlessing": {
+    "NAME": "Forest Blessing",
+    "DESCRIPTION": "Next card you play this turn, play it twice."
+  },
+  "theRanger:MeanNoHarm": {
+    "NAME": "MeanNoHarmDEPRECATED",
+    "DESCRIPTION": "Apply !M! Vulnerable. NL Gain !M2! Weak."
+  },
+  "theRanger:BloodcurdlingAppearance": {
+    "NAME": "Bloodcurdling Appearance",
+    "DESCRIPTION": "Gain !M! theranger:Kukri. NL theranger:Stealth: Apply !M2! Vulnerable. NL Exhaust."
+  },
+  "theRanger:Agility": {
+    "NAME": "Agility",
+    "DESCRIPTION": "Draw !M! cards."
+  },
+  "theRanger:WillOWisp": {
+    "NAME": "Will-o-Wisp",
+    "DESCRIPTION": "Unplayable. NL Whenever this card is drawn gain !M! theranger:Essence."
+  },
+  "theRanger:Quickness": {
+    "NAME": "Quickness",
+    "DESCRIPTION": "Gain !M! Vigor. NL Draw !M2! cards."
+  },
+  "theRanger:EnergeticEntrance": {
+    "NAME": "Energetic Entrance",
+    "DESCRIPTION": "Gain !M! Vigor. NL Next turn, gain [E]."
+  },
+  "theRanger:Charity": {
+    "NAME": "Charity",
+    "DESCRIPTION": "Discard up to !M! cards from your draw pile."
+  },
+  "theRanger:Trick": {
+    "NAME": "Trick",
+    "DESCRIPTION": "Add a random card of the same type of your last card played. It cost 0 this turn. NL Exhaust.",
+    "EXTENDED_DESCRIPTION": [
+      "NL (Adds a ",
+      " card.)"
+    ]
+  },
+  "theRanger:Concentration": {
+    "NAME": "Concentration",
+    "DESCRIPTION": "Gain !M! theranger:Density, lose !M2! theranger:Spirit."
+  },
+  "theRanger:Banish": {
+    "NAME": "Banish",
+    "DESCRIPTION": "Gain !M! theranger:Camouflage. NL Exhaust."
+  },
+  "theRanger:Frontflip": {
+    "NAME": "Frontflip",
+    "DESCRIPTION": "Gain !B! Block. NL Gain !M! Vigor."
   }
 }

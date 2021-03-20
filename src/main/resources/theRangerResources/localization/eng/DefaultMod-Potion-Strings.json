@@ -5,11 +5,11 @@
 },
         "theRanger:InfusivePotion": {
                 "NAME": "Infusive Potion",
-                "DESCRIPTIONS": ["Apply #b", " #yInfused."]
+                "DESCRIPTIONS": ["Apply #b", " #ytheranger:Infused."]
         },
         "theRanger:BottledSoul": {
                 "NAME": "Bottled Soul",
-                "DESCRIPTIONS": ["Gain #b", " #ySpirit and #b", " #Essence."]
+                "DESCRIPTIONS": ["Gain #b", " #ytheranger:Spirit and #b", " #ytheranger:Essence."]
         },
         "theRanger:LiquidCourage": {
         "NAME": "Liquid Courage",
