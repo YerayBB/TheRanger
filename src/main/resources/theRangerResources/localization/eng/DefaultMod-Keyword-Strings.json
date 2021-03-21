@@ -26,12 +26,12 @@
       "shot",
       "shots"
     ],
-    "DESCRIPTION": "Uses #yEssence to activate its effects."
+    "DESCRIPTION": "Requires #yEssence to activate its effects."
   },
   {
     "NAMES": [
       "infused"
     ],
-    "DESCRIPTION": "Infused enemies take damage when their HP is lower than their Infused stacks."
+    "DESCRIPTION": "Infused enemies take damage whenever their HP is lower than their Infused stacks."
   }
 ]

@@ -75,7 +75,7 @@
   },
   "theRanger:ShadowForm": {
     "NAME": "Shadow Form",
-    "DESCRIPTION": "You no longer lose theranger:Camouflage when Attack. NL Gain !M! theranger:Camouflage at start turn."
+    "DESCRIPTION": "You no longer lose theranger:Camouflage when Attack. NL Gain !M! theranger:Camouflage at start of your turn."
   },
   "theRanger:Vessel": {
     "NAME": "Vessel",
@@ -175,7 +175,7 @@
   },
   "theRanger:Retrieve": {
     "NAME": "Retrieve",
-    "DESCRIPTION": "Deal !D! damage. NL If the enemy is theranger:Heavy_Wounded, gain 1 theranger:Kukri."
+    "DESCRIPTION": "Deal !D! damage. NL If the enemy has theranger:Heavy_Wounds, gain 1 theranger:Kukri."
   },
   "theRanger:HitandRun": {
     "NAME": "Hit and Run",

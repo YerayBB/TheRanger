@@ -1,10 +1,105 @@
 {
-"theRanger:CommonPower": {
-        "NAME": "Placeholder Power",
-        "DESCRIPTIONS": ["You applied #b", " keyword.", " keywords."]
-},
-"theRanger:RarePower": {
-        "NAME": "Placeholder Power",
-        "DESCRIPTIONS": ["At the start of your turn, TOUCH #b", " enemy." , " enemies."]
-}
+        "theRanger:CommonPower": {
+                "NAME": "Placeholder Power",
+                "DESCRIPTIONS": ["You applied #b", " keyword.", " keywords."]
+        },
+        "theRanger:RarePower": {
+                "NAME": "Placeholder Power",
+                "DESCRIPTIONS": ["At the start of your turn, TOUCH #b", " enemy." , " enemies."]
+        },
+        "theRanger:Essence": {
+                "NAME": "Essence",
+                "DESCRIPTIONS": ["You have #b", " Essence. NL The maximum amount you can have now is #b","." ]
+        },
+        "theRanger:Kukri": {
+                "NAME": "Kukri",
+                "DESCRIPTIONS": ["You have #b", " Kukris. You can't have more than 6."]
+        },
+        "theRanger:Exposed": {
+                "NAME": "Exposed",
+                "DESCRIPTIONS": ["Next time you take attack damage, DIE. NL You can no longer gain block from cards."]
+        },
+        "theRanger:Infused": {
+                "NAME": "Infused",
+                "DESCRIPTIONS": ["Whenever its HP is lower than its Infused, take damage equal to its Infused and lose ALL Infused. NL At the End of your turn, reduce the #yInfused by alf of it. If during this turn this creature has been #yInfused, reduce the #Infused amount by 1 instead."]
+        },
+        "theRanger:ShadowForm": {
+                "NAME": "Shadow Form",
+                "DESCRIPTIONS": ["No longer lose #yCamouflage when using attack cards. NL At the start of your turn gain #b", " #yCamouflage."]
+        },
+        "theRanger:Spirit": {
+                "NAME": "Spirit",
+                "DESCRIPTIONS": ["Increase the maximum amount of #yEssence you can have by #b", "."]
+        },
+        "theRanger:Transcendence": {
+                "NAME": "Transcendence",
+                "DESCRIPTIONS": ["At the start of your turn gain #b", " #ySpirit."]
+        },
+        "theRanger:Arm-Guard": {
+                "NAME": "Arm-Guard",
+                "DESCRIPTIONS": ["Whenever you #yShot, gain #b", " #yBlock."]
+        },
+        "theRanger:Overdraw": {
+                "NAME": "Overdraw",
+                "DESCRIPTIONS": ["The first #b", " cards that you play each turn that #yShot, won't consume #yEssence.","NL #yShots made this turn: #b","."]
+        },
+        "theRanger:FewerCards": {
+                "NAME": "Fewer Cards",
+                "DESCRIPTIONS": ["Draw #b", " less cards."]
+        },
+        "theRanger:Tenacity": {
+                "NAME": "Tenacity",
+                "DESCRIPTIONS": ["Whenever you gain #yVigor, gain #b", " #yBlock."]
+        },
+        "theRanger:ForestAid": {
+                "NAME": "Forest Aid",
+                "DESCRIPTIONS": ["Whenever you draw a #yWill-o-Wisp, draw #b1 card.",
+                "Whenever you draw a #yWill-o-Wisp, draw #b",
+                " cards."]
+        },
+        "theRanger:Sanctuary": {
+                "NAME": "Sanctuary",
+                "DESCRIPTIONS": ["Whenever you gain #yCamouflage, gain #b", " #yEssence."]
+        },
+        "theRanger:Donation": {
+                "NAME": "Donation",
+                "DESCRIPTIONS": ["At the start of your turn, lose #b", " #ySpirit."]
+        },
+        "theRanger:LeaveNoTrace": {
+                "NAME": "Leave No Trace",
+                "DESCRIPTIONS": ["Whenever you gain #yCamouflage, draw #b", " cards."]
+        },
+        "theRanger:Trap": {
+                "NAME": "Trap",
+                "DESCRIPTIONS": ["Prevent the next time you would lose HP from an attack.NL If you are in #Stealth the turn when this effect triggers, next turn #Stun the enemy who triggered"]
+        },
+        "theRanger:Apollo": {
+                "NAME": "Apollo",
+                "DESCRIPTIONS": ["Next turn take #b", " damage."]
+        },
+        "theRanger:HeavyWounds": {
+                "NAME": "Heavy Wounds",
+                "DESCRIPTIONS": ["Receive  #b", " more damage from the next attack."]
+        },
+        "theRanger:Camouflage": {
+                "NAME": "Camouflage",
+                "DESCRIPTIONS": ["Prevents the next time you would take attack damage if the #yCamouflage is bigger than the attack. NL Whenever you play an attack, lose ALL #yCamouflage."]
+        },
+        "theRanger:TemporalStrengthDown": {
+                "NAME": "Temporal Strength Down",
+                "DESCRIPTIONS": ["During next turn lose #b", " #yStrength."]
+        },
+        "theRanger:FutureExtraDraw": {
+                "NAME": "Future Extra Draw",
+                "DESCRIPTIONS": ["In 2 turns, draw #b", " more cards."]
+        },
+        "theRanger:EnergizedRanger": {
+                "NAME": "Energized",
+                "DESCRIPTIONS": [
+                        "Gain #b",
+                        " additional [E] next turn.",
+                        " additional [E] next turn.",
+                        " - TRANSLATOR NOTE: - The above line is for plural if needed to distinguish from singular."
+                ]
+        }
 }
