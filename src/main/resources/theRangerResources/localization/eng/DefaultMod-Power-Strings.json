@@ -53,7 +53,7 @@
         },
         "theRanger:Tenacity": {
                 "NAME": "Tenacity",
-                "DESCRIPTIONS": ["Whenever you gain Vigor, gain #b", " #yBlock."]
+                "DESCRIPTIONS": ["Whenever you gain #yVigor, gain #b", " #yBlock."]
         },
         "theRanger:ForestAid": {
                 "NAME": "Forest Aid",
