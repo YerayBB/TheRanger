@@ -25,7 +25,7 @@
         },
         "theRanger:Infused": {
                 "NAME": "Infused",
-                "DESCRIPTIONS": ["Whenever its HP is lower than its Infused, take damage equal to its Infused and lose ALL Infused. NL At the End of your turn, reduce the #yInfused by alf of it. If during this turn this creature has been #yInfused, reduce the #Infused amount by 1 instead."]
+                "DESCRIPTIONS": ["Whenever its HP is lower than its #yInfused, take damage equal to its #yInfused and lose ALL #yInfused. NL At the End of your turn, reduce the #yInfused by half of it. If during this turn this creature has been #yInfused, reduce the #Infused amount by 1 instead."]
         },
         "theRanger:ShadowForm": {
                 "NAME": "Shadow Form",

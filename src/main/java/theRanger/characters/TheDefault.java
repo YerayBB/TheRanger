@@ -22,9 +22,9 @@ import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import theRanger.DefaultMod;
-import theRanger.cards.*;
-import theRanger.cards.Attacks.RangerBasicStrike;
-import theRanger.cards.Skills.RangerBasicDefend;
+import theRanger.cards.Skills.*;
+import theRanger.cards.Attacks.*;
+import theRanger.cards.Powers.*;
 import theRanger.relics.DefaultClickableRelic;
 import theRanger.relics.PlaceholderRelic;
 import theRanger.relics.PlaceholderRelic2;
@@ -32,7 +32,7 @@ import theRanger.relics.PlaceholderRelic2;
 import java.util.ArrayList;
 
 import static theRanger.DefaultMod.*;
-import static theRanger.characters.TheDefault.Enums.COLOR_GRAY;
+import static theRanger.characters.TheDefault.Enums.COLOR_BROWN;
 
 //Wiki-page https://github.com/daviscook477/BaseMod/wiki/Custom-Characters
 //and https://github.com/daviscook477/BaseMod/wiki/Migrating-to-5.0
@@ -51,9 +51,9 @@ public class TheDefault extends CustomPlayer {
     public static class Enums {
         @SpireEnum
         public static AbstractPlayer.PlayerClass THE_DEFAULT;
-        @SpireEnum(name = "DEFAULT_GRAY_COLOR") // These two HAVE to have the same absolutely identical name.
-        public static AbstractCard.CardColor COLOR_GRAY;
-        @SpireEnum(name = "DEFAULT_GRAY_COLOR") @SuppressWarnings("unused")
+        @SpireEnum(name = "DEFAULT_BROWN_COLOR") // These two HAVE to have the same absolutely identical name.
+        public static AbstractCard.CardColor COLOR_BROWN;
+        @SpireEnum(name = "DEFAULT_BROWN_COLOR") @SuppressWarnings("unused")
         public static CardLibrary.LibraryType LIBRARY_COLOR;
     }
 
@@ -63,18 +63,18 @@ public class TheDefault extends CustomPlayer {
     // =============== BASE STATS =================
 
     public static final int ENERGY_PER_TURN = 3;
-    public static final int STARTING_HP = 75;
-    public static final int MAX_HP = 75;
+    public static final int STARTING_HP = 70;
+    public static final int MAX_HP = 70;
     public static final int STARTING_GOLD = 99;
-    public static final int CARD_DRAW = 9;
-    public static final int ORB_SLOTS = 3;
+    public static final int CARD_DRAW = 5;
+    public static final int ORB_SLOTS = 0;
 
     // =============== /BASE STATS/ =================
 
 
     // =============== STRINGS =================
 
-    private static final String ID = makeID("DefaultCharacter");
+    private static final String ID = makeID("TheRanger");
     private static final CharacterStrings characterStrings = CardCrawlGame.languagePack.getCharacterString(ID);
     private static final String[] NAMES = characterStrings.NAMES;
     private static final String[] TEXT = characterStrings.TEXT;
@@ -181,6 +181,8 @@ public class TheDefault extends CustomPlayer {
         retVal.add(RangerBasicDefend.ID);
         retVal.add(RangerBasicDefend.ID);
         retVal.add(RangerBasicDefend.ID);
+        retVal.add(DirectShot.ID);
+        retVal.add(NimbleReload.ID);
         return retVal;
     }
 
@@ -189,14 +191,14 @@ public class TheDefault extends CustomPlayer {
         ArrayList<String> retVal = new ArrayList<>();
 
         retVal.add(PlaceholderRelic.ID);
-        retVal.add(PlaceholderRelic2.ID);
-        retVal.add(DefaultClickableRelic.ID);
+        //retVal.add(PlaceholderRelic2.ID);
+        //retVal.add(DefaultClickableRelic.ID);
 
         // Mark relics as seen - makes it visible in the compendium immediately
         // If you don't have this it won't be visible in the compendium until you see them in game
         UnlockTracker.markRelicAsSeen(PlaceholderRelic.ID);
-        UnlockTracker.markRelicAsSeen(PlaceholderRelic2.ID);
-        UnlockTracker.markRelicAsSeen(DefaultClickableRelic.ID);
+        //UnlockTracker.markRelicAsSeen(PlaceholderRelic2.ID);
+        //UnlockTracker.markRelicAsSeen(DefaultClickableRelic.ID);
 
         return retVal;
     }
@@ -219,19 +221,19 @@ public class TheDefault extends CustomPlayer {
     // Ascension 14 or higher. (ironclad loses 5, defect and silent lose 4 hp respectively)
     @Override
     public int getAscensionMaxHPLoss() {
-        return 0;
+        return 4;
     }
 
     // Should return the card color enum to be associated with your character.
     @Override
     public AbstractCard.CardColor getCardColor() {
-        return COLOR_GRAY;
+        return COLOR_BROWN;
     }
 
     // Should return a color object to be used to color the trail of moving cards
     @Override
     public Color getCardTrailColor() {
-        return theRanger.DefaultMod.DEFAULT_GRAY;
+        return theRanger.DefaultMod.DEFAULT_BROWN;
     }
 
     // Should return a BitmapFont object that you can use to customize how your
@@ -250,7 +252,7 @@ public class TheDefault extends CustomPlayer {
     //Which card should be obtainable from the Match and Keep event?
     @Override
     public AbstractCard getStartCardForEvent() {
-        return new DefaultCommonAttack();
+        return new DirectShot();
     }
 
     // The class name as it appears next to your player name in-game
@@ -268,14 +270,14 @@ public class TheDefault extends CustomPlayer {
     // Should return a Color object to be used to color the miniature card images in run history.
     @Override
     public Color getCardRenderColor() {
-        return theRanger.DefaultMod.DEFAULT_GRAY;
+        return theRanger.DefaultMod.DEFAULT_BROWN;
     }
 
     // Should return a Color object to be used as screen tint effect when your
     // character attacks the heart.
     @Override
     public Color getSlashAttackColor() {
-        return theRanger.DefaultMod.DEFAULT_GRAY;
+        return theRanger.DefaultMod.DEFAULT_BROWN;
     }
 
     // Should return an AttackEffect array of any size greater than 0. These effects
@@ -284,8 +286,8 @@ public class TheDefault extends CustomPlayer {
     @Override
     public AbstractGameAction.AttackEffect[] getSpireHeartSlashEffect() {
         return new AbstractGameAction.AttackEffect[]{
-                AbstractGameAction.AttackEffect.BLUNT_HEAVY,
-                AbstractGameAction.AttackEffect.BLUNT_HEAVY,
+                AbstractGameAction.AttackEffect.LIGHTNING,
+                AbstractGameAction.AttackEffect.SLASH_HEAVY,
                 AbstractGameAction.AttackEffect.BLUNT_HEAVY};
     }
 

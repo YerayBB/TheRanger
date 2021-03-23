@@ -121,7 +121,7 @@
   },
   "theRanger:Shelter": {
     "NAME": "Shelter",
-    "DESCRIPTION": "Gain !M! Dexterity. NL Lose !M2! Strength."
+    "DESCRIPTION": "Gain !M! Dexterity. NL Lose !theranger:M2! Strength."
   },
   "theRanger:Trap": {
     "NAME": "Trap",

@@ -35,7 +35,7 @@ public class DefaultUncommonPower extends AbstractDynamicCard {
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.SELF;
     private static final CardType TYPE = CardType.POWER;
-    public static final CardColor COLOR = TheDefault.Enums.COLOR_GRAY;
+    public static final CardColor COLOR = TheDefault.Enums.COLOR_BROWN;
 
     private static final int COST = -1;
     private static final int MAGIC = 1;
