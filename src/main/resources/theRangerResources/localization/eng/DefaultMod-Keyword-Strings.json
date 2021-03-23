@@ -18,9 +18,7 @@
     "DESCRIPTION": "Make sure the first element in the NAMES is the same as your PROPER_NAME. The rest is to match keywords like the single word keyword."
   },
   {
-    "PROPER_NAME": "Shot",
     "NAMES": [
-      "Shot",
       "Shot",
       "Shots",
       "shot",
@@ -30,8 +28,111 @@
   },
   {
     "NAMES": [
+      "Infused",
       "infused"
     ],
     "DESCRIPTION": "Infused enemies take damage whenever their HP is lower than their Infused stacks."
+  },
+  {
+    "NAMES": [
+      "Essence",
+      "essence"
+    ],
+    "DESCRIPTION": "The ammo of the Ranger's bow. NL #yEssence is required to get the full potential of some cards."
+  },
+  {
+    "NAMES": [
+      "Camouflage",
+      "camouflage"
+    ],
+    "DESCRIPTION": "Can prevent next attack damage taken. Lose all #ycamouflage whenever you play an attack."
+  },
+  {
+    "NAMES": [
+      "Spirit",
+      "spirit"
+    ],
+    "DESCRIPTION": "Increases the amount of #yEssence you can have."
+  },
+  {
+    "NAMES": [
+      "Density",
+      "density"
+    ],
+    "DESCRIPTION": "Density increases the amount of #yInfused applied from any source."
+  },
+  {
+    "NAMES": [
+      "Stealth",
+      "stealth"
+    ],
+    "DESCRIPTION": "Triggers if your #yCamouflage is bigger than the attack of the target's intent."
+  },
+  {
+    "PROPER_NAME": "True Damage",
+    "NAMES": [
+      "True Damage",
+      "True_Damage",
+      "True_damage",
+      "true_damage"
+    ],
+    "DESCRIPTION": "Ignores #yBlock. It's not affected by buffs nor debuffs."
+  },
+  {
+    "PROPER_NAME": "Empty Handed",
+    "NAMES": [
+      "Empty Handed",
+      "Empty_Handed",
+      "Empty_handed",
+      "empty_handed"
+    ],
+    "DESCRIPTION": "Triggers if you have #b0 #yEssence and #b0 #yKukri."
+  },
+  {
+    "NAMES": [
+      "Exposed",
+      "exposed"
+    ],
+    "DESCRIPTION": "Die if you take attack damage, can't gain block from cards."
+  },
+  {
+    "PROPER_NAME": "Heavy Wounds",
+    "NAMES": [
+      "Heavy Wounds",
+      "Heavy_Wounds",
+      "Heavy_wounds",
+      "heavy_wounds"
+    ],
+    "DESCRIPTION": "Half of the unblocked damage gets stacked on the target. NL Next time the target takes attack damage, would take that amount as additional damage."
+  },
+  {
+    "NAMES": [
+      "Kukri",
+      "kukri",
+      "Kukris",
+      "kukris"
+    ],
+    "DESCRIPTION": "The melee weapons of the Ranger. Apply theranger:Heavy_Wounds to the target when used."
+  },
+  {
+    "NAMES": [
+      "Overcharge",
+      "overcharge"
+    ],
+    "DESCRIPTION": "Triggers whenever you gain more #yEssence than you can hold."
+  },
+  {
+    "NAMES": [
+      "Multiplay",
+      "multiplay"
+    ],
+    "DESCRIPTION": "On played, adds an Ethereal copy of this card to your hand."
+  },
+  {
+    "NAMES": [
+      "Vigor",
+      "vigor"
+    ],
+    "DESCRIPTION": "Increases the damage of your next attack."
   }
 ]

@@ -19,6 +19,10 @@
                 "NAME": "Exposed",
                 "DESCRIPTIONS": ["Next time you take attack damage, DIE. NL You can no longer gain block from cards."]
         },
+        "theRanger:Density": {
+                "NAME": "Density",
+                "DESCRIPTIONS": ["Increases the amount of #yInfused applied by #b", "."]
+        },
         "theRanger:Infused": {
                 "NAME": "Infused",
                 "DESCRIPTIONS": ["Whenever its HP is lower than its Infused, take damage equal to its Infused and lose ALL Infused. NL At the End of your turn, reduce the #yInfused by alf of it. If during this turn this creature has been #yInfused, reduce the #Infused amount by 1 instead."]
