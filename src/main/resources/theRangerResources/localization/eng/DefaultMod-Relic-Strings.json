@@ -30,5 +30,70 @@
       ".",
       "Select a card to bottle for "
     ]
+  },
+  "theRanger:Quiver": {
+    "NAME": "Quiver",
+    "FLAVOR": "The basic equipment for an archer.",
+    "DESCRIPTIONS": [
+      "At the start of each combat, gain #b",
+      " #ytheranger:Spirit and #b",
+      " #ytheranger:Essence."
+    ]
+  },
+  "theRanger:HungryFairy": {
+    "NAME": "Hungry Fairy",
+    "FLAVOR": "YO FEED ME!.",
+    "DESCRIPTIONS": [
+      "At the start of your turn, lose #b1 #ytheranger:Essence to gain [E]."
+    ]
+  },
+  "theRanger:HandCrossbow": {
+    "NAME": "HandCrossbow",
+    "FLAVOR": "If things turns ugly, it's always ready.",
+    "DESCRIPTIONS": [
+      "The first time you #ytheranger:Shot each turn, draw #b1 card."
+    ]
+  },
+  "theRanger:Place": {
+    "NAME": "Place",
+    "FLAVOR": "IDK YET",
+    "DESCRIPTIONS": [
+      "Whenever you apply #ytheranger:Vigor, apply an additional #b",
+      " #ytheranger:Vigor."
+    ]
+  },
+  "theRanger:Camoplace": {
+    "NAME": "Camoplace",
+    "FLAVOR": "IDK YET",
+    "DESCRIPTIONS": [
+      "At the end of your turn, gain #b",
+      " #ytheranger:Camouflage for each card in your hand."
+    ]
+  },
+  "theRanger:EverbloomingFlower": {
+    "NAME": "Everblooming Flower",
+    "FLAVOR": "It's always on its season.",
+    "DESCRIPTIONS": [
+      "At the start of each combat, apply #b",
+      " #ytheranger:Infused to ALL enemies."
+    ]
+  },
+  "theRanger:SiphonersSeal": {
+    "NAME": "Siphoner's Seal",
+    "FLAVOR": "An ancient tool for soul harvesting.",
+    "DESCRIPTIONS": [
+      "Every #b",
+      " turns, gain #b",
+      " #ytheranger:Essence."
+    ]
+  },
+  "theRanger:Yazutsu": {
+    "NAME": "Yazutsu",
+    "FLAVOR": "Still carries the ~aura~ of the shrine.",
+    "DESCRIPTIONS": [
+      "#rReplaces #rQuiver. At the start of each combat, gain #b",
+      " #ytheranger:Spirit and #b",
+      " #ytheranger:Essence."
+    ]
   }
 }

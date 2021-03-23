@@ -99,7 +99,7 @@
   },
   "theRanger:Tenacity": {
     "NAME": "Tenacity",
-    "DESCRIPTION": "Whenever you gain Vigor, gain !M! Block."
+    "DESCRIPTION": "Whenever you gain theranger:Vigor, gain !M! Block."
   },
   "theRanger:Forest Aid": {
     "NAME": "Forest Aid",
@@ -236,7 +236,7 @@
   },
   "theRanger:RawPunch": {
     "NAME": "RawPunch",
-    "DESCRIPTION": "Deal !D! damage. NL Gain !M! Weak. NL theranger:Empty_Handed: Vigor affects this card !M2! times."
+    "DESCRIPTION": "Deal !D! damage. NL Gain !M! Weak. NL theranger:Empty_Handed: theranger:Vigor affects this card !M2! times."
   },
   "theRanger:HeavyRain": {
     "NAME": "Heavy Rain",
@@ -269,7 +269,7 @@
   },
   "theRanger:Bluff": {
     "NAME": "Bluff",
-    "DESCRIPTION": "Double your Vigor. NL During next turn lose the same amount of Strength."
+    "DESCRIPTION": "Double your theranger:Vigor. NL During next turn lose the same amount of Strength."
   },
   "theRanger:SpiritDetonation": {
     "NAME": "Spirit Detonation",
@@ -344,7 +344,7 @@
   },
   "theRanger:Overconfidence": {
     "NAME": "Overconfidence",
-    "DESCRIPTION": "Gain !M! Vigor.NL Gain !M2! Vulnerable."
+    "DESCRIPTION": "Gain !M! theranger:Vigor.NL Gain !M2! Vulnerable."
   },
   "theRanger:Blooming": {
     "NAME": "Blooming",
@@ -373,11 +373,11 @@
   },
   "theRanger:Quickness": {
     "NAME": "Quickness",
-    "DESCRIPTION": "Gain !M! Vigor. NL Draw !M2! cards."
+    "DESCRIPTION": "Gain !M! theranger:Vigor. NL Draw !M2! cards."
   },
   "theRanger:EnergeticEntrance": {
     "NAME": "Energetic Entrance",
-    "DESCRIPTION": "Gain !M! Vigor. NL Next turn, gain [E]."
+    "DESCRIPTION": "Gain !M! theranger:Vigor. NL Next turn, gain [E]."
   },
   "theRanger:Charity": {
     "NAME": "Charity",
@@ -401,6 +401,6 @@
   },
   "theRanger:Frontflip": {
     "NAME": "Frontflip",
-    "DESCRIPTION": "Gain !B! Block. NL Gain !M! Vigor."
+    "DESCRIPTION": "Gain !B! Block. NL Gain !M! theranger:Vigor."
   }
 }

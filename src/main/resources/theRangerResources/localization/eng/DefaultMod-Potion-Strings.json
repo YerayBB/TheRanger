@@ -13,6 +13,6 @@
         },
         "theRanger:LiquidCourage": {
         "NAME": "Liquid Courage",
-        "DESCRIPTIONS": ["Gain #b", " #yVigor."]
+        "DESCRIPTIONS": ["Gain #b", " #ytheranger:Vigor."]
 }
 }
