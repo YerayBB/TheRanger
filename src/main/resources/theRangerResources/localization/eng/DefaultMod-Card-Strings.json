@@ -1,53 +1,53 @@
 {
   "theRanger:DefaultCommonAttack": {
-    "NAME": "Strike",
+    "NAME": "StrikeKK",
     "DESCRIPTION": "Deal !D! damage. NL [#0000ff]This[] [#ff0000]Is[] [#ffff00]How[] [#88888]color[] [#ff00ff]works.[]"
   },
   "theRanger:DefaultCommonSkill": {
-    "NAME": "Defend",
+    "NAME": "DefendKK",
     "DESCRIPTION": "Gain !B! Block. NL theranger:Multiword_Keyword."
   },
   "theRanger:DefaultCommonPower": {
-    "NAME": "Hold Place",
+    "NAME": "Hold PlaceKK",
     "DESCRIPTION": "Gain !M! theranger:Keyword.",
     "UPGRADE_DESCRIPTION": "Gain !M! theranger:Keywords."
   },
   "theRanger:DefaultUncommonAttack": {
-    "NAME": "Big slap",
+    "NAME": "Big KK",
     "DESCRIPTION": "Deal !D! damage."
   },
   "theRanger:DefaultUncommonSkill": {
-    "NAME": "A Better Defend",
+    "NAME": "A Better DefendKK",
     "DESCRIPTION": "Gain !B! Plated Armor. Affected by Dexterity."
   },
   "theRanger:DefaultUncommonPower": {
-    "NAME": "Weirdness",
+    "NAME": "WeirdnessKK",
     "DESCRIPTION": "Gain X theranger:Keywords.",
     "UPGRADE_DESCRIPTION": "Gain X +1 theranger:Keywords."
   },
   "theRanger:DefaultRareAttack": {
-    "NAME": "TOUCH",
+    "NAME": "TOUCHKK",
     "DESCRIPTION": "Deal !D! damage."
   },
   "theRanger:DefaultRareSkill": {
-    "NAME": "For Each Loop x2",
+    "NAME": "For Each Loop x2KK",
     "DESCRIPTION": "Apply !M! Vulnerable to all enemies, 2 times.",
     "UPGRADE_DESCRIPTION": "Apply !M! Vulnerable to all enemies, 3 times."
   },
   "theRanger:DefaultRarePower": {
-    "NAME": "In-Progress Form",
+    "NAME": "In-Progress FormKK",
     "DESCRIPTION": "At the start of your turn, play a TOUCH."
   },
   "theRanger:DefaultAttackWithVariable": {
-    "NAME": "Special Strike",
+    "NAME": "Special StrikeKK",
     "DESCRIPTION": "Deal !D! damage [E] times. NL (Deal !theranger:ENERGY_DAMAGE! damage total.)"
   },
   "theRanger:DefaultSecondMagicNumberSkill": {
-    "NAME": "Cool HEY Number Card",
+    "NAME": "Cool HEY Number CardKK",
     "DESCRIPTION": "Apply !M! Vulnerable and !theranger:M2! poison to an enemy."
   },
   "theRanger:OrbSkill": {
-    "NAME": "Get Orb",
+    "NAME": "Get OrbKK",
     "DESCRIPTION": "Channel 1 Default Orb."
   },
   "theRanger:EmptySpace": {
@@ -58,11 +58,11 @@
   },
   "theRanger:RangerBasicStrike": {
     "NAME" : "Strike",
-    "DESCRIPTION": "Deal !D! damage"
+    "DESCRIPTION": "Deal !D! damage."
   },
   "theRanger:RangerBasicDefend": {
     "NAME" : "Defend",
-    "DESCRIPTION": "Gain !B! Block"
+    "DESCRIPTION": "Gain !B! Block."
   },
   "theRanger:DirectShot": {
     "NAME" : "Direct Shot",
@@ -85,7 +85,7 @@
     "NAME": "Transcendence",
     "DESCRIPTION": "At Start of your turn gain !M! theranger:Spirit."
   },
-  "theRanger:Arm-Guard": {
+  "theRanger:ArmGuard": {
     "NAME": "Arm-Guard",
     "DESCRIPTION": "Everytime you theranger:Shot gain !M! Block."
   },
@@ -101,7 +101,7 @@
     "NAME": "Tenacity",
     "DESCRIPTION": "Whenever you gain theranger:Vigor, gain !M! Block."
   },
-  "theRanger:Forest Aid": {
+  "theRanger:ForestAid": {
     "NAME": "Forest Aid",
     "DESCRIPTION": "Add !M! *Will-o-Wisp to your Draw pile. NL Whenever you draw a *Will-o-Wisp, draw !M2! card.",
     "UPGRADE_DESCRIPTION": "Add !M! *Will-o-Wisp to your Draw pile. NL Whenever you draw a *Will-o-Wisp, draw !M2! cards."
@@ -131,7 +131,7 @@
     "NAME": "Explosive Shot",
     "DESCRIPTION": "theranger:Shot 1. NL Deal !D! damage. Consume all the theranger:Infused of the enemy and deal that amount as damage to ALL enemies."
   },
-  "theRanger:Apollo'sFavor": {
+  "theRanger:ApollosFavor": {
     "NAME": "Apollo's Favor",
     "DESCRIPTION": "theranger:Shot 5. NL Next turn deal !D! + !M! times your theranger:Density. NL (Currently deals !M2!)"
   },
@@ -148,7 +148,7 @@
   },
   "theRanger:SoulReap": {
     "NAME": "Soul Reap",
-    "DESCRIPTION": "Deal !D! damage. NL Gain theranger:Essence equal to the unblocked damage."
+    "DESCRIPTION": "Deal !D! damage. NL Gain theranger:Spirit equal to the unblocked damage. NL Exhaust."
   },
   "theRanger:LastDitchEffort": {
     "NAME": "Last Ditch Effort",
@@ -253,7 +253,7 @@
   "NAME": "Shooting Star",
   "DESCRIPTION": "theranger:Shot 3. NL Add a *Star *Fall to the bottom of your draw pile."
   },
-  "theRanger:Star Fall": {
+  "theRanger:StarFall": {
     "NAME": "Star Fall",
     "DESCRIPTION": "Ethereal. NL Deal damage equal to !M! times the amount of theranger:Shots you made since this card was created.",
     "EXTENDED_DESCRIPTION": [
@@ -332,7 +332,7 @@
   },
   "theRanger:DrainIvy": {
     "NAME": "Drain Ivy",
-    "DESCRIPTION": "Gain !B! Block. NL Whenever you are attacked this turn, Gain 1 theranger:Essence."
+    "DESCRIPTION": "Gain !B! Block. NL Whenever you are attacked this turn, Gain !M! theranger:Essence."
   },
   "theRanger:Mimicry": {
     "NAME": "Mimicry",
@@ -340,7 +340,7 @@
   },
   "theRanger:SoulWave": {
     "NAME": "Soul Wave",
-    "DESCRIPTION": "Use M theranger:Essence.NL Each apply !M2! theranger:Infused to ALL enemies. NL Increase the amount of theranger:Essence used in this card by NEED MORE VARS this combat."
+    "DESCRIPTION": "Use !M! theranger:Essence.NL Each apply !M2! theranger:Infused to ALL enemies. NL Increase the amount of theranger:Essence used in this card by NEED MORE VARS this combat."
   },
   "theRanger:Overconfidence": {
     "NAME": "Overconfidence",
