@@ -24,6 +24,7 @@ import theRanger.cards.*;
 import theRanger.characters.TheDefault;
 import theRanger.events.IdentityCrisisEvent;
 import theRanger.potions.PlaceholderPotion;
+import theRanger.relics.*;
 import theRanger.relics.BottledPlaceholderRelic;
 import theRanger.relics.DefaultClickableRelic;
 import theRanger.relics.PlaceholderRelic;
@@ -395,7 +396,9 @@ public class DefaultMod implements
         BaseMod.addRelicToCustomPool(new PlaceholderRelic(), TheDefault.Enums.COLOR_BROWN);
         BaseMod.addRelicToCustomPool(new BottledPlaceholderRelic(), TheDefault.Enums.COLOR_BROWN);
         BaseMod.addRelicToCustomPool(new DefaultClickableRelic(), TheDefault.Enums.COLOR_BROWN);
-        
+        //MINE
+        BaseMod.addRelicToCustomPool(new Quiver(), TheDefault.Enums.COLOR_BROWN);
+
         // This adds a relic to the Shared pool. Every character can find this relic.
         BaseMod.addRelic(new PlaceholderRelic2(), RelicType.SHARED);
         

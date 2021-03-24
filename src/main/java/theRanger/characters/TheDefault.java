@@ -27,6 +27,7 @@ import theRanger.cards.Attacks.*;
 import theRanger.cards.Powers.*;
 import theRanger.relics.DefaultClickableRelic;
 import theRanger.relics.PlaceholderRelic;
+import theRanger.relics.Quiver;
 import theRanger.relics.PlaceholderRelic2;
 
 import java.util.ArrayList;
@@ -190,13 +191,13 @@ public class TheDefault extends CustomPlayer {
     public ArrayList<String> getStartingRelics() {
         ArrayList<String> retVal = new ArrayList<>();
 
-        retVal.add(PlaceholderRelic.ID);
+        retVal.add(Quiver.ID);
         //retVal.add(PlaceholderRelic2.ID);
         //retVal.add(DefaultClickableRelic.ID);
 
         // Mark relics as seen - makes it visible in the compendium immediately
         // If you don't have this it won't be visible in the compendium until you see them in game
-        UnlockTracker.markRelicAsSeen(PlaceholderRelic.ID);
+        UnlockTracker.markRelicAsSeen(Quiver.ID);
         //UnlockTracker.markRelicAsSeen(PlaceholderRelic2.ID);
         //UnlockTracker.markRelicAsSeen(DefaultClickableRelic.ID);
 
