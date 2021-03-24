@@ -179,7 +179,7 @@
   },
   "theRanger:HitandRun": {
     "NAME": "Hit and Run",
-    "DESCRIPTION": "Deal !D! damage.Nl Gain !M! theranger:Camouflage."
+    "DESCRIPTION": "Deal !D! damage. NL Gain !M! theranger:Camouflage."
   },
   "theRanger:PlannedAttack": {
     "NAME": "Planned Attack",
@@ -235,7 +235,7 @@
     "DESCRIPTION": "Deal !D! damage. NL theranger:Stealth: Apply !M! Vulnerable."
   },
   "theRanger:RawPunch": {
-    "NAME": "RawPunch",
+    "NAME": "Raw Punch",
     "DESCRIPTION": "Deal !D! damage. NL Gain !M! Weak. NL theranger:Empty_Handed: theranger:Vigor affects this card !M2! times."
   },
   "theRanger:HeavyRain": {
@@ -247,9 +247,9 @@
   },
   "theRanger:SpinKick": {
     "NAME": "Spin Kick",
-    "DESCRIPTION": "Deal !D! damage X times."
+    "DESCRIPTION": "Deal !D! damage to a random enemy X times."
   },
-  "theRanger:Shooting Star": {
+  "theRanger:ShootingStar": {
   "NAME": "Shooting Star",
   "DESCRIPTION": "theranger:Shot 3. NL Add a *Star *Fall to the bottom of your draw pile."
   },

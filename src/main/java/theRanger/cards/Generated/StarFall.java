@@ -24,10 +24,10 @@ public class StarFall extends AbstractDynamicCard {
 
     // STAT DECLARATION
 
-    private static final CardRarity RARITY = CardRarity.COMMON;
+    private static final CardRarity RARITY = CardRarity.SPECIAL;
     private static final CardTarget TARGET = CardTarget.ENEMY;
     private static final CardType TYPE = CardType.ATTACK;
-    public static final CardColor COLOR = TheDefault.Enums.COLOR_BROWN;
+    public static final CardColor COLOR = CardColor.COLORLESS;//TheDefault.Enums.COLOR_BROWN;
 
     private static final int COST = 2;
     private static final int UPGRADED_COST = 1;

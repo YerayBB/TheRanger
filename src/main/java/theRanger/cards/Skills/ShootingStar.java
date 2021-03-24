@@ -33,7 +33,7 @@ public class ShootingStar extends AbstractDynamicCard {
     private static final CardType TYPE = CardType.SKILL;
     public static final CardColor COLOR = TheDefault.Enums.COLOR_BROWN;
 
-    private static final int COST = 2;
+    private static final int COST = 15;
     private static final int UPGRADE_COST = 1;
     private static final int MAGIC = 0;
     private static final int UPGRADE_MAGIC = 0;

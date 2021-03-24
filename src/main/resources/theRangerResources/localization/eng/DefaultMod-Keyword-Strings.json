@@ -112,7 +112,7 @@
       "Kukris",
       "kukris"
     ],
-    "DESCRIPTION": "The melee weapons of the Ranger. Apply theranger:Heavy_Wounds to the target when used."
+    "DESCRIPTION": "The melee weapons of the Ranger. Apply #yHeavy #yWounds to the target when used."
   },
   {
     "NAMES": [
@@ -126,7 +126,7 @@
       "Multiplay",
       "multiplay"
     ],
-    "DESCRIPTION": "On played, adds an Ethereal copy of this card to your hand."
+    "DESCRIPTION": "On played, adds an #yEthereal copy of this card to your hand."
   },
   {
     "NAMES": [
