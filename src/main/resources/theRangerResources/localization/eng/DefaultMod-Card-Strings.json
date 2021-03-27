@@ -116,7 +116,7 @@
   },
   "theRanger:LeaveNoTrace": {
     "NAME": "Leave No Trace",
-    "DESCRIPTION": "Everytime you draw a card during your turn, gain !M! theranger:Camouflage.",
+    "DESCRIPTION": "Whenever you gain theranger:Camouflage, draw !M! card.",
     "UPGRADE_DESCRIPTION": "Whenever you gain theranger:Camouflage, draw !M! card."
   },
   "theRanger:Shelter": {
