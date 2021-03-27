@@ -1,6 +1,5 @@
 package theRanger.cards.Skills;
 
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -11,11 +10,11 @@ import theRanger.characters.TheDefault;
 
 import static theRanger.DefaultMod.makeCardPath;
 
-public class BloodcurdlingAppearance extends AbstractDynamicCard {
+public class BloodcurdlingGlare extends AbstractDynamicCard {
 
     // TEXT DECLARATION
 
-    public static final String ID = DefaultMod.makeID(BloodcurdlingAppearance.class.getSimpleName());
+    public static final String ID = DefaultMod.makeID(BloodcurdlingGlare.class.getSimpleName());
     public static final String IMG = makeCardPath("Skill.png");//makeCardPath("BloodcurdlingAppearance.png");
 
     // /TEXT DECLARATION/
@@ -37,7 +36,7 @@ public class BloodcurdlingAppearance extends AbstractDynamicCard {
     // /STAT DECLARATION/
 
 
-    public BloodcurdlingAppearance() {
+    public BloodcurdlingGlare() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         baseBlock = BLOCK;
     }

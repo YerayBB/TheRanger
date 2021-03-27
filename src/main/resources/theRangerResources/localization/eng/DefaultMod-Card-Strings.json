@@ -179,7 +179,7 @@
   },
   "theRanger:HitandRun": {
     "NAME": "Hit and Run",
-    "DESCRIPTION": "Deal !D! damage. NL Gain !M! theranger:Camouflage."
+    "DESCRIPTION": "Deal !D! damage. NL theranger:Stealth: Draw !M! cards."
   },
   "theRanger:PlannedAttack": {
     "NAME": "Planned Attack",
@@ -220,7 +220,7 @@
   },
   "theRanger:DriveBy": {
     "NAME": "Drive By",
-    "DESCRIPTION": "Deal !D! damage. NL Next !M! turns draw 1 more card."
+    "DESCRIPTION": "Shot 1. NL Deal !D! damage. NL Next !M! turns draw 1 more card."
   },
   "theRanger:Bloodshed": {
     "NAME": "Bloodshed",
@@ -232,7 +232,7 @@
   },
   "theRanger:CrossUp": {
     "NAME": "Cross-Up",
-    "DESCRIPTION": "Deal !D! damage. NL theranger:Stealth: Apply !M! Vulnerable."
+    "DESCRIPTION": "Deal !D! damage.NL Draw !M2! card. NL theranger:Stealth: Apply !M! Vulnerable."
   },
   "theRanger:RawPunch": {
     "NAME": "Raw Punch",
@@ -323,7 +323,7 @@
     "UPGRADE_DESCRIPTION": "Gain your maximum amount of theranger:Essence."
   },
   "theRanger:Reminiscence": {
-    "NAME": "Reminiscence",
+    "NAME": "ReminiscenceDEPRECATED",
     "DESCRIPTION": "Choose a card in your discard pile. NL Play the chosen card twice and exhaust it. NL Exhaust."
   },
   "theRanger:SuppressPresence": {
@@ -380,7 +380,7 @@
     "DESCRIPTION": "Gain !M! theranger:Vigor. NL Next turn, gain [E]."
   },
   "theRanger:Charity": {
-    "NAME": "Charity",
+    "NAME": "CharityDEPRECATED",
     "DESCRIPTION": "Discard up to !M! cards from your draw pile."
   },
   "theRanger:Trick": {
@@ -402,5 +402,14 @@
   "theRanger:Frontflip": {
     "NAME": "Frontflip",
     "DESCRIPTION": "Gain !B! Block. NL Gain !M! theranger:Vigor."
+  },
+  "theRanger:UncertainManeuver": {
+    "NAME": "Uncertain Maneuver",
+    "DESCRIPTION": "Play the top X cards of your draw pile. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Play the top X+1 cards of your draw pile. NL Exhaust."
+  },
+  "theRanger:Prune": {
+    "NAME": "Prune",
+    "DESCRIPTION": "Exhaust a card. NL Gain theranger:Essence equal to its cost."
   }
 }
