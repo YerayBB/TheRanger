@@ -42,29 +42,29 @@
   },
   "theRanger:HungryFairy": {
     "NAME": "Hungry Fairy",
-    "FLAVOR": "YO FEED ME!.",
+    "FLAVOR": "YO FEED ME!",
     "DESCRIPTIONS": [
       "At the start of your turn, lose #b1 #ytheranger:Essence to gain [E]."
     ]
   },
   "theRanger:HandCrossbow": {
-    "NAME": "HandCrossbow",
+    "NAME": "Hand Crossbow",
     "FLAVOR": "If things turns ugly, it's always ready.",
     "DESCRIPTIONS": [
       "The first time you #ytheranger:Shot each turn, draw #b1 card."
     ]
   },
-  "theRanger:Place": {
-    "NAME": "Place",
-    "FLAVOR": "IDK YET",
+  "theRanger:CourageMedal": {
+    "NAME": "Courage Medal",
+    "FLAVOR": "\"If lost, return to the middle of Nowhere.\"",
     "DESCRIPTIONS": [
       "Whenever you apply #ytheranger:Vigor, apply an additional #b",
       " #ytheranger:Vigor."
     ]
   },
-  "theRanger:Camoplace": {
-    "NAME": "Camoplace",
-    "FLAVOR": "IDK YET",
+  "theRanger:InvisibleCloak": {
+    "NAME": "Invisible Cloak",
+    "FLAVOR": "Where did I put it?",
     "DESCRIPTIONS": [
       "At the end of your turn, gain #b",
       " #ytheranger:Camouflage for each card in your hand."
@@ -89,11 +89,19 @@
   },
   "theRanger:Yazutsu": {
     "NAME": "Yazutsu",
-    "FLAVOR": "Still carries the ~aura~ of the shrine.",
+    "FLAVOR": "Still carries the mystic ~aura~ of the shrine.",
     "DESCRIPTIONS": [
       "#rReplaces #rQuiver. At the start of each combat, gain #b",
       " #ytheranger:Spirit and #b",
       " #ytheranger:Essence."
+    ]
+  },
+  "theRanger:RunicVessel": {
+    "NAME": "Runic Vessel",
+    "FLAVOR": "The runes are indecipherable.",
+    "DESCRIPTIONS": [
+      "#At the start of each combat, gain #b",
+      " #ytheranger:Spirit."
     ]
   }
 }

@@ -99,7 +99,7 @@
   },
   "theRanger:Tenacity": {
     "NAME": "Tenacity",
-    "DESCRIPTION": "Whenever you gain theranger:Vigor, gain !M! Block."
+    "DESCRIPTION": "Whenever you gain Block, gain !M! theranger:Vigor."
   },
   "theRanger:ForestAid": {
     "NAME": "Forest Aid",
@@ -116,7 +116,7 @@
   },
   "theRanger:LeaveNoTrace": {
     "NAME": "Leave No Trace",
-    "DESCRIPTION": "Whenever you gain theranger:Camouflage, draw !M! card.",
+    "DESCRIPTION": "Everytime you draw a card during your turn, gain !M! theranger:Camouflage.",
     "UPGRADE_DESCRIPTION": "Whenever you gain theranger:Camouflage, draw !M! card."
   },
   "theRanger:Shelter": {
@@ -359,8 +359,8 @@
     "NAME": "MeanNoHarmDEPRECATED",
     "DESCRIPTION": "Apply !M! Vulnerable. NL Gain !M2! Weak."
   },
-  "theRanger:BloodcurdlingAppearance": {
-    "NAME": "Bloodcurdling Appearance",
+  "theRanger:BloodcurdlingGlare": {
+    "NAME": "Bloodcurdling Glare",
     "DESCRIPTION": "Gain !M! theranger:Kukri. NL theranger:Stealth: Apply !M2! Vulnerable. NL Exhaust."
   },
   "theRanger:Agility": {
