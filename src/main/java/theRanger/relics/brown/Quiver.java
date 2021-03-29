@@ -1,4 +1,4 @@
-package theRanger.relics;
+package theRanger.relics.brown;
 
 import basemod.abstracts.CustomRelic;
 import com.badlogic.gdx.graphics.Texture;

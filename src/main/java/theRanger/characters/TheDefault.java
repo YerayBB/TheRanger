@@ -24,11 +24,7 @@ import org.apache.logging.log4j.Logger;
 import theRanger.DefaultMod;
 import theRanger.cards.Skills.*;
 import theRanger.cards.Attacks.*;
-import theRanger.cards.Powers.*;
-import theRanger.relics.DefaultClickableRelic;
-import theRanger.relics.PlaceholderRelic;
-import theRanger.relics.Quiver;
-import theRanger.relics.PlaceholderRelic2;
+import theRanger.relics.brown.Quiver;
 
 import java.util.ArrayList;
 

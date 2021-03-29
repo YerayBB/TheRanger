@@ -1,18 +1,19 @@
 {
         "theRanger:PlaceholderPotion": {
                 "NAME": "Placeholder Potion",
-                "DESCRIPTIONS": ["Gain ", " At the end of your turn, lose ", " Strength."]
-},
+                "DESCRIPTIONS": ["Apply #b", " #ytheranger:Infused. ","NL BECAUSE I CAN theranger:Spirit." ],
+                "BASE_DESCRIPTION":["Gain ", " At the end of your turn, lose ", " Strength."]
+        },
         "theRanger:InfusivePotion": {
                 "NAME": "Infusive Potion",
                 "DESCRIPTIONS": ["Apply #b", " #ytheranger:Infused."]
         },
         "theRanger:BottledSoul": {
                 "NAME": "Bottled Soul",
-                "DESCRIPTIONS": ["Gain #b", " #ytheranger:Spirit and #b", " #ytheranger:Essence."]
+                "DESCRIPTIONS": ["Gain #b", " #ySpirit and #b", " #yEssence."]
         },
         "theRanger:LiquidCourage": {
         "NAME": "Liquid Courage",
-        "DESCRIPTIONS": ["Gain #b", " #ytheranger:Vigor."]
+        "DESCRIPTIONS": ["Gain #b", " #yVigor."]
 }
 }

@@ -152,7 +152,7 @@
   },
   "theRanger:LastDitchEffort": {
     "NAME": "Last Ditch Effort",
-    "DESCRIPTION": "Deal !M! theranger:True_Damage. NL Became theranger:Exposed. NL theranger:Empty_Handed: Deal !M2! extra theranger:True_Damage. NL Exhaust."
+    "DESCRIPTION": "Deal !M! theranger:True_Damage. NL Become theranger:Exposed. NL theranger:Empty_Handed: Deal !M2! extra theranger:True_Damage. NL Exhaust."
   },
   "theRanger:CondensedShot": {
     "NAME": "Condensed Shot",

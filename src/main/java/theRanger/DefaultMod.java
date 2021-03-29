@@ -23,12 +23,15 @@ import org.apache.logging.log4j.Logger;
 import theRanger.cards.*;
 import theRanger.characters.TheDefault;
 import theRanger.events.IdentityCrisisEvent;
+import theRanger.potions.BottledSoul;
+import theRanger.potions.InfusivePotion;
+import theRanger.potions.LiquidCourage;
 import theRanger.potions.PlaceholderPotion;
-import theRanger.relics.*;
 import theRanger.relics.BottledPlaceholderRelic;
 import theRanger.relics.DefaultClickableRelic;
 import theRanger.relics.PlaceholderRelic;
 import theRanger.relics.PlaceholderRelic2;
+import theRanger.relics.brown.Quiver;
 import theRanger.util.IDCheckDontTouchPls;
 import theRanger.util.TextureLoader;
 import theRanger.variables.DefaultCustomVariable;
@@ -371,8 +374,13 @@ public class DefaultMod implements
         // Class Specific Potion. If you want your potion to not be class-specific,
         // just remove the player class at the end (in this case the "TheDefaultEnum.THE_DEFAULT".
         // Remember, you can press ctrl+P inside parentheses like addPotions)
-        BaseMod.addPotion(PlaceholderPotion.class, PLACEHOLDER_POTION_LIQUID, PLACEHOLDER_POTION_HYBRID, PLACEHOLDER_POTION_SPOTS, PlaceholderPotion.POTION_ID, TheDefault.Enums.THE_DEFAULT);
-        
+        BaseMod.addPotion(PlaceholderPotion.class, PLACEHOLDER_POTION_LIQUID, PLACEHOLDER_POTION_HYBRID, (Color)null, PlaceholderPotion.POTION_ID, TheDefault.Enums.THE_DEFAULT);
+        //MINE
+        //BaseMod.addPotion(InfusivePotion.class, PLACEHOLDER_POTION_LIQUID, PLACEHOLDER_POTION_HYBRID, PLACEHOLDER_POTION_SPOTS, InfusivePotion.POTION_ID, TheDefault.Enums.THE_DEFAULT);
+        BaseMod.addPotion(InfusivePotion.class,Color.SKY,Color.WHITE,null,InfusivePotion.POTION_ID, TheDefault.Enums.THE_DEFAULT);
+        BaseMod.addPotion(BottledSoul.class,Color.CYAN,Color.GOLD,Color.CLEAR,BottledSoul.POTION_ID, TheDefault.Enums.THE_DEFAULT);
+        BaseMod.addPotion(LiquidCourage.class,Color.RED,Color.BLACK,null,LiquidCourage.POTION_ID, TheDefault.Enums.THE_DEFAULT);
+
         logger.info("Done editing potions");
     }
     
