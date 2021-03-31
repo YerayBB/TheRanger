@@ -14,12 +14,6 @@ import static theRanger.DefaultMod.makeRelicPath;
 
 public class Quiver extends CustomRelic {
 
-    /*
-     * https://github.com/daviscook477/BaseMod/wiki/Custom-Relics
-     *
-     * Gain 1 energy.
-     */
-
     // ID, images, text.
     public static final String ID = DefaultMod.makeID("Quiver");
 

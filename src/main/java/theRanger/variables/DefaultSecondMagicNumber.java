@@ -20,22 +20,25 @@ public class DefaultSecondMagicNumber extends DynamicVariable {
 
     @Override
     public boolean isModified(AbstractCard card) {
-        return ((AbstractDefaultCard) card).isDefaultSecondMagicNumberModified;
-
+        if(card instanceof AbstractDefaultCard) return ((AbstractDefaultCard) card).isDefaultSecondMagicNumberModified;
+        else return false;
     }
 
     @Override
     public int value(AbstractCard card) {
-        return ((AbstractDefaultCard) card).defaultSecondMagicNumber;
+        if(card instanceof AbstractDefaultCard) return ((AbstractDefaultCard) card).defaultSecondMagicNumber;
+        else return 0;
     }
 
     @Override
     public int baseValue(AbstractCard card) {
-        return ((AbstractDefaultCard) card).defaultBaseSecondMagicNumber;
+        if(card instanceof AbstractDefaultCard)return ((AbstractDefaultCard) card).defaultBaseSecondMagicNumber;
+        else return 0;
     }
 
     @Override
     public boolean upgraded(AbstractCard card) {
-        return ((AbstractDefaultCard) card).upgradedDefaultSecondMagicNumber;
+        if(card instanceof AbstractDefaultCard) return ((AbstractDefaultCard) card).upgradedDefaultSecondMagicNumber;
+        else return false;
     }
 }

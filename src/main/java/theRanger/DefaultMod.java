@@ -20,7 +20,7 @@ import com.megacrit.cardcrawl.localization.*;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import theRanger.cards.*;
+import theRanger.cards.AbstractDefaultCard;
 import theRanger.characters.TheDefault;
 import theRanger.events.IdentityCrisisEvent;
 import theRanger.potions.BottledSoul;
@@ -36,6 +36,7 @@ import theRanger.util.IDCheckDontTouchPls;
 import theRanger.util.TextureLoader;
 import theRanger.variables.DefaultCustomVariable;
 import theRanger.variables.DefaultSecondMagicNumber;
+import theRanger.variables.InfuseNumber;
 
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -432,7 +433,10 @@ public class DefaultMod implements
         // Add the Custom Dynamic variables
         BaseMod.addDynamicVariable(new DefaultCustomVariable());
         BaseMod.addDynamicVariable(new DefaultSecondMagicNumber());
-        
+
+        logger.info("Add MY variables");
+        BaseMod.addDynamicVariable(new InfuseNumber());
+
         logger.info("Adding cards");
         // Add the cards
         // Don't delete these default cards yet. You need 1 of each type and rarity (technically) for your game not to crash

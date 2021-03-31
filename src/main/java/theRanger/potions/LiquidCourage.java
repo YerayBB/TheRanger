@@ -54,8 +54,9 @@ public class LiquidCourage extends CustomPotion {
         // Initialize the Description
         description = DESCRIPTIONS[0] + potency + DESCRIPTIONS[1];
         // Initialize the on-hover name + description
+        tips.clear();
         tips.add(new PowerTip(name, description));
-        tips.add(new PowerTip(BaseMod.getKeywordProper("theranger:Vigor"),BaseMod.getKeywordDescription("theranger:Vigor")));
+        tips.add(new PowerTip(BaseMod.getKeywordTitle("theranger:Vigor"),BaseMod.getKeywordDescription("theranger:Vigor")));
     }
 
     @Override

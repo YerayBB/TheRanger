@@ -65,7 +65,7 @@ public class InfusivePotion extends CustomPotion {
         description = DESCRIPTIONS[0] + potency + DESCRIPTIONS[1];
         tips.clear();
         tips.add(new PowerTip(name, description));
-        tips.add(new PowerTip(BaseMod.getKeywordProper("theranger:Infused"),BaseMod.getKeywordDescription("theranger:Infused")));
+        tips.add(new PowerTip(BaseMod.getKeywordTitle("theranger:Infused"),BaseMod.getKeywordDescription("theranger:Infused")));
     }
 
     //TODO

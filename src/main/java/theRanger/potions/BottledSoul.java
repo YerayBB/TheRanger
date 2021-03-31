@@ -49,11 +49,11 @@ public class BottledSoul extends CustomPotion {
 
     public void initializeData() {
         potency = getPotency();
-        description = DESCRIPTIONS[0] + potency + DESCRIPTIONS[1];
+        description = DESCRIPTIONS[0] + potency + DESCRIPTIONS[1] + potency + DESCRIPTIONS[2];
         tips.clear();
         tips.add(new PowerTip(name, description));
-        tips.add(new PowerTip(BaseMod.getKeywordProper("theranger:Spirit"), BaseMod.getKeywordDescription("theranger:Spirit")));
-        tips.add(new PowerTip(BaseMod.getKeywordProper("theranger:Essence"), BaseMod.getKeywordDescription("theranger:Essence")));
+        tips.add(new PowerTip(BaseMod.getKeywordTitle("theranger:Spirit"), BaseMod.getKeywordDescription("theranger:Spirit")));
+        tips.add(new PowerTip(BaseMod.getKeywordTitle("theranger:Essence"), BaseMod.getKeywordDescription("theranger:Essence")));
     }
 
         //TODO
