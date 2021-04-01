@@ -1,5 +1,5 @@
 package theRanger.interfaces;
 
-public interface OnShotCard {
+public interface OnShotTrigger {
     public void OnShot();
 }
