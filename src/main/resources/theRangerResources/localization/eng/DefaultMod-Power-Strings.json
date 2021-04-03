@@ -9,15 +9,15 @@
         },
         "theRanger:EssencePower": {
                 "NAME": "Essence",
-                "DESCRIPTIONS": ["You have #b", " Essence. NL The maximum amount you can have now is #b","." ]
+                "DESCRIPTIONS": ["You have #b", " #yEssence. NL The maximum amount you can have now is #b","." ]
         },
         "theRanger:KukriPower": {
                 "NAME": "Kukri",
-                "DESCRIPTIONS": ["You have #b", " Kukris. You can't have more than 6."]
+                "DESCRIPTIONS": ["You have #b", " #yKukris. You can't have more than #b6."]
         },
         "theRanger:ExposedPower": {
                 "NAME": "Exposed",
-                "DESCRIPTIONS": ["Next time you take attack damage, DIE. NL You can no longer gain block from cards."]
+                "DESCRIPTIONS": ["Next time you take attack damage, #rDIE. NL You can no longer gain block from cards."]
         },
         "theRanger:DensityPower": {
                 "NAME": "Density",
@@ -45,15 +45,18 @@
         },
         "theRanger:OverdrawPower": {
                 "NAME": "Overdraw",
-                "DESCRIPTIONS": ["The first #b", " cards that you play each turn that #yShot, won't consume #yEssence.","NL #yShots made this turn: #b","."]
+                "DESCRIPTIONS": [
+                        "The first #b",
+                        " #yShots you do each turn, won't consume #yEssence. NL #yShots made this turn: #b",
+                        "."]
         },
         "theRanger:FewerCardsPower": {
-                "NAME": "Fewer Cards",
+                "NAME": "Fewer Cards NONEED, negative drawpower works",
                 "DESCRIPTIONS": ["Draw #b", " less cards."]
         },
         "theRanger:TenacityPower": {
                 "NAME": "Tenacity",
-                "DESCRIPTIONS": ["Whenever you gain #yVigor, gain #b", " #yBlock."]
+                "DESCRIPTIONS": ["Whenever you gain #yBlock, gain #b", " #yVigor."]
         },
         "theRanger:ForestAidPower": {
                 "NAME": "Forest Aid",
