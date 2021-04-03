@@ -14,6 +14,8 @@ import com.megacrit.cardcrawl.rooms.AbstractRoom;
 
 import basemod.abstracts.CustomPotion;
 import theRanger.DefaultMod;
+import theRanger.powers.brown.EssencePower;
+import theRanger.powers.brown.SpiritPower;
 
 //TODO
 public class BottledSoul extends CustomPotion {
@@ -61,8 +63,8 @@ public class BottledSoul extends CustomPotion {
     public void use(AbstractCreature target) {
         target = AbstractDungeon.player;
         if (AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT) {
-            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(target, AbstractDungeon.player, new StrengthPower(target, potency), potency));
-            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(target, AbstractDungeon.player, new LoseStrengthPower(target, potency), potency));
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(target, AbstractDungeon.player, new SpiritPower(target, potency), potency));
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(target, AbstractDungeon.player, new EssencePower(target, potency), potency));
         }
     }
 

@@ -65,7 +65,7 @@ public class SanctuaryPower extends AbstractPower implements OnReceivePowerPower
     public boolean onReceivePower(AbstractPower powerApply, AbstractCreature target, AbstractCreature source) {
         if(target == this.owner){
             if(powerApply instanceof CamouflagePower){
-                this.addToBot(new ApplyPowerAction(target,target,new EssencePower(target,target,this.amount),this.amount));
+                this.addToBot(new ApplyPowerAction(target,target,new EssencePower(target,this.amount),this.amount));
             }
         }
         return true;

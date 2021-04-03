@@ -23,6 +23,7 @@ import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import basemod.abstracts.CustomPotion;
 import com.megacrit.cardcrawl.vfx.combat.ExplosionSmallEffect;
 import theRanger.DefaultMod;
+import theRanger.powers.brown.InfusedPower;
 
 import java.util.Iterator;
 
@@ -71,17 +72,25 @@ public class InfusivePotion extends CustomPotion {
     //TODO
     @Override
     public void use(AbstractCreature target) {
-        Iterator var2 = AbstractDungeon.getMonsters().monsters.iterator();
+        if(AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT) {
+            Iterator var2 = AbstractDungeon.getMonsters().monsters.iterator();
 
-        while(var2.hasNext()) {
-            AbstractMonster m = (AbstractMonster)var2.next();
-            if (!m.isDeadOrEscaped()) {
-                this.addToBot(new VFXAction(new ExplosionSmallEffect(m.hb.cX, m.hb.cY), 0.1F));
+            while (var2.hasNext()) {
+                AbstractMonster m = (AbstractMonster) var2.next();
+                if (!m.isDeadOrEscaped()) {
+                    this.addToBot(new VFXAction(new ExplosionSmallEffect(m.hb.cX, m.hb.cY), 0.1F));
+                }
+            }
+
+            this.addToBot(new WaitAction(0.5F));
+
+            var2 = AbstractDungeon.getMonsters().monsters.iterator();
+
+            while (var2.hasNext()) {
+                AbstractMonster m = (AbstractMonster) var2.next();
+                this.addToBot(new ApplyPowerAction(m, AbstractDungeon.player, new InfusedPower(m, AbstractDungeon.player, potency), potency));
             }
         }
-
-        this.addToBot(new WaitAction(0.5F));
-        //TODO: INFUSE ALL ACTION this.addToBot(new DamageAllEnemiesAction((AbstractCreature)null, DamageInfo.createDamageMatrix(this.potency, true), DamageInfo.DamageType.NORMAL, AbstractGameAction.AttackEffect.NONE));
 
     }
 

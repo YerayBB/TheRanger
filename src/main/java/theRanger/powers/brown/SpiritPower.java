@@ -33,13 +33,12 @@ public class SpiritPower extends AbstractPower {
     private static final Texture tex84 = TextureLoader.getTexture(makePowerPath("placeholder_power84.png"));
     private static final Texture tex32 = TextureLoader.getTexture(makePowerPath("placeholder_power32.png"));
 
-    public SpiritPower(final AbstractCreature owner, final AbstractCreature source, final int amount) {
+    public SpiritPower(final AbstractCreature owner, final int amount) {
         name = NAME;
         ID = POWER_ID;
 
         this.owner = owner;
         this.amount = amount;
-        this.source = source;
 
         this.priority = 2;
 

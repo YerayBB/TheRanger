@@ -35,13 +35,12 @@ public class EssencePower extends AbstractPower {
 
     private int max = 1;
 
-    public EssencePower(final AbstractCreature owner, final AbstractCreature source, final int amount) {
+    public EssencePower(final AbstractCreature owner, final int amount) {
         name = NAME;
         ID = POWER_ID;
 
         this.owner = owner;
         this.amount = amount;
-        this.source = source;
 
         this.priority = 1;
 
