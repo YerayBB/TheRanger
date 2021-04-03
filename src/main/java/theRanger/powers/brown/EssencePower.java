@@ -33,15 +33,15 @@ public class EssencePower extends AbstractPower {
     private static final Texture tex84 = TextureLoader.getTexture(makePowerPath("placeholder_power84.png"));
     private static final Texture tex32 = TextureLoader.getTexture(makePowerPath("placeholder_power32.png"));
 
-    private int max = 1;
+    private int max;
 
     public EssencePower(final AbstractCreature owner, final int amount) {
         name = NAME;
         ID = POWER_ID;
 
+        this.max = 1;
         this.owner = owner;
         this.amount = amount;
-
         this.priority = 1;
 
         type = PowerType.BUFF;
@@ -73,8 +73,8 @@ public class EssencePower extends AbstractPower {
         super.stackPower(stackAmount);
         AbstractPower p1;
         this.max = 1;
-        if(owner.hasPower("theranger:SpiritPower")){
-            p1 = owner.getPower("theranger:SpiritPower");
+        if(owner.hasPower(SpiritPower.POWER_ID)){
+            p1 = owner.getPower(SpiritPower.POWER_ID);
             this.max += p1.amount;
         }
         if (this.amount > this.max){
@@ -82,6 +82,13 @@ public class EssencePower extends AbstractPower {
             //TODO overcharge
         }
         updateDescription();
+    }
+
+    @Override
+    public void onInitialApplication() {
+        if(this.owner.hasPower(SpiritPower.POWER_ID)){
+            this.updateMax(this.owner.getPower(SpiritPower.POWER_ID).amount);
+        }//TODO overcharge
     }
 
     @Override

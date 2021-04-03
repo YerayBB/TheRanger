@@ -65,7 +65,7 @@ public class CamouflagePower extends AbstractPower {
     @Override
     public void onAfterUseCard(AbstractCard card, UseCardAction action) {
         if(card.type == AbstractCard.CardType.ATTACK){
-            if(!this.owner.hasPower("theranger:ShadowFormPower")){
+            if(!this.owner.hasPower("theRanger:ShadowFormPower")){
                 this.addToTop(new RemoveSpecificPowerAction(this.owner, this.owner, this.ID));
             }
         }

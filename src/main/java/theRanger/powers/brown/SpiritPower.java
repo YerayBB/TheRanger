@@ -56,31 +56,30 @@ public class SpiritPower extends AbstractPower {
     public void updateDescription() {
         if(this.amount < 0) this.type = PowerType.DEBUFF;
         else this.type = PowerType.BUFF;
-
             description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[1];
     }
 
     @Override
     public void onInitialApplication() {
         super.onInitialApplication();
-        if(owner.hasPower("theranger:EssencePower")){
-            ((EssencePower) owner.getPower("theranger:EssencePower")).updateMax(this.amount);
+        if(owner.hasPower(EssencePower.POWER_ID)){
+            ((EssencePower) owner.getPower(EssencePower.POWER_ID)).updateMax(this.amount);
         }
     }
 
     @Override
     public void stackPower(int stackAmount) {
         super.stackPower(stackAmount);
-        if(owner.hasPower("theranger:EssencePower")){
-            ((EssencePower) owner.getPower("theranger:EssencePower")).updateMax(this.amount);
+        if(owner.hasPower(EssencePower.POWER_ID)){
+            ((EssencePower) owner.getPower(EssencePower.POWER_ID)).updateMax(this.amount);
         }
     }
 
     @Override
     public void reducePower(int reduceAmount) {
         super.reducePower(reduceAmount);
-        if(owner.hasPower("theranger:EssencePower")){
-            ((EssencePower) owner.getPower("theranger:EssencePower")).updateMax(this.amount);
+        if(owner.hasPower(EssencePower.POWER_ID)){
+            ((EssencePower) owner.getPower(EssencePower.POWER_ID)).updateMax(this.amount);
         }
     }
 }

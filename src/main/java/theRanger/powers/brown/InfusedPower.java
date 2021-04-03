@@ -95,6 +95,10 @@ public class InfusedPower extends AbstractPower implements HealthBarRenderPower 
     public void onInitialApplication() {
         super.onInitialApplication();
         this.isRefreshed = true;
+        if(!this.owner.isDead && !this.owner.halfDead && !this.owner.isDying && this.owner.currentHealth <= this.amount){
+            addToBot(new DamageAction(owner,new DamageInfo(source, amount, DamageInfo.DamageType.THORNS)));
+            addToBot(new ReducePowerAction(owner, source, this, amount));
+        }
     }
 
     @Override

@@ -60,6 +60,6 @@ public class TranscendencePower extends AbstractPower {
     @Override
     public void atStartOfTurn() {
         this.flash();
-        this.addToBot(new ApplyPowerAction(this.owner,this.owner,new SpiritPower(this.owner,this.owner,this.amount), this.amount));
+        this.addToBot(new ApplyPowerAction(this.owner,this.owner,new SpiritPower(this.owner,this.amount), this.amount));
     }
 }

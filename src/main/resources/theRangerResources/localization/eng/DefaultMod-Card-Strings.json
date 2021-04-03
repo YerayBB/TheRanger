@@ -40,11 +40,11 @@
   },
   "theRanger:DefaultAttackWithVariable": {
     "NAME": "Special StrikeKK",
-    "DESCRIPTION": "Deal !D! damage [E] times. NL (Deal !theranger:ENERGY_DAMAGE! damage total.)"
+    "DESCRIPTION": "Deal !D! damage [E] times. NL (Deal !theRanger:ENERGY_DAMAGE! damage total.)"
   },
   "theRanger:DefaultSecondMagicNumberSkill": {
     "NAME": "Cool HEY Number CardKK",
-    "DESCRIPTION": "Apply !M! Vulnerable and !theranger:M2! poison to an enemy."
+    "DESCRIPTION": "Apply !M! Vulnerable and !theRanger:M2! poison to an enemy."
   },
   "theRanger:OrbSkill": {
     "NAME": "Get OrbKK",
@@ -103,8 +103,8 @@
   },
   "theRanger:ForestAid": {
     "NAME": "Forest Aid",
-    "DESCRIPTION": "Add !M! *Will-o-Wisp to your Draw pile. NL Whenever you draw a *Will-o-Wisp, draw !theranger:M2! card.",
-    "UPGRADE_DESCRIPTION": "Add !M! *Will-o-Wisp to your Draw pile. NL Whenever you draw a *Will-o-Wisp, draw !theranger:M2! cards."
+    "DESCRIPTION": "Add !M! *Will-o-Wisp to your Draw pile. NL Whenever you draw a *Will-o-Wisp, draw !theRanger:M2! card.",
+    "UPGRADE_DESCRIPTION": "Add !M! *Will-o-Wisp to your Draw pile. NL Whenever you draw a *Will-o-Wisp, draw !theRanger:M2! cards."
   },
   "theRanger:Sanctuary": {
     "NAME": "Sanctuary",
@@ -121,7 +121,7 @@
   },
   "theRanger:Shelter": {
     "NAME": "Shelter",
-    "DESCRIPTION": "Gain !M! Dexterity. NL Lose !theranger:M2! Strength."
+    "DESCRIPTION": "Gain !M! Dexterity. NL Lose !theRanger:M2! Strength."
   },
   "theRanger:Trap": {
     "NAME": "Trap",
@@ -133,7 +133,7 @@
   },
   "theRanger:ApollosFavor": {
     "NAME": "Apollo's Favor",
-    "DESCRIPTION": "theranger:Shot 5. NL Next turn deal !D! + !M! times your theranger:Density. NL (Currently deals !theranger:M2!)"
+    "DESCRIPTION": "theranger:Shot 5. NL Next turn deal !D! + !M! times your theranger:Density. NL (Currently deals !theRanger:M2!)"
   },
   "theRanger:Volley": {
     "NAME": "Volley",
@@ -152,7 +152,7 @@
   },
   "theRanger:LastDitchEffort": {
     "NAME": "Last Ditch Effort",
-    "DESCRIPTION": "Deal !M! theranger:True_Damage. NL Become theranger:Exposed. NL theranger:Empty_Handed: Deal !theranger:M2! extra theranger:True_Damage. NL Exhaust."
+    "DESCRIPTION": "Deal !M! theranger:True_Damage. NL Become theranger:Exposed. NL theranger:Empty_Handed: Deal !theRanger:M2! extra theranger:True_Damage. NL Exhaust."
   },
   "theRanger:CondensedShot": {
     "NAME": "Condensed Shot",
@@ -232,11 +232,11 @@
   },
   "theRanger:CrossUp": {
     "NAME": "Cross-Up",
-    "DESCRIPTION": "Deal !D! damage.NL Draw !theranger:M2! card. NL theranger:Stealth: Apply !M! Vulnerable."
+    "DESCRIPTION": "Deal !D! damage.NL Draw !theRanger:M2! card. NL theranger:Stealth: Apply !M! Vulnerable."
   },
   "theRanger:RawPunch": {
     "NAME": "Raw Punch",
-    "DESCRIPTION": "Deal !D! damage. NL Gain !M! Weak. NL theranger:Empty_Handed: theranger:Vigor affects this card !theranger:M2! times."
+    "DESCRIPTION": "Deal !D! damage. NL Gain !M! Weak. NL theranger:Empty_Handed: theranger:Vigor affects this card !theRanger:M2! times."
   },
   "theRanger:HeavyRain": {
     "NAME": "Heavy Rain",
@@ -307,15 +307,15 @@
   },
   "theRanger:Bait": {
     "NAME": "Bait",
-    "DESCRIPTION": "Gain !M! theranger:Camouflage. NL Draw !theranger:M2! cards."
+    "DESCRIPTION": "Gain !M! theranger:Camouflage. NL Draw !theRanger:M2! cards."
   },
   "theRanger:WarningShot": {
     "NAME": "Warning Shot",
-    "DESCRIPTION": "theranger:Shot 1. NL Apply !M! Vulnerable to the target and !theranger:M2! Weak to ALL enemies."
+    "DESCRIPTION": "theranger:Shot 1. NL Apply !M! Vulnerable to the target and !theRanger:M2! Weak to ALL enemies."
   },
   "theRanger:Flare": {
     "NAME": "Flare",
-    "DESCRIPTION": "Apply !M! theranger:Infused and !theranger:M2! Weak to ALL enemies. NL Exhaust."
+    "DESCRIPTION": "Apply !M! theranger:Infused and !theRanger:M2! Weak to ALL enemies. NL Exhaust."
   },
   "theRanger:ForestCommunion": {
     "NAME": "Forest Communion",
@@ -336,15 +336,15 @@
   },
   "theRanger:Mimicry": {
     "NAME": "Mimicry",
-    "DESCRIPTION": "Gain !M! theranger:Camouflage. Permanently increase this card theranger:Camouflage by !theranger:M2!. NL Exhaust."
+    "DESCRIPTION": "Gain !M! theranger:Camouflage. Permanently increase this card theranger:Camouflage by !theRanger:M2!. NL Exhaust."
   },
   "theRanger:SoulWave": {
     "NAME": "Soul Wave",
-    "DESCRIPTION": "Use !M! theranger:Essence.NL Each apply !theranger:M2! theranger:Infused to ALL enemies. NL Increase the amount of theranger:Essence used in this card by NEED MORE VARS this combat."
+    "DESCRIPTION": "Use !M! theranger:Essence.NL Each apply !theRanger:M2! theranger:Infused to ALL enemies. NL Increase the amount of theranger:Essence used in this card by NEED MORE VARS this combat."
   },
   "theRanger:Overconfidence": {
     "NAME": "Overconfidence",
-    "DESCRIPTION": "Gain !M! theranger:Vigor.NL Gain !theranger:M2! Vulnerable."
+    "DESCRIPTION": "Gain !M! theranger:Vigor.NL Gain !theRanger:M2! Vulnerable."
   },
   "theRanger:Blooming": {
     "NAME": "Blooming",
@@ -357,11 +357,11 @@
   },
   "theRanger:MeanNoHarm": {
     "NAME": "MeanNoHarmDEPRECATED",
-    "DESCRIPTION": "Apply !M! Vulnerable. NL Gain !theranger:M2! Weak."
+    "DESCRIPTION": "Apply !M! Vulnerable. NL Gain !theRanger:M2! Weak."
   },
   "theRanger:BloodcurdlingGlare": {
     "NAME": "Bloodcurdling Glare",
-    "DESCRIPTION": "Gain !M! theranger:Kukri. NL theranger:Stealth: Apply !theranger:M2! Vulnerable. NL Exhaust."
+    "DESCRIPTION": "Gain !M! theranger:Kukri. NL theranger:Stealth: Apply !theRanger:M2! Vulnerable. NL Exhaust."
   },
   "theRanger:Agility": {
     "NAME": "Agility",
@@ -373,7 +373,7 @@
   },
   "theRanger:Quickness": {
     "NAME": "Quickness",
-    "DESCRIPTION": "Gain !M! theranger:Vigor. NL Draw !theranger:M2! cards."
+    "DESCRIPTION": "Gain !M! theranger:Vigor. NL Draw !theRanger:M2! cards."
   },
   "theRanger:EnergeticEntrance": {
     "NAME": "Energetic Entrance",
@@ -393,7 +393,7 @@
   },
   "theRanger:Concentration": {
     "NAME": "Concentration",
-    "DESCRIPTION": "Gain !M! theranger:Density, lose !theranger:M2! theranger:Spirit."
+    "DESCRIPTION": "Gain !M! theranger:Density, lose !theRanger:M2! theranger:Spirit."
   },
   "theRanger:Banish": {
     "NAME": "Banish",

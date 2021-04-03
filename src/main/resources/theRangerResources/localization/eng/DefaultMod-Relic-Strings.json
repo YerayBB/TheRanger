@@ -89,9 +89,9 @@
   },
   "theRanger:Yazutsu": {
     "NAME": "Yazutsu",
-    "FLAVOR": "Still carries the mystic ~aura~ of the shrine.",
+    "FLAVOR": "Still carries the mystic aura of the shrine.",
     "DESCRIPTIONS": [
-      "#rReplaces #rQuiver. At the start of each combat, gain #b",
+      "Replaces [#793200]Quiver. At the start of each combat, gain #b",
       " #ytheranger:Spirit and #b",
       " #ytheranger:Essence."
     ]

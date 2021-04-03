@@ -32,6 +32,7 @@ import theRanger.relics.DefaultClickableRelic;
 import theRanger.relics.PlaceholderRelic;
 import theRanger.relics.PlaceholderRelic2;
 import theRanger.relics.brown.Quiver;
+import theRanger.relics.brown.Yazutsu;
 import theRanger.util.IDCheckDontTouchPls;
 import theRanger.util.TextureLoader;
 import theRanger.variables.DefaultCustomVariable;
@@ -375,7 +376,7 @@ public class DefaultMod implements
         // Class Specific Potion. If you want your potion to not be class-specific,
         // just remove the player class at the end (in this case the "TheDefaultEnum.THE_DEFAULT".
         // Remember, you can press ctrl+P inside parentheses like addPotions)
-        BaseMod.addPotion(PlaceholderPotion.class, PLACEHOLDER_POTION_LIQUID, PLACEHOLDER_POTION_HYBRID, (Color)null, PlaceholderPotion.POTION_ID, TheDefault.Enums.THE_DEFAULT);
+        BaseMod.addPotion(PlaceholderPotion.class, PLACEHOLDER_POTION_LIQUID, PLACEHOLDER_POTION_HYBRID, null, PlaceholderPotion.POTION_ID, TheDefault.Enums.THE_DEFAULT);
         //MINE
         //BaseMod.addPotion(InfusivePotion.class, PLACEHOLDER_POTION_LIQUID, PLACEHOLDER_POTION_HYBRID, PLACEHOLDER_POTION_SPOTS, InfusivePotion.POTION_ID, TheDefault.Enums.THE_DEFAULT);
         BaseMod.addPotion(InfusivePotion.class,Color.SKY,Color.WHITE,null,InfusivePotion.POTION_ID, TheDefault.Enums.THE_DEFAULT);
@@ -402,14 +403,15 @@ public class DefaultMod implements
         // in order to automatically differentiate which pool to add the relic too.
 
         // This adds a character specific relic. Only when you play with the mentioned color, will you get this relic.
-        BaseMod.addRelicToCustomPool(new PlaceholderRelic(), TheDefault.Enums.COLOR_BROWN);
+       /* BaseMod.addRelicToCustomPool(new PlaceholderRelic(), TheDefault.Enums.COLOR_BROWN);
         BaseMod.addRelicToCustomPool(new BottledPlaceholderRelic(), TheDefault.Enums.COLOR_BROWN);
         BaseMod.addRelicToCustomPool(new DefaultClickableRelic(), TheDefault.Enums.COLOR_BROWN);
-        //MINE
+        *///MINE
         BaseMod.addRelicToCustomPool(new Quiver(), TheDefault.Enums.COLOR_BROWN);
+        BaseMod.addRelicToCustomPool(new Yazutsu(), TheDefault.Enums.COLOR_BROWN);
 
         // This adds a relic to the Shared pool. Every character can find this relic.
-        BaseMod.addRelic(new PlaceholderRelic2(), RelicType.SHARED);
+       // BaseMod.addRelic(new PlaceholderRelic2(), RelicType.SHARED);
         
         // Mark relics as seen - makes it visible in the compendium immediately
         // If you don't have this it won't be visible in the compendium until you see them in game

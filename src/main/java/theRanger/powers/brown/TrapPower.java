@@ -68,7 +68,7 @@ public class TrapPower extends AbstractPower {
     @Override
     public void atEndOfTurn(boolean isPlayer) {
         if(isPlayer){
-            this.turnCamo = AbstractDungeon.player.getPower("theranger:Camouflage").amount;
+            this.turnCamo = AbstractDungeon.player.getPower("theRanger:Camouflage").amount;
         }
     }
 

@@ -7,6 +7,8 @@ import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 import theRanger.DefaultMod;
+import theRanger.powers.brown.EssencePower;
+import theRanger.powers.brown.SpiritPower;
 import theRanger.util.TextureLoader;
 
 import static theRanger.DefaultMod.makeRelicOutlinePath;
@@ -28,13 +30,12 @@ public class Quiver extends CustomRelic {
         super(ID, IMG, OUTLINE, RelicTier.STARTER, LandingSound.MAGICAL);
     }
 
-    //TODO
-    // Flash at the start of Battle.
     @Override
     public void atBattleStartPreDraw() {
         flash();
-        AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new StrengthPower(AbstractDungeon.player, 1), 1));
-        AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new StrengthPower(AbstractDungeon.player, 1), 1));
+
+        AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new EssencePower(AbstractDungeon.player, ESSENCE), ESSENCE));
+        AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new SpiritPower(AbstractDungeon.player, SPIRIT), SPIRIT));
         AbstractDungeon.actionManager.addToTop(new RelicAboveCreatureAction(AbstractDungeon.player, this));
     }
 
