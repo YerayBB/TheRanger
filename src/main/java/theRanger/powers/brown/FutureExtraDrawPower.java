@@ -3,6 +3,7 @@ package theRanger.powers.brown;
 import basemod.interfaces.CloneablePowerInterface;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
+import com.evacipated.cardcrawl.mod.stslib.powers.abstracts.TwoAmountPower;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
@@ -23,7 +24,7 @@ import static theRanger.DefaultMod.makePowerPath;
 
 //Gain 1 dex for the turn for each card played.
 
-public class FutureExtraDrawPower extends AbstractPower {
+public class FutureExtraDrawPower extends TwoAmountPower {
     public AbstractCreature source;
 
     public static final String POWER_ID = DefaultMod.makeID("FutureExtraDrawPower");
@@ -42,32 +43,48 @@ public class FutureExtraDrawPower extends AbstractPower {
 
         this.owner = owner;
         this.amount = amount;
+        this.amount2 = amount;
         this.source = source;
 
-        type = PowerType.BUFF;
-        isTurnBased = true;
+        this.type = PowerType.BUFF;
+        this.isTurnBased = true;
 
-        priority = 40;
+        this.priority = 40;
 
         // We load those txtures here.
         this.region128 = new TextureAtlas.AtlasRegion(tex84, 0, 0, 84, 84);
         this.region48 = new TextureAtlas.AtlasRegion(tex32, 0, 0, 32, 32);
 
-        updateDescription();
+        this.updateDescription();
+    }
+
+    @Override
+    public void stackPower(int stackAmount) {
+        super.stackPower(stackAmount);
+        this.fontScale = 8.0F;
+        this.amount2 += stackAmount;
+        this.updateDescription();
     }
 
     // Update the description when you apply this power. (i.e. add or remove an "s" in keyword(s))
     @Override
     public void updateDescription() {
 
-            description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[1];
+            description = DESCRIPTIONS[0] + this.amount2 + DESCRIPTIONS[2] + DESCRIPTIONS[1] + this.amount2 + DESCRIPTIONS[2];
 
     }
 
     @Override
     public void atStartOfTurnPostDraw() {
         this.flash();
-        this.addToBot(new ApplyPowerAction(this.owner, this.owner, new DrawCardNextTurnPower(this.owner, this. amount), this.amount));
-        this.addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, this));
+        if(this.amount > 0) addToBot(new DrawCardAction(this.owner, this.amount));
+        this.amount = this.amount2;
+        this.amount2 = 0;
+        if(this.amount == 0){
+            addToBot(new RemoveSpecificPowerAction(this.owner, this.source, this.ID));
+        }
+        else{
+            this.updateDescription();
+        }
     }
 }

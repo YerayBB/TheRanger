@@ -98,7 +98,7 @@
         },
         "theRanger:FutureExtraDrawPower": {
                 "NAME": "Future Extra Draw",
-                "DESCRIPTIONS": ["In 2 turns, draw #b", " more cards."]
+                "DESCRIPTIONS": ["In 2 turns, draw #b", "NL Next turn, draw #b"," more cards."]
         },
         "theRanger:EnergizedRangerPower": {
                 "NAME": "Energized",
@@ -108,5 +108,9 @@
                         " additional [E] next turn.",
                         " - TRANSLATOR NOTE: - The above line is for plural if needed to distinguish from singular."
                 ]
+        },
+        "theRanger:StunNextTurnPower": {
+                "NAME": "Stun Next Turn",
+                "DESCRIPTIONS": ["Next turn get stslib:Stunned #b", " time.", "times."]
         }
 }

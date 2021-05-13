@@ -3,6 +3,7 @@ package theRanger.powers.brown;
 import basemod.interfaces.CloneablePowerInterface;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
+import com.evacipated.cardcrawl.mod.stslib.powers.abstracts.TwoAmountPower;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
@@ -20,7 +21,7 @@ import static theRanger.DefaultMod.makePowerPath;
 
 //Gain 1 dex for the turn for each card played.
 
-public class EssencePower extends AbstractPower {
+public class EssencePower extends TwoAmountPower {
     public AbstractCreature source;
 
     public static final String POWER_ID = DefaultMod.makeID("EssencePower");
@@ -33,13 +34,12 @@ public class EssencePower extends AbstractPower {
     private static final Texture tex84 = TextureLoader.getTexture(makePowerPath("placeholder_power84.png"));
     private static final Texture tex32 = TextureLoader.getTexture(makePowerPath("placeholder_power32.png"));
 
-    private int max;
 
     public EssencePower(final AbstractCreature owner, final int amount) {
         name = NAME;
         ID = POWER_ID;
 
-        this.max = 1;
+        this.amount2 = 1;
         this.owner = owner;
         this.amount = amount;
         this.priority = 1;
@@ -57,13 +57,13 @@ public class EssencePower extends AbstractPower {
     // Update the description when you apply this power. (i.e. add or remove an "s" in keyword(s))
     @Override
     public void updateDescription() {
-            description = DESCRIPTIONS[0] + this.amount + DESCRIPTIONS[1] + this.max + DESCRIPTIONS[2];
+            description = DESCRIPTIONS[0] + this.amount + DESCRIPTIONS[1] + this.amount2 + DESCRIPTIONS[2];
     }
 
     public void updateMax(int cap){
-        this.max = 1 + cap;
-        if(this.amount > this.max){
-            this.amount = this.max;
+        this.amount2 = 1 + cap;
+        if(this.amount > this.amount2){
+            this.amount = this.amount2;
         }
         updateDescription();
     }
@@ -72,13 +72,13 @@ public class EssencePower extends AbstractPower {
     public void stackPower(int stackAmount) {
         super.stackPower(stackAmount);
         AbstractPower p1;
-        this.max = 1;
+        this.amount2 = 1;
         if(owner.hasPower(SpiritPower.POWER_ID)){
             p1 = owner.getPower(SpiritPower.POWER_ID);
-            this.max += p1.amount;
+            this.amount2 += p1.amount;
         }
-        if (this.amount > this.max){
-            this.amount = this.max;
+        if (this.amount > this.amount2){
+            this.amount = this.amount2;
             //TODO overcharge
         }
         updateDescription();

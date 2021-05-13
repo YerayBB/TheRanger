@@ -1,18 +1,23 @@
 package theRanger.cards.Attacks;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.AttackDamageRandomEnemyAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import theRanger.DefaultMod;
+import theRanger.actions.brown.RandomEnemyDmgWithInfusion;
+import theRanger.actions.brown.StandartShotAction;
 import theRanger.cards.AbstractDynamicCard;
+import theRanger.cards.AbstractInfusedCard;
 import theRanger.characters.TheDefault;
+import theRanger.powers.brown.EssencePower;
 
 import static theRanger.DefaultMod.makeCardPath;
 
-public class ArrowHell extends AbstractDynamicCard {
+public class ArrowHell extends AbstractInfusedCard {
 
     // TEXT DECLARATION
 
@@ -47,8 +52,16 @@ public class ArrowHell extends AbstractDynamicCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(
-                new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
+        int amount = 0;
+        if(p.hasPower(EssencePower.POWER_ID)){
+             amount = p.getPower(EssencePower.POWER_ID).amount;
+        }
+        if(amount != 0){
+            applyPowers();
+            for(int i = 0; i<amount; i++){
+                addToBot(new StandartShotAction(amount,new AbstractGameAction[] {new RandomEnemyDmgWithInfusion(this, this.infuseNumber, AbstractGameAction.AttackEffect.SLASH_DIAGONAL)}));
+            }
+        }
     }
 
 

@@ -63,4 +63,9 @@ public class DefaultCommonSkill extends AbstractDynamicCard {
             initializeDescription();
         }
     }
+
+    @Override
+    public void calculateCardDamage(AbstractMonster mo) {
+        super.calculateCardDamage(mo);
+    }
 }

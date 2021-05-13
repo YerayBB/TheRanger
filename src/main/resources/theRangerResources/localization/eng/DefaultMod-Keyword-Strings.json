@@ -76,7 +76,7 @@
       "True_damage",
       "true_damage"
     ],
-    "DESCRIPTION": "Ignores #yBlock. It's not affected by buffs nor debuffs."
+    "DESCRIPTION": "Ignores target's #yBlock. It's not affected by player's debuffs."
   },
   {
     "PROPER_NAME": "Empty Handed",
