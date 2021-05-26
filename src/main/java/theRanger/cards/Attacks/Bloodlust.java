@@ -1,14 +1,18 @@
 package theRanger.cards.Attacks;
 
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.DamageAction;
-import com.megacrit.cardcrawl.cards.DamageInfo;
+import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.vfx.ThoughtBubble;
 import theRanger.DefaultMod;
+import theRanger.actions.brown.generic.RandomHeavyWoundAttackAction;
 import theRanger.cards.AbstractDynamicCard;
 import theRanger.characters.TheDefault;
+import theRanger.powers.brown.KukriPower;
 
 import static theRanger.DefaultMod.makeCardPath;
 
@@ -30,10 +34,11 @@ public class Bloodlust extends AbstractDynamicCard {
     public static final CardColor COLOR = TheDefault.Enums.COLOR_BROWN;
 
     private static final int COST = 3;
-    private static final int UPGRADED_COST = 3;
 
     private static final int DAMAGE = 6;
-    private static final int UPGRADE_PLUS_DMG = 2;
+    private static final int UPGRADE_PLUS_DMG = 4;
+
+    private static final UIStrings UITEXT = CardCrawlGame.languagePack.getUIString("TheRanger:MissingKukri");
 
     // /STAT DECLARATION/
 
@@ -43,14 +48,38 @@ public class Bloodlust extends AbstractDynamicCard {
         baseDamage = DAMAGE;
     }
 
-//TODO
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(
-                new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
+        if(p.hasPower(KukriPower.POWER_ID)){
+            int aux = p.getPower(KukriPower.POWER_ID).amount;
+            if(aux > 0){
+
+                for(int i = 0; i<aux; i++){
+                    addToBot((new ReducePowerAction(p,p,KukriPower.POWER_ID,1)));
+                    addToBot(new RandomHeavyWoundAttackAction(this.baseDamage));
+                }
+            }
+            else {
+                AbstractDungeon.effectList.add(new ThoughtBubble(p.dialogX, p.dialogY, 3.0F, UITEXT.TEXT[0],true));
+            }
+        }
+        else{
+            AbstractDungeon.effectList.add(new ThoughtBubble(p.dialogX, p.dialogY, 3.0F, UITEXT.TEXT[0],true));
+        }
+
     }
 
+
+    public void triggerOnGlowCheck() {
+        this.glowColor = AbstractCard.BLUE_BORDER_GLOW_COLOR.cpy();
+        if (AbstractDungeon.player.hasPower(KukriPower.POWER_ID)) {
+            if(AbstractDungeon.player.getPower(KukriPower.POWER_ID).amount > 0){
+                this.glowColor = AbstractCard.GOLD_BORDER_GLOW_COLOR.cpy();
+            }
+        }
+
+    }
 
     // Upgraded stats.
     @Override
@@ -58,7 +87,6 @@ public class Bloodlust extends AbstractDynamicCard {
         if (!upgraded) {
             upgradeName();
             upgradeDamage(UPGRADE_PLUS_DMG);
-            upgradeBaseCost(UPGRADED_COST);
             initializeDescription();
         }
     }

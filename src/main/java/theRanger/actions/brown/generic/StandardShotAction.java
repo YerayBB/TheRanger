@@ -1,4 +1,4 @@
-package theRanger.actions.brown;
+package theRanger.actions.brown.generic;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -8,21 +8,21 @@ import theRanger.util.ShotHelper;
 
 import java.util.Objects;
 
-public class StandartShotAction extends AbstractGameAction {
+public class StandardShotAction extends AbstractGameAction {
 
     private AbstractGameAction[] action;
     private int amount;
     private String failMessage;
 
 
-    public StandartShotAction(final int amount, final AbstractGameAction[] action, final String failIDUIString) {
+    public StandardShotAction(final int amount, final AbstractGameAction[] action, final String failIDUIString) {
         this.amount = amount;
         this.action = action;
         this.failMessage = CardCrawlGame.languagePack.getUIString(failIDUIString).TEXT[0];
         actionType = ActionType.SPECIAL;
     }
 
-    public StandartShotAction(final int amount, final AbstractGameAction[] action) {
+    public StandardShotAction(final int amount, final AbstractGameAction[] action) {
         this.amount = amount;
         this.action = action;
         this.failMessage = CardCrawlGame.languagePack.getUIString("theRanger:MissingEssence").TEXT[0];
@@ -32,17 +32,17 @@ public class StandartShotAction extends AbstractGameAction {
 
     @Override
     public void update() {
-        if(this.amount == ShotHelper.Shot(this.amount)){
-            int temp = this.action.length;
-            for (AbstractGameAction abstractGameAction : this.action) {
-                addToTop(abstractGameAction);
+        if(!this.isDone) {
+            if (this.amount == ShotHelper.Shot(this.amount)) {
+                for (AbstractGameAction abstractGameAction : this.action) {
+                    addToTop(abstractGameAction);
+                }
+            } else {
+                if (!Objects.equals(this.failMessage, "") && this.failMessage != null) {
+                    AbstractDungeon.effectList.add(new ThoughtBubble(AbstractDungeon.player.dialogX, AbstractDungeon.player.dialogY, 3.0F, failMessage, true));
+                }
             }
+            this.isDone = true;
         }
-        else{
-            if(!Objects.equals(this.failMessage, "") && this.failMessage != null){
-                AbstractDungeon.effectList.add(new ThoughtBubble(AbstractDungeon.player.dialogX, AbstractDungeon.player.dialogY, 3.0F,failMessage,true));
-            }
-        }
-        this.isDone = true;
     }
 }

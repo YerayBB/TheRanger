@@ -41,7 +41,7 @@ public class AntiAir extends AbstractDynamicCard {
 
     public AntiAir() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        baseDamage = DAMAGE;
+        this.baseDamage = DAMAGE;
     }
 
     // Actions the card should do.

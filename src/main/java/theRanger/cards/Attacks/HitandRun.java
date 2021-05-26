@@ -2,11 +2,13 @@ package theRanger.cards.Attacks;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
+import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import theRanger.DefaultMod;
+import theRanger.actions.brown.generic.StandardStealthAction;
 import theRanger.cards.AbstractDynamicCard;
 import theRanger.characters.TheDefault;
 
@@ -30,25 +32,28 @@ public class HitandRun extends AbstractDynamicCard {
     public static final CardColor COLOR = TheDefault.Enums.COLOR_BROWN;
 
     private static final int COST = 1;
-    private static final int UPGRADED_COST = 1;
 
-    private static final int DAMAGE = 1;
+
+    private static final int DAMAGE = 9;
     private static final int UPGRADE_PLUS_DMG = 1;
+
+    private static final int MAGIC = 1;
+    private static final int UPGRADE_PLUS_MAGIC = 1;
 
     // /STAT DECLARATION/
 
 
     public HitandRun() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        baseDamage = DAMAGE;
+        this.baseDamage = DAMAGE;
+        this.baseMagicNumber = MAGIC;
     }
 
-//TODO
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(
-                new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
+        addToBot(new StandardStealthAction(m,p,new AbstractGameAction[]{new DrawCardAction(this.magicNumber)}));
+        addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn)));
     }
 
 
@@ -58,7 +63,7 @@ public class HitandRun extends AbstractDynamicCard {
         if (!upgraded) {
             upgradeName();
             upgradeDamage(UPGRADE_PLUS_DMG);
-            upgradeBaseCost(UPGRADED_COST);
+            upgradeMagicNumber(UPGRADE_PLUS_MAGIC);
             initializeDescription();
         }
     }

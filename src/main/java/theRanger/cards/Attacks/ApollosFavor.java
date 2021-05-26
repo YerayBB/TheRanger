@@ -8,6 +8,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import theRanger.DefaultMod;
+import theRanger.actions.brown.generic.StandardShotAction;
 import theRanger.cards.AbstractDynamicCard;
 import theRanger.characters.TheDefault;
 import theRanger.powers.brown.ApolloPower;
@@ -37,20 +38,21 @@ public class ApollosFavor extends AbstractDynamicCard {
     private static final int DAMAGE = 12;
     private static final int UPGRADE_PLUS_DMG = 6;
 
+    private static final int SHOTAMOUNT = 5;
+
     // /STAT DECLARATION/
 
 
     public ApollosFavor() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        baseDamage = DAMAGE;
+        this.baseDamage = DAMAGE;
     }
 
-//TODO
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         this.applyPowers();
-        addToBot(new ApplyPowerAction(m,p, new ApolloPower(m,p,this.damage), this.damage));
+        addToBot(new StandardShotAction(SHOTAMOUNT,new AbstractGameAction[]{new ApplyPowerAction(m,p, new ApolloPower(m,p,this.damage), this.damage)}));
     }
 
 

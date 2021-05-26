@@ -1,4 +1,4 @@
-package theRanger.actions.brown;
+package theRanger.actions.brown.generic;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
@@ -29,11 +29,13 @@ public class RandomEnemyDmgWithInfusion extends AbstractGameAction {
 
     @Override
     public void update() {
-        this.target = AbstractDungeon.getMonsters().getRandomMonster(null,true, AbstractDungeon.cardRandomRng);
-        if(target != null){
-            this.card.calculateCardDamage((AbstractMonster)this.target);
-            addToTop(new ApplyPowerAction(this.target,AbstractDungeon.player,new InfusedPower(this.target,AbstractDungeon.player,this.infusion),this.infusion));
-            addToTop(new DamageAction(this.target, new DamageInfo(AbstractDungeon.player,this.card.damage, this.card.damageTypeForTurn), this.attackEffect));
+        if(!this.isDone) {
+            this.target = AbstractDungeon.getMonsters().getRandomMonster(null, true, AbstractDungeon.cardRandomRng);
+            if (this.target != null) {
+                this.card.calculateCardDamage((AbstractMonster) this.target);
+                addToTop(new ApplyPowerAction(this.target, AbstractDungeon.player, new InfusedPower(this.target, AbstractDungeon.player, this.infusion), this.infusion));
+                addToTop(new DamageAction(this.target, new DamageInfo(AbstractDungeon.player, this.card.damage, this.card.damageTypeForTurn), this.attackEffect));
+            }
         }
     }
 }

@@ -78,7 +78,7 @@ public class TrapPower extends AbstractPower {
             if (info.type == DamageInfo.DamageType.NORMAL) {
                 this.flash();
                 if(info.output <= this.turnCamo){
-                    //TODO Stun this.addToBot();
+                    this.addToBot(new ApplyPowerAction(info.owner,this.owner,new StunNextTurnPower(info.owner,this.owner,1),1));
                 }
                 this.addToTop(new ReducePowerAction(this.owner,this.owner,this.ID,1));
                 return 0;

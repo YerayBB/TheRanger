@@ -66,8 +66,8 @@
   },
   "theRanger:DirectShot": {
     "NAME" : "Direct Shot",
-    "DESCRIPTION": "theranger:Shot 1. NL Each deals !D! damage to the target",
-    "UPGRADE_DESCRIPTION": "theranger:Shot 1. NL Each deals !D! damage and apply somevalue theranger:Infused to the target"
+    "DESCRIPTION": "theranger:Shot 1. NL Each deals !D! damage to the target.",
+    "UPGRADE_DESCRIPTION": "theranger:Shot 1. NL Each deals !D! damage and apply !theRanger:I! theranger:Infused to the target"
   },
   "theRanger:NimbleReload": {
     "NAME": "Nimble Reload",
@@ -152,11 +152,11 @@
   },
   "theRanger:LastDitchEffort": {
     "NAME": "Last Ditch Effort",
-    "DESCRIPTION": "Deal !M! theranger:True_Damage. NL Become theranger:Exposed. NL theranger:Empty_Handed: Deal !theRanger:M2! extra theranger:True_Damage. NL Exhaust."
+    "DESCRIPTION": "Deal !D! theranger:True_Damage. NL Become theranger:Exposed. NL theranger:Empty_Handed: Deal !M! extra theranger:True_Damage. NL Exhaust."
   },
   "theRanger:CondensedShot": {
     "NAME": "Condensed Shot",
-    "DESCRIPTION": "theranger:Shot 1. NL Consume ALL theranger:Essence deal that amount multiplied by your theranger:Density as damage. ",
+    "DESCRIPTION": "theranger:Shot 1. NL Consume ALL theranger:Essence, deal that amount multiplied by your theranger:Density as damage. ",
     "EXTENDED_DESCRIPTION": [
       "NL (Deals ",
       " damage.)"]
@@ -179,7 +179,7 @@
   },
   "theRanger:HitandRun": {
     "NAME": "Hit and Run",
-    "DESCRIPTION": "Deal !D! damage. NL theranger:Stealth: Draw !M! cards."
+    "DESCRIPTION": "theranger:Stealth: Draw !M! cards. NL NL Deal !D! damage. "
   },
   "theRanger:PlannedAttack": {
     "NAME": "Planned Attack",
@@ -196,17 +196,17 @@
   },
   "theRanger:EssenceBlast": {
     "NAME": "Essence Blast",
-    "DESCRIPTION": "Deal !D! damage. NL theranger:Overcharge: Return this from the discard pile to your hand."
+    "DESCRIPTION": "Deal !D! damage. NL theranger:Overcharge: Return this card from the discard pile to your hand."
   },
   "theRanger:DryFire": {
     "NAME": "Dry Fire",
-    "DESCRIPTION": "Deal !D! damage.NL Whenever you run out of theranger:Essence, return this from the discard pile to your hand"
+    "DESCRIPTION": "Deal !D! damage.NL Whenever you run out of theranger:Essence, return this card from the discard pile to your hand."
   },
   "theRanger:OutOfNowhere": {
     "NAME": "Out Of Nowhere",
     "DESCRIPTION": "Deal !D! damage. NL theranger:Stealth: Double the damage."
   },
-  "theRanger:BlindShot": {
+  "theRanger: BlindShot": {
     "NAME": "Blind Shot",
     "DESCRIPTION": "theranger:Shot 1. NL Deal !D! damage and apply !M! theranger:Infused to a random enemy."
   },
@@ -220,19 +220,20 @@
   },
   "theRanger:DriveBy": {
     "NAME": "Drive By",
-    "DESCRIPTION": "Shot 1. NL Deal !D! damage. NL Next !M! turns draw 1 more card."
+    "DESCRIPTION": "Shot 1. NL Deal !D! damage. NL Next 2 turns draw 1 more card.",
+    "UPGRADE_DESCRIPTION": "NL Draw 1 card."
   },
   "theRanger:Bloodshed": {
     "NAME": "Bloodshed",
-    "DESCRIPTION": "Use 1 theranger:Kukri for each enemy. NL Deal !D! damage to ALL enemies."
+    "DESCRIPTION": "Use 1 theranger:Kukri for each enemy. NL Deal !D! damage to each enemy."
   },
   "theRanger:AntiAir": {
     "NAME": "Anti Air",
-    "DESCRIPTION": "Deal !D! damage. NL Remove Flight from the enemy."
+    "DESCRIPTION": "Deal !D! damage. NL Remove #yFlight from the enemy."
   },
   "theRanger:CrossUp": {
     "NAME": "Cross-Up",
-    "DESCRIPTION": "Deal !D! damage.NL Draw !theRanger:M2! card. NL theranger:Stealth: Apply !M! Vulnerable."
+    "DESCRIPTION": "theranger:Stealth: Apply !M! Vulnerable. NL NL Deal !D! damage.NL Draw !theRanger:M2! card. "
   },
   "theRanger:RawPunch": {
     "NAME": "Raw Punch",
@@ -240,7 +241,7 @@
   },
   "theRanger:HeavyRain": {
     "NAME": "Heavy Rain",
-    "DESCRIPTION": "theranger:Shot 3 for each enemy. NL Deal !D! damage and apply !M! theranger:Infused to ALL enemies.",
+    "DESCRIPTION": "theranger:Shot 3 to each enemy. NL Deal !D! damage and apply !M! theranger:Infused to each enemy.",
     "EXTENDED_DESCRIPTION": [
       " NL (theranger:Shots ",
       " .)"]

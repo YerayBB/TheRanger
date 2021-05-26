@@ -1,7 +1,16 @@
 {
   "theRanger:MissingEssence": {
     "TEXT": [
-      "Missing the required #rEssence."
+      "Missing the required #rEssence.",
+      "Ran out of #rEssence."
+    ]
+  },
+
+  "TheRanger:MissingKukri": {
+    "TEXT": [
+      "Don't have any #rKukri to use.",
+      "Ran out of #rKukris.",
+      "Missing the required amount of #rKukris."
     ]
   }
 }
