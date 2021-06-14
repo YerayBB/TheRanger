@@ -12,6 +12,7 @@ import theRanger.DefaultMod;
 import theRanger.actions.brown.generic.RandomHeavyWoundAttackAction;
 import theRanger.cards.AbstractDynamicCard;
 import theRanger.characters.TheDefault;
+import theRanger.powers.brown.EssencePower;
 import theRanger.powers.brown.KukriPower;
 
 import static theRanger.DefaultMod.makeCardPath;
@@ -35,8 +36,8 @@ public class Bloodlust extends AbstractDynamicCard {
 
     private static final int COST = 3;
 
-    private static final int DAMAGE = 6;
-    private static final int UPGRADE_PLUS_DMG = 4;
+    private static final int DAMAGE = 5;
+    private static final int UPGRADE_PLUS_DMG = 2;
 
     private static final UIStrings UITEXT = CardCrawlGame.languagePack.getUIString("TheRanger:MissingKukri");
 
@@ -45,7 +46,7 @@ public class Bloodlust extends AbstractDynamicCard {
 
     public Bloodlust() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        baseDamage = DAMAGE;
+        this.baseDamage = DAMAGE;
     }
 
     // Actions the card should do.
@@ -70,24 +71,27 @@ public class Bloodlust extends AbstractDynamicCard {
 
     }
 
-
+    @Override
     public void triggerOnGlowCheck() {
         this.glowColor = AbstractCard.BLUE_BORDER_GLOW_COLOR.cpy();
         if (AbstractDungeon.player.hasPower(KukriPower.POWER_ID)) {
             if(AbstractDungeon.player.getPower(KukriPower.POWER_ID).amount > 0){
                 this.glowColor = AbstractCard.GOLD_BORDER_GLOW_COLOR.cpy();
+            }else {
+                this.glowColor = AbstractCard.BLUE_BORDER_GLOW_COLOR.cpy();
             }
+        } else {
+            this.glowColor = AbstractCard.BLUE_BORDER_GLOW_COLOR.cpy();
         }
-
     }
 
     // Upgraded stats.
     @Override
     public void upgrade() {
-        if (!upgraded) {
-            upgradeName();
-            upgradeDamage(UPGRADE_PLUS_DMG);
-            initializeDescription();
+        if (!this.upgraded) {
+            this.upgradeName();
+            this.upgradeDamage(UPGRADE_PLUS_DMG);
+            this.initializeDescription();
         }
     }
 }

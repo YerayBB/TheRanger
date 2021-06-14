@@ -26,8 +26,10 @@ public class ExplosiveShotAction extends AbstractGameAction {
             if(target.hasPower(InfusedPower.POWER_ID)){
                 var = target.getPower(InfusedPower.POWER_ID).amount;
             }
-            if(var > 0) this.addToTop(new DamageAllEnemiesAction(this.source, DamageInfo.createDamageMatrix(var, true), DamageInfo.DamageType.THORNS, AttackEffect.FIRE));
-            this.addToTop(new RemoveSpecificPowerAction(this.target,this.source,InfusedPower.POWER_ID));
+            if(var > 0) {
+                this.addToTop(new DamageAllEnemiesAction(this.source, DamageInfo.createDamageMatrix(var, true), DamageInfo.DamageType.THORNS, AttackEffect.FIRE));
+                this.addToTop(new RemoveSpecificPowerAction(this.target, this.source, InfusedPower.POWER_ID));
+            }
             this.addToTop(new DamageAction(this.target,new DamageInfo(this.source, this.damage), AttackEffect.BLUNT_LIGHT));
             this.isDone = true;
         }

@@ -1,6 +1,7 @@
 package theRanger.cards.Attacks;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -9,6 +10,7 @@ import theRanger.actions.brown.generic.RandomEnemyDmgWithInfusion;
 import theRanger.actions.brown.generic.StandardShotAction;
 import theRanger.cards.AbstractInfusedCard;
 import theRanger.characters.TheDefault;
+import theRanger.powers.brown.EssencePower;
 
 import static theRanger.DefaultMod.makeCardPath;
 
@@ -31,11 +33,11 @@ public class BlindShot extends AbstractInfusedCard {
 
     private static final int COST = 0;
 
-    private static final int DAMAGE = 2;
+    private static final int DAMAGE = 5;
     private static final int UPGRADE_PLUS_DMG = 1;
 
-    private static final int INFUSE = 3;
-    private static final int UPGRADE_PLUS_INFUSE = 1;
+    private static final int INFUSE = 1;
+    private static final int UPGRADE_PLUS_INFUSE = 3;
 
     private static final int SHOTAMOUNT = 1;
 
@@ -44,8 +46,8 @@ public class BlindShot extends AbstractInfusedCard {
 
     public BlindShot() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        baseDamage = DAMAGE;
-        baseInfuseNumber = INFUSE;
+        this.baseDamage = DAMAGE;
+        this.baseInfuseNumber = INFUSE;
     }
 
 
@@ -57,14 +59,27 @@ public class BlindShot extends AbstractInfusedCard {
     }
 
 
+    @Override
+    public void triggerOnGlowCheck() {
+        if (AbstractDungeon.player.hasPower(EssencePower.POWER_ID)) {
+            if(AbstractDungeon.player.getPower(EssencePower.POWER_ID).amount >= SHOTAMOUNT) {
+                this.glowColor = AbstractCard.GOLD_BORDER_GLOW_COLOR.cpy();
+            } else {
+                this.glowColor = AbstractCard.BLUE_BORDER_GLOW_COLOR.cpy();
+            }
+        } else {
+            this.glowColor = AbstractCard.BLUE_BORDER_GLOW_COLOR.cpy();
+        }
+    }
+
     // Upgraded stats.
     @Override
     public void upgrade() {
-        if (!upgraded) {
-            upgradeName();
-            upgradeDamage(UPGRADE_PLUS_DMG);
-            upgradeInfuseNumber(UPGRADE_PLUS_INFUSE);
-            initializeDescription();
+        if (!this.upgraded) {
+            this.upgradeName();
+            this.upgradeDamage(UPGRADE_PLUS_DMG);
+            this.upgradeInfuseNumber(UPGRADE_PLUS_INFUSE);
+            this.initializeDescription();
         }
     }
 }

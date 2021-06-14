@@ -13,7 +13,7 @@ import theRanger.actions.brown.generic.StandardShotAction;
 import theRanger.powers.brown.DensityPower;
 import theRanger.powers.brown.EssencePower;
 
-public class CondensedShotAction extends AbstractGameAction {
+public class CondensedShotAction extends AbstractGameAction {//DEPRECATED
 
     private int basedamage;
     private int shotamount;

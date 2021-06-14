@@ -31,17 +31,17 @@ public abstract class AbstractInfusedCard extends AbstractDefaultCard {
     }
 
     public void upgradeInfuseNumber(int amount){
-        baseInfuseNumber += amount;
-        infuseNumber = baseInfuseNumber;
-        upgradedInfuseNumber = true;
+        this.baseInfuseNumber += amount;
+        this.infuseNumber = baseInfuseNumber;
+        this.upgradedInfuseNumber = true;
     }
 
     @Override
     public void displayUpgrades() {
         super.displayUpgrades();
-        if (upgradedInfuseNumber) {
-            infuseNumber = baseInfuseNumber;
-            isInfuseNumberModified = true;
+        if (this.upgradedInfuseNumber) {
+            this.infuseNumber = this.baseInfuseNumber;
+            this.isInfuseNumberModified = true;
         }
     }
 
@@ -52,7 +52,7 @@ public abstract class AbstractInfusedCard extends AbstractDefaultCard {
         var = AbstractDungeon.player.powers.iterator();
         AbstractPower p;
         float tmp = this.baseInfuseNumber;
-        isInfuseNumberModified = false;
+        this.isInfuseNumberModified = false;
 
         //apply player powers
         while(var.hasNext()) {

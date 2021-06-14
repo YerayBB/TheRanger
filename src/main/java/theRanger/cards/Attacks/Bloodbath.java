@@ -32,25 +32,24 @@ public class Bloodbath extends AbstractDynamicCard {
 
     // STAT DECLARATION
 
-    private static final CardRarity RARITY = CardRarity.COMMON;
+    private static final CardRarity RARITY = CardRarity.RARE;
     private static final CardTarget TARGET = CardTarget.ALL_ENEMY;
     private static final CardType TYPE = CardType.ATTACK;
     public static final CardColor COLOR = TheDefault.Enums.COLOR_BROWN;
 
     private static final int COST = 2;
-    private static final int UPGRADED_COST = 2;
 
     private static final int KUKRICOST = 1;
 
-    private static final int DAMAGE = 15;
-    private static final int UPGRADE_PLUS_DMG = 5;
+    private static final int DAMAGE = 20;
+    private static final int UPGRADE_PLUS_DMG = 7;
 
     // /STAT DECLARATION/
 
 
     public Bloodbath() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        baseDamage = DAMAGE;
+        this.baseDamage = DAMAGE;
     }
 
     // Actions the card should do.
@@ -74,24 +73,27 @@ public class Bloodbath extends AbstractDynamicCard {
         }
     }
 
+    @Override
     public void triggerOnGlowCheck() {
         this.glowColor = AbstractCard.BLUE_BORDER_GLOW_COLOR.cpy();
         if (AbstractDungeon.player.hasPower(KukriPower.POWER_ID)) {
             if(AbstractDungeon.player.getPower(KukriPower.POWER_ID).amount >= KUKRICOST){
                 this.glowColor = AbstractCard.GOLD_BORDER_GLOW_COLOR.cpy();
+            }else {
+                this.glowColor = AbstractCard.BLUE_BORDER_GLOW_COLOR.cpy();
             }
+        } else {
+            this.glowColor = AbstractCard.BLUE_BORDER_GLOW_COLOR.cpy();
         }
     }
-
 
     // Upgraded stats.
     @Override
     public void upgrade() {
-        if (!upgraded) {
-            upgradeName();
-            upgradeDamage(UPGRADE_PLUS_DMG);
-            upgradeBaseCost(UPGRADED_COST);
-            initializeDescription();
+        if (!this.upgraded) {
+            this.upgradeName();
+            this.upgradeDamage(UPGRADE_PLUS_DMG);
+            this.initializeDescription();
         }
     }
 }

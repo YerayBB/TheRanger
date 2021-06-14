@@ -10,6 +10,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import theRanger.DefaultMod;
+import theRanger.actions.brown.unique.DirectShotAction;
 import theRanger.cards.AbstractDynamicCard;
 import theRanger.cards.AbstractInfusedCard;
 import theRanger.characters.TheDefault;
@@ -42,8 +43,9 @@ public class DirectShot extends AbstractInfusedCard {
     private static final int INFUSE = 0;
     private static final int UPGRADE_PLUS_INFUSE = 4;
 
+    private static final int SHOTAMOUNT = 1;
+
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
-    public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
 
     // /STAT DECLARATION/
 
@@ -57,23 +59,19 @@ public class DirectShot extends AbstractInfusedCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(
-                new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
-        if(this.upgraded){
-            addToBot(new ApplyPowerAction(m, p, new InfusedPower(m,p,this.infuseNumber),this.infuseNumber));
-        }
+        addToBot(new DirectShotAction(m, this.damage, this.infuseNumber, this.upgraded, SHOTAMOUNT));
     }
 
 
     // Upgraded stats.
     @Override
     public void upgrade() {
-        if (!upgraded) {
-            upgradeName();
-            upgradeDamage(UPGRADE_PLUS_DMG);
-            upgradeInfuseNumber(UPGRADE_PLUS_INFUSE);
-            this.rawDescription = UPGRADE_DESCRIPTION;
-            initializeDescription();
+        if (!this.upgraded) {
+            this.upgradeName();
+            this.upgradeDamage(UPGRADE_PLUS_DMG);
+            this.upgradeInfuseNumber(UPGRADE_PLUS_INFUSE);
+            this.rawDescription = cardStrings.UPGRADE_DESCRIPTION;
+            this.initializeDescription();
         }
     }
 }

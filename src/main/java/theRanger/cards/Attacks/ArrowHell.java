@@ -1,7 +1,9 @@
 package theRanger.cards.Attacks;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import theRanger.DefaultMod;
 import theRanger.actions.brown.generic.RandomEnemyDmgWithInfusion;
@@ -25,7 +27,7 @@ public class ArrowHell extends AbstractInfusedCard {
 
     // STAT DECLARATION
 
-    private static final CardRarity RARITY = CardRarity.COMMON;
+    private static final CardRarity RARITY = CardRarity.RARE;
     private static final CardTarget TARGET = CardTarget.ALL_ENEMY;
     private static final CardType TYPE = CardType.ATTACK;
     public static final CardColor COLOR = TheDefault.Enums.COLOR_BROWN;
@@ -69,14 +71,27 @@ public class ArrowHell extends AbstractInfusedCard {
     }
 
 
+    @Override
+    public void triggerOnGlowCheck() {
+        if (AbstractDungeon.player.hasPower(EssencePower.POWER_ID)) {
+            if(AbstractDungeon.player.getPower(EssencePower.POWER_ID).amount >= SHOTAMOUNT) {
+                this.glowColor = AbstractCard.GOLD_BORDER_GLOW_COLOR.cpy();
+            } else {
+                this.glowColor = AbstractCard.BLUE_BORDER_GLOW_COLOR.cpy();
+            }
+        } else {
+            this.glowColor = AbstractCard.BLUE_BORDER_GLOW_COLOR.cpy();
+        }
+    }
+
     // Upgraded stats.
     @Override
     public void upgrade() {
-        if (!upgraded) {
-            upgradeName();
-            upgradeDamage(UPGRADE_PLUS_DMG);
-            upgradeInfuseNumber(UPGRADE_PLUS_INFUSED);
-            initializeDescription();
+        if (!this.upgraded) {
+            this.upgradeName();
+            this.upgradeDamage(UPGRADE_PLUS_DMG);
+            this.upgradeInfuseNumber(UPGRADE_PLUS_INFUSED);
+            this.initializeDescription();
         }
     }
 }

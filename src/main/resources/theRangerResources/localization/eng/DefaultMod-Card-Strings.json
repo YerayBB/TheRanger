@@ -104,7 +104,7 @@
   "theRanger:ForestAid": {
     "NAME": "Forest Aid",
     "DESCRIPTION": "Add !M! *Will-o-Wisp to your Draw pile. NL Whenever you draw a *Will-o-Wisp, draw !theRanger:M2! card.",
-    "UPGRADE_DESCRIPTION": "Add !M! *Will-o-Wisp to your Draw pile. NL Whenever you draw a *Will-o-Wisp, draw !theRanger:M2! cards."
+    "UPGRADE_DESCRIPTION": "Add !M! *Will-o-Wisp+ to your Draw pile. NL Whenever you draw a *Will-o-Wisp, draw !theRanger:M2! cards."
   },
   "theRanger:Sanctuary": {
     "NAME": "Sanctuary",
@@ -133,7 +133,7 @@
   },
   "theRanger:ApollosFavor": {
     "NAME": "Apollo's Favor",
-    "DESCRIPTION": "theranger:Shot 5. NL Next turn deal !D! + !M! times your theranger:Density. NL (Currently deals !theRanger:M2!)"
+    "DESCRIPTION": "theranger:Shot 5. NL Next turn deal !D! + !M! times your theranger:Density."
   },
   "theRanger:Volley": {
     "NAME": "Volley",
@@ -148,7 +148,7 @@
   },
   "theRanger:SoulReap": {
     "NAME": "Soul Reap",
-    "DESCRIPTION": "Deal !D! damage. NL Gain theranger:Spirit equal to the unblocked damage. NL Exhaust."
+    "DESCRIPTION": "Deal !D! damage. NL Gain theranger:Spirit and theranger:Essence equal to the unblocked damage. NL Exhaust."
   },
   "theRanger:LastDitchEffort": {
     "NAME": "Last Ditch Effort",
@@ -163,7 +163,7 @@
   },
   "theRanger:ArrowHell": {
     "NAME": "Arrow Hell",
-    "DESCRIPTION": "theranger:Shot 1 until you run out of theranger:Essence. NL Each theranger:Shot deals !D! damage and applies !M! theranger:Infused to a random enemy."
+    "DESCRIPTION": "theranger:Shot 1 until you run out of theranger:Essence. NL Each theranger:Shot deals !D! damage and applies !theRanger:I! theranger:Infused to a random enemy."
   },
   "theRanger:Snipe": {
     "NAME": "Snipe",
@@ -196,14 +196,16 @@
   },
   "theRanger:EssenceBlast": {
     "NAME": "Essence Blast",
-    "DESCRIPTION": "Deal !D! damage. NL theranger:Overcharge: Return this card from the discard pile to your hand."
+    "DESCRIPTION": "Deal !D! damage. NL NL theranger:Overcharge: Return this card from the discard pile to your hand.",
+    "UPGRADE_DESCRIPTION": "Deal !D! damage. NL NL theranger:Overcharge: Return this card from the discard pile to your hand. Increase this card's damage by !M! this combat."
+
   },
   "theRanger:DryFire": {
     "NAME": "Dry Fire",
     "DESCRIPTION": "Deal !D! damage.NL Whenever you run out of theranger:Essence, return this card from the discard pile to your hand."
   },
   "theRanger:OutOfNowhere": {
-    "NAME": "Out Of Nowhere",
+    "NAME": "Out Of Nowhere DEPRECATED",
     "DESCRIPTION": "Deal !D! damage. NL theranger:Stealth: Double the damage."
   },
   "theRanger: BlindShot": {
@@ -283,7 +285,8 @@
   },
   "theRanger:BloodHunt": {
     "NAME": "BloodHunt",
-    "DESCRIPTION": "Gain !M! theranger:Kukri. NL Add 1 *Bloody *Cut to your hand. NL Exhaust."
+    "DESCRIPTION": "Gain !M! theranger:Kukri. NL Add 1 *Bloody *Cut to your hand. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Gain !M! theranger:Kukri. NL Add 1 *Bloody *Cut+ to your hand. NL Exhaust."
   },
   "theRanger:BloodyCut": {
     "NAME": "Bloody Cut",
@@ -304,7 +307,7 @@
   },
   "theRanger:Decoy": {
     "NAME": "Decoy",
-    "DESCRIPTION": "Convert ALL your Block into theranger:Camouflage."
+    "DESCRIPTION": "Convert ALL your theranger:Camouflage into Block."
   },
   "theRanger:Bait": {
     "NAME": "Bait",
@@ -316,11 +319,11 @@
   },
   "theRanger:Flare": {
     "NAME": "Flare",
-    "DESCRIPTION": "Apply !M! theranger:Infused and !theRanger:M2! Weak to ALL enemies. NL Exhaust."
+    "DESCRIPTION": "Apply !theRanger:I! theranger:Infused and !M! Weak to ALL enemies. NL Exhaust."
   },
   "theRanger:ForestCommunion": {
     "NAME": "Forest Communion",
-    "DESCRIPTION": "Gain your maximum amount of theranger:Essence.NL Exhaust.",
+    "DESCRIPTION": "Gain your maximum amount of theranger:Essence. NL Exhaust.",
     "UPGRADE_DESCRIPTION": "Gain your maximum amount of theranger:Essence."
   },
   "theRanger:Reminiscence": {
@@ -341,7 +344,7 @@
   },
   "theRanger:SoulWave": {
     "NAME": "Soul Wave",
-    "DESCRIPTION": "Use !M! theranger:Essence.NL Each apply !theRanger:M2! theranger:Infused to ALL enemies. NL Increase the amount of theranger:Essence used in this card by NEED MORE VARS this combat."
+    "DESCRIPTION": "Use !M! theranger:Essence.NL Each apply !theRanger:I! theranger:Infused to ALL enemies. NL Increase the amount of theranger:Essence used in this card by !theRanger:M2! this combat."
   },
   "theRanger:Overconfidence": {
     "NAME": "Overconfidence",
@@ -366,7 +369,8 @@
   },
   "theRanger:Agility": {
     "NAME": "Agility",
-    "DESCRIPTION": "Draw !M! cards."
+    "DESCRIPTION": "Draw !M! cards. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Draw !M! cards. NL Gain [E] for every card that exceeds your hand capacity. NL Exhaust."
   },
   "theRanger:WillOWisp": {
     "NAME": "Will-o-Wisp",
@@ -378,7 +382,8 @@
   },
   "theRanger:EnergeticEntrance": {
     "NAME": "Energetic Entrance",
-    "DESCRIPTION": "Gain !M! theranger:Vigor. NL Next turn, gain [E]."
+    "DESCRIPTION": "Innate. NL Gain !M! theranger:Vigor. NL Next turn, gain [E]. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Innate. NL Gain !M! theranger:Vigor. NL Next turn, gain [E][E]."
   },
   "theRanger:Charity": {
     "NAME": "CharityDEPRECATED",
@@ -393,7 +398,7 @@
     ]
   },
   "theRanger:Concentration": {
-    "NAME": "Concentration",
+    "NAME": "Absorption",
     "DESCRIPTION": "Gain !M! theranger:Density, lose !theRanger:M2! theranger:Spirit."
   },
   "theRanger:Banish": {

@@ -33,15 +33,15 @@ public class Bloodshed extends AbstractDynamicCard {
 
     // STAT DECLARATION
 
-    private static final CardRarity RARITY = CardRarity.COMMON;
+    private static final CardRarity RARITY = CardRarity.RARE;
     private static final CardTarget TARGET = CardTarget.ALL_ENEMY;
     private static final CardType TYPE = CardType.ATTACK;
     public static final CardColor COLOR = TheDefault.Enums.COLOR_BROWN;
 
     private static final int COST = 1;
 
-    private static final int DAMAGE = 10;
-    private static final int UPGRADE_PLUS_DMG = 3;
+    private static final int DAMAGE = 12;
+    private static final int UPGRADE_PLUS_DMG = 4;
 
     private static final int KUKRICOST = 1;
 
@@ -52,7 +52,7 @@ public class Bloodshed extends AbstractDynamicCard {
 
     public Bloodshed() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        baseDamage = DAMAGE;
+        this.baseDamage = DAMAGE;
     }
 
     // Actions the card should do.
@@ -110,7 +110,6 @@ public class Bloodshed extends AbstractDynamicCard {
 
 
     public void triggerOnGlowCheck() {
-        this.glowColor = AbstractCard.BLUE_BORDER_GLOW_COLOR.cpy();
         if (AbstractDungeon.player.hasPower(KukriPower.POWER_ID)) {
             int count = 0;
             Iterator var = AbstractDungeon.getCurrRoom().monsters.monsters.iterator();
@@ -122,7 +121,11 @@ public class Bloodshed extends AbstractDynamicCard {
             }
             if(AbstractDungeon.player.getPower(KukriPower.POWER_ID).amount >= count){
                 this.glowColor = AbstractCard.GOLD_BORDER_GLOW_COLOR.cpy();
+            } else{
+                this.glowColor = AbstractCard.BLUE_BORDER_GLOW_COLOR.cpy();
             }
+        }else{
+            this.glowColor = AbstractCard.BLUE_BORDER_GLOW_COLOR.cpy();
         }
     }
 

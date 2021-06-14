@@ -36,12 +36,13 @@ public class ApolloPower extends AbstractPower {
     private static final Texture tex84 = TextureLoader.getTexture(makePowerPath("placeholder_power84.png"));
     private static final Texture tex32 = TextureLoader.getTexture(makePowerPath("placeholder_power32.png"));
 
-    public ApolloPower(final AbstractCreature owner, final AbstractCreature source, final int amount) {
+
+    public ApolloPower(final AbstractCreature owner, final AbstractCreature source, final int dmg) {
         name = NAME;
         ID = POWER_ID;
 
         this.owner = owner;
-        this.amount = amount;
+        this.amount = dmg;
         this.source = source;
 
         type = PowerType.DEBUFF;
