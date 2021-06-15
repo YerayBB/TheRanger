@@ -2,7 +2,8 @@
   "theRanger:MissingEssence": {
     "TEXT": [
       "Missing the required #rEssence.",
-      "Ran out of #rEssence."
+      "Ran out of #rEssence.",
+      "Missing the required #rEssence to #yShot to this many targets."
     ]
   },
 

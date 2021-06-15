@@ -34,8 +34,8 @@ public class HitandRun extends AbstractDynamicCard {
     private static final int COST = 1;
 
 
-    private static final int DAMAGE = 9;
-    private static final int UPGRADE_PLUS_DMG = 1;
+    private static final int DAMAGE = 8;
+    private static final int UPGRADE_PLUS_DMG = 3;
 
     private static final int MAGIC = 1;
     private static final int UPGRADE_PLUS_MAGIC = 1;
@@ -60,11 +60,11 @@ public class HitandRun extends AbstractDynamicCard {
     // Upgraded stats.
     @Override
     public void upgrade() {
-        if (!upgraded) {
-            upgradeName();
-            upgradeDamage(UPGRADE_PLUS_DMG);
-            upgradeMagicNumber(UPGRADE_PLUS_MAGIC);
-            initializeDescription();
+        if (!this.upgraded) {
+            this.upgradeName();
+            this.upgradeDamage(UPGRADE_PLUS_DMG);
+            this.upgradeMagicNumber(UPGRADE_PLUS_MAGIC);
+            this.initializeDescription();
         }
     }
 }

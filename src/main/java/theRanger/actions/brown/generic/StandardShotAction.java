@@ -16,13 +16,6 @@ public class StandardShotAction extends AbstractGameAction {
     private static final UIStrings UIStrings = CardCrawlGame.languagePack.getUIString("theRanger:MissingEssence");
 
 
-    public StandardShotAction(final int amount, final AbstractGameAction[] action, final String failUIString) {
-        this.amount = amount;
-        this.action = action;
-
-        actionType = ActionType.SPECIAL;
-    }
-
     public StandardShotAction(final int amount, final AbstractGameAction[] action) {
         this.amount = amount;
         this.action = action;
@@ -38,7 +31,7 @@ public class StandardShotAction extends AbstractGameAction {
                 for (AbstractGameAction abstractGameAction : this.action) {
                     addToTop(abstractGameAction);
                 }
-            } else {//TODO: check the string
+            } else {
                 AbstractDungeon.effectList.add(new ThoughtBubble(AbstractDungeon.player.dialogX, AbstractDungeon.player.dialogY, 3.0F, UIStrings.TEXT[0], true));
                 /*if (!Objects.equals(this.failMessage, "") && this.failMessage != null) {
                     AbstractDungeon.effectList.add(new ThoughtBubble(AbstractDungeon.player.dialogX, AbstractDungeon.player.dialogY, 3.0F, failMessage, true));

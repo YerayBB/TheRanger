@@ -3,6 +3,7 @@ package theRanger.cards.Attacks;
 import com.badlogic.gdx.math.MathUtils;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -13,6 +14,8 @@ import theRanger.DefaultMod;
 import theRanger.actions.brown.unique.LastDitchEffortAction;
 import theRanger.cards.AbstractDynamicCard;
 import theRanger.characters.TheDefault;
+import theRanger.powers.brown.EssencePower;
+import theRanger.powers.brown.KukriPower;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -31,28 +34,29 @@ public class LastDitchEffort extends AbstractDynamicCard {
 
     // STAT DECLARATION
 
-    private static final CardRarity RARITY = CardRarity.COMMON;
+    private static final CardRarity RARITY = CardRarity.RARE;
     private static final CardTarget TARGET = CardTarget.ENEMY;
     private static final CardType TYPE = CardType.ATTACK;
     public static final CardColor COLOR = TheDefault.Enums.COLOR_BROWN;
 
     private static final int COST = 3;
 
-    private static final int DAMAGE = 20;
-    private static final int UPGRADE_PLUS_DMG = 10;
+    private static final int DAMAGE = 15;
+    private static final int UPGRADE_PLUS_DMG = 5;
 
-    private static final int MAGIC = 40;
-    private static final int UPGRADE_PLUS_MAGIC = 30;
+    private static final int MAGIC = 30;
+    private static final int UPGRADE_PLUS_MAGIC = 10;
 
     // /STAT DECLARATION/
 
 
     public LastDitchEffort() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        baseDamage = DAMAGE;
+        this.baseDamage = DAMAGE;
+        this.baseMagicNumber = MAGIC;
+        this.exhaust = true;
     }
 
-//TODO
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
@@ -113,14 +117,33 @@ public class LastDitchEffort extends AbstractDynamicCard {
 
     }
 
+    @Override
+    public void triggerOnGlowCheck() {
+        int aux1 = 0;
+        int aux2 = 0;
+        if (AbstractDungeon.player.hasPower(EssencePower.POWER_ID)) {
+            aux1 = AbstractDungeon.player.getPower(EssencePower.POWER_ID).amount;
+        }
+        if(AbstractDungeon.player.hasPower(KukriPower.POWER_ID)) {
+            aux2 = AbstractDungeon.player.getPower(KukriPower.POWER_ID).amount;
+        }
+        if(aux1 > 0 || aux2 > 0) {
+            this.glowColor = AbstractCard.BLUE_BORDER_GLOW_COLOR.cpy();
+        }else{
+            this.glowColor = AbstractCard.GOLD_BORDER_GLOW_COLOR.cpy();
+        }
+
+    }
+
+
     // Upgraded stats.
     @Override
     public void upgrade() {
-        if (!upgraded) {
-            upgradeName();
-            upgradeDamage(UPGRADE_PLUS_DMG);
-            upgradeMagicNumber(UPGRADE_PLUS_MAGIC);
-            initializeDescription();
+        if (!this.upgraded) {
+            this.upgradeName();
+            this.upgradeDamage(UPGRADE_PLUS_DMG);
+            this.upgradeMagicNumber(UPGRADE_PLUS_MAGIC);
+            this.initializeDescription();
         }
     }
 }

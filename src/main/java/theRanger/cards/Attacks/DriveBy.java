@@ -41,15 +41,15 @@ public class DriveBy extends AbstractDynamicCard {
     private static final int EXTRADRAW = 1;
     private static final int SHOTAMOUNT = 1;
 
-    private static final int DAMAGE = 13;
-    private static final int UPGRADE_PLUS_DMG = 1;
+    private static final int DAMAGE = 8;
+    private static final int UPGRADE_PLUS_DMG = 2;
 
     // /STAT DECLARATION/
 
 
     public DriveBy() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        baseDamage = DAMAGE;
+        this.baseDamage = DAMAGE;
     }
 
     // Actions the card should do.
@@ -57,15 +57,15 @@ public class DriveBy extends AbstractDynamicCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractGameAction[] queue;
         if(this.upgraded){
-            queue = new AbstractGameAction[]
-                    {new DamageAction(m,new DamageInfo(p, this.damage,this.damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_HEAVY),
-                            new ApplyPowerAction(p,p, new FutureExtraDrawPower(p,p,EXTRADRAW),EXTRADRAW),
-                            new DrawCardAction(EXTRADRAW)};
+            queue = new AbstractGameAction[]{
+                    new ApplyPowerAction(p,p, new FutureExtraDrawPower(p,p,EXTRADRAW),EXTRADRAW),
+                    new DrawCardAction(EXTRADRAW),
+                    new DamageAction(m,new DamageInfo(p, this.damage,this.damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_HEAVY)};
         }
         else{
-            queue = new AbstractGameAction[]
-                    {new DamageAction(m,new DamageInfo(p, this.damage,this.damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_HEAVY),
-                            new ApplyPowerAction(p,p, new FutureExtraDrawPower(p,p,EXTRADRAW),EXTRADRAW)};
+            queue = new AbstractGameAction[]{
+                    new ApplyPowerAction(p,p, new FutureExtraDrawPower(p,p,EXTRADRAW),EXTRADRAW),
+                    new DamageAction(m,new DamageInfo(p, this.damage,this.damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_HEAVY)};
         }
         addToBot(new StandardShotAction(SHOTAMOUNT, queue));
     }
@@ -74,12 +74,12 @@ public class DriveBy extends AbstractDynamicCard {
     // Upgraded stats.
     @Override
     public void upgrade() {
-        if (!upgraded) {
-            upgradeName();
-            upgradeDamage(UPGRADE_PLUS_DMG);
-            upgradeBaseCost(UPGRADED_COST);
-            this.rawDescription = cardStrings.DESCRIPTION+cardStrings.UPGRADE_DESCRIPTION;
-            initializeDescription();
+        if (!this.upgraded) {
+            this.upgradeName();
+            this.upgradeDamage(UPGRADE_PLUS_DMG);
+            this.upgradeBaseCost(UPGRADED_COST);
+            this.rawDescription = cardStrings.UPGRADE_DESCRIPTION;
+            this.initializeDescription();
         }
     }
 }

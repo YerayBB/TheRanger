@@ -16,6 +16,7 @@ public class RandomHeavyWoundAttackAction extends AbstractGameAction {
         this.actionType = ActionType.SPECIAL;
     }
 
+    @Override
     public void update() {
         if(!this.isDone) {
             this.target =AbstractDungeon.getCurrRoom().monsters.getRandomMonster(true);

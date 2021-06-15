@@ -84,7 +84,6 @@ public class CondensedShot extends AbstractDynamicCard {
     @Override
     public void applyPowers() {
         this.rawDescription = cardStrings.DESCRIPTION;
-        this.rawDescription += cardStrings.EXTENDED_DESCRIPTION[0];
         int realBaseDamage = this.baseDamage;
         this.baseDamage = 0;
         if(AbstractDungeon.player.hasPower(EssencePower.POWER_ID) && AbstractDungeon.player.hasPower(DensityPower.POWER_ID)){
@@ -94,7 +93,7 @@ public class CondensedShot extends AbstractDynamicCard {
         super.applyPowers();
         this.baseDamage = realBaseDamage;
         this.isDamageModified = this.damage != this.baseDamage;
-        this.rawDescription += this.damage + cardStrings.EXTENDED_DESCRIPTION[1];
+        this.rawDescription += cardStrings.EXTENDED_DESCRIPTION[0];
         this.initializeDescription();
     }
 
@@ -120,7 +119,7 @@ public class CondensedShot extends AbstractDynamicCard {
     // Upgraded stats.
     @Override
     public void upgrade() {
-        if (!upgraded) {
+        if (!this.upgraded) {
             this.upgradeName();
             this.initializeDescription();
         }

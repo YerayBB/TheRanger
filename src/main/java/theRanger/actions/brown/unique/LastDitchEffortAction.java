@@ -21,7 +21,7 @@ public class LastDitchEffortAction extends AbstractGameAction {
         this.extra = extra;
         this.target = target;
         this.source = AbstractDungeon.player;
-        this.actionType = ActionType.SPECIAL;
+        this.actionType = ActionType.DAMAGE;
     }
 
     @Override

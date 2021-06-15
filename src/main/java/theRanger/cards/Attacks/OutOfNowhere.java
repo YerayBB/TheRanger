@@ -12,12 +12,13 @@ import theRanger.characters.TheDefault;
 
 import static theRanger.DefaultMod.makeCardPath;
 
-public class OutOfNowhere extends AbstractDynamicCard {
+public class OutOfNowhere extends AbstractDynamicCard {//DEPRECATED
 
     // TEXT DECLARATION
 
     public static final String ID = DefaultMod.makeID(OutOfNowhere.class.getSimpleName());
     public static final String IMG = makeCardPath("Attack.png");//makeCardPath("OutOfNowhere.png");
+
 
     // /TEXT DECLARATION/
 
@@ -55,11 +56,11 @@ public class OutOfNowhere extends AbstractDynamicCard {
     // Upgraded stats.
     @Override
     public void upgrade() {
-        if (!upgraded) {
-            upgradeName();
-            upgradeDamage(UPGRADE_PLUS_DMG);
-            upgradeBaseCost(UPGRADED_COST);
-            initializeDescription();
+        if (!this.upgraded) {
+            this.upgradeName();
+            this.upgradeDamage(UPGRADE_PLUS_DMG);
+            this.upgradeBaseCost(UPGRADED_COST);
+            this.initializeDescription();
         }
     }
 }
