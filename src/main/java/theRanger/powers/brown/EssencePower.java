@@ -15,6 +15,7 @@ import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.powers.DexterityPower;
 import theRanger.DefaultMod;
+import theRanger.util.ShotHelper;
 import theRanger.util.TextureLoader;
 
 import static theRanger.DefaultMod.makePowerPath;
@@ -79,7 +80,7 @@ public class EssencePower extends TwoAmountPower {
         }
         if (this.amount > this.amount2){
             this.amount = this.amount2;
-            //TODO overcharge
+            ShotHelper.TriggerOvercharge();
         }
         updateDescription();
     }
@@ -88,12 +89,19 @@ public class EssencePower extends TwoAmountPower {
     public void onInitialApplication() {
         if(this.owner.hasPower(SpiritPower.POWER_ID)){
             this.updateMax(this.owner.getPower(SpiritPower.POWER_ID).amount);
-        }//TODO overcharge
+        }
+        if (this.amount > this.amount2){
+            this.amount = this.amount2;
+            ShotHelper.TriggerOvercharge();
+        }
     }
 
     @Override
     public void reducePower(int reduceAmount) {
+        boolean check = this.amount > 0;
         super.reducePower(reduceAmount);
-        //TODO empty
+        if(check && this.amount == 0) {
+            ShotHelper.TriggerEmptiness();
+        }
     }
 }

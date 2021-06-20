@@ -172,7 +172,7 @@
   "theRanger:UnseenStrike": {
     "NAME": "Unseen Strike",
     "DESCRIPTION": "Deal damage equal to your theranger:Camouflage.",
-    "EXTENDED_DESCRIPTION": " NL (Deals !D! damage.)"
+    "EXTENDED_DESCRIPTION": [" NL (Deals !D! damage.)"]
   },
   "theRanger:Retrieve": {
     "NAME": "Retrieve",
@@ -263,8 +263,7 @@
     "EXTENDED_DESCRIPTION": [
       "NL (You made ",
       " theranger:Shots.)",
-      "NL(Deals ",
-      " damage.)"
+      "NL(Deals !D! damage.)"
     ]
   },
   "theRanger:BlendIn": {
@@ -291,7 +290,8 @@
   },
   "theRanger:BloodyCut": {
     "NAME": "Bloody Cut",
-    "DESCRIPTION": "Use 1 theranger:Kukri. NL Deal !D! damage.NL theranger:Multiplay. NL Exhaust."
+    "DESCRIPTION": "Use 1 theranger:Kukri. NL Deal !D! damage.NL theranger:Multiplay. NL Exhaust.",
+    "EXTENDED_DESCRIPTION": ["Ethereal. NL"]
   },
   "theRanger:Arsenal": {
     "NAME": "Arsenal",
@@ -366,7 +366,7 @@
   },
   "theRanger:BloodcurdlingGlare": {
     "NAME": "Bloodcurdling Glare",
-    "DESCRIPTION": "Gain !M! theranger:Kukri. NL theranger:Stealth: Apply !theRanger:M2! Vulnerable. NL Exhaust."
+    "DESCRIPTION": "Gain !M! theranger:Kukri. NL To ALL enemies: NL theranger:Stealth: Apply !theRanger:M2! Vulnerable. NL Exhaust."
   },
   "theRanger:Agility": {
     "NAME": "Agility",
@@ -404,7 +404,7 @@
   },
   "theRanger:Banish": {
     "NAME": "Banish",
-    "DESCRIPTION": "Gain !M! theranger:Camouflage. NL Exhaust."
+    "DESCRIPTION": "Gain !B! Block. NL Gain !M! theranger:Camouflage. NL Exhaust."
   },
   "theRanger:Frontflip": {
     "NAME": "Frontflip",
