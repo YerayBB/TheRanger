@@ -300,7 +300,7 @@
   },
   "theRanger:Disguise": {
     "NAME": "Disguise",
-    "DESCRIPTION": "Gain !M! theranger:Camouflage."
+    "DESCRIPTION": "Gain !B! Block. NL Gain !M! theranger:Camouflage."
   },
   "theRanger:TravelLight": {
     "NAME": "Travel Light",
@@ -320,7 +320,7 @@
   },
   "theRanger:Flare": {
     "NAME": "Flare",
-    "DESCRIPTION": "Apply !theRanger:I! theranger:Infused and !M! Weak to ALL enemies. NL Exhaust."
+    "DESCRIPTION": "Apply !theRanger:I! theranger:Infused and !M! Weak to ALL enemies."
   },
   "theRanger:ForestCommunion": {
     "NAME": "Forest Communion",
@@ -383,8 +383,8 @@
   },
   "theRanger:EnergeticEntrance": {
     "NAME": "Energetic Entrance",
-    "DESCRIPTION": "Innate. NL Gain !M! theranger:Vigor. NL Next turn, gain [E]. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Innate. NL Gain !M! theranger:Vigor. NL Next turn, gain [E][E]."
+    "DESCRIPTION": "Innate. NL Gain !theRanger:M2! theranger:Vigor. NL Next turn, gain [E]. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Innate. NL Gain !M! theranger:Vigor. NL Next turn, gain [E][E]. NL Exhaust"
   },
   "theRanger:Charity": {
     "NAME": "CharityDEPRECATED",
@@ -398,7 +398,7 @@
       " card.)"
     ]
   },
-  "theRanger:Concentration": {
+  "theRanger:Absorption": {
     "NAME": "Absorption",
     "DESCRIPTION": "Gain !M! theranger:Density, lose !theRanger:M2! theranger:Spirit."
   },

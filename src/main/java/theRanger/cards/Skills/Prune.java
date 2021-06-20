@@ -10,12 +10,12 @@ import theRanger.characters.TheDefault;
 
 import static theRanger.DefaultMod.makeCardPath;
 
-public class Charity extends AbstractDynamicCard {
+public class Prune extends AbstractDynamicCard {
 
     // TEXT DECLARATION
 
-    public static final String ID = DefaultMod.makeID(Charity.class.getSimpleName());
-    public static final String IMG = makeCardPath("Skill.png");//makeCardPath("Charity.png");
+    public static final String ID = DefaultMod.makeID(Prune.class.getSimpleName());
+    public static final String IMG = makeCardPath("Skill.png");//makeCardPath("Concentration.png");
 
     // /TEXT DECLARATION/
 
@@ -27,8 +27,8 @@ public class Charity extends AbstractDynamicCard {
     private static final CardType TYPE = CardType.SKILL;
     public static final CardColor COLOR = TheDefault.Enums.COLOR_BROWN;
 
-    private static final int COST = 2;
-    private static final int UPGRADED_COST = 2;
+    private static final int COST = 0;
+    private static final int UPGRADED_COST = 0;
 
     private static final int BLOCK = 0;
     private static final int UPGRADE_PLUS_BLOCK = 0;
@@ -36,7 +36,7 @@ public class Charity extends AbstractDynamicCard {
     // /STAT DECLARATION/
 
 
-    public Charity() {
+    public Prune() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         baseBlock = BLOCK;
     }

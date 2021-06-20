@@ -1,12 +1,17 @@
 package theRanger.cards.Skills;
 
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.watcher.VigorPower;
 import theRanger.DefaultMod;
 import theRanger.cards.AbstractDynamicCard;
 import theRanger.characters.TheDefault;
+import theRanger.powers.brown.EnergizedRangerPower;
 
 import static theRanger.DefaultMod.makeCardPath;
 
@@ -16,6 +21,7 @@ public class EnergeticEntrance extends AbstractDynamicCard {
 
     public static final String ID = DefaultMod.makeID(EnergeticEntrance.class.getSimpleName());
     public static final String IMG = makeCardPath("Skill.png");//makeCardPath("EnergeticEntrance.png");
+    private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
 
     // /TEXT DECLARATION/
 
@@ -28,36 +34,39 @@ public class EnergeticEntrance extends AbstractDynamicCard {
     public static final CardColor COLOR = TheDefault.Enums.COLOR_BROWN;
 
     private static final int COST = 0;
-    private static final int UPGRADED_COST = 0;
 
-    private static final int BLOCK = 0;
-    private static final int UPGRADE_PLUS_BLOCK = 0;
+    private static final int MAGIC = 1;
+    private static final int UPGRADE_PLUS_MAGIC = 1;
+
+    private static final int VIGOR_AMOUNT = 5;
 
     // /STAT DECLARATION/
 
 
     public EnergeticEntrance() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        baseBlock = BLOCK;
+        this.baseMagicNumber = MAGIC;
+        this.defaultBaseSecondMagicNumber = VIGOR_AMOUNT;
+        this.isInnate = true;
+        this.exhaust = true;
     }
 
-//TODO
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(
-                new GainBlockAction(p, p, block));
+        addToBot(new ApplyPowerAction(p, p, new EnergizedRangerPower(p, this.magicNumber), this.magicNumber));
+        addToBot(new ApplyPowerAction(p,p, new VigorPower(p, this.defaultSecondMagicNumber)));
     }
 
 
     // Upgraded stats.
     @Override
     public void upgrade() {
-        if (!upgraded) {
-            upgradeName();
-            upgradeBlock(UPGRADE_PLUS_BLOCK);
-            upgradeBaseCost(UPGRADED_COST);
-            initializeDescription();
+        if (!this.upgraded) {
+            this.upgradeName();
+            this.upgradeBlock(UPGRADE_PLUS_MAGIC);
+            this.rawDescription = cardStrings.UPGRADE_DESCRIPTION;
+            this.initializeDescription();
         }
     }
 }

@@ -36,7 +36,8 @@ public class Blooming extends AbstractDynamicCard {
     // /STAT DECLARATION/
 
 
-    public Blooming() {
+    public Blooming()
+    {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
     }
 

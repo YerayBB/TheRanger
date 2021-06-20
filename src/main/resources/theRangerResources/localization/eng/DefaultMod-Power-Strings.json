@@ -112,5 +112,12 @@
         "theRanger:StunNextTurnPower": {
                 "NAME": "Stun Next Turn",
                 "DESCRIPTIONS": ["Next turn get stslib:Stunned #b", " time.", "times."]
+        },
+        "theRanger:DrainPower": {
+                "NAME": "Drain",
+                "DESCRIPTIONS": [
+                        "When attacked, gain #b",
+                        " #yEssence."
+                ]
         }
 }
