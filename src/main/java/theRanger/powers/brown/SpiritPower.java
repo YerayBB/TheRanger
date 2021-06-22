@@ -82,4 +82,12 @@ public class SpiritPower extends AbstractPower {
             ((EssencePower) owner.getPower(EssencePower.POWER_ID)).updateMax(this.amount);
         }
     }
+
+    @Override
+    public void onRemove() {
+        super.onRemove();
+        if(owner.hasPower(EssencePower.POWER_ID)){
+            ((EssencePower) owner.getPower(EssencePower.POWER_ID)).updateMax(0);
+        }
+    }
 }

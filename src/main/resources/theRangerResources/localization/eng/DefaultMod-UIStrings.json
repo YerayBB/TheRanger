@@ -7,11 +7,17 @@
     ]
   },
 
-  "TheRanger:MissingKukri": {
+  "theRanger:MissingKukri": {
     "TEXT": [
       "Don't have any #rKukri to use.",
       "Ran out of #rKukris.",
       "Missing the required amount of #rKukris."
+    ]
+  },
+
+  "theRanger:PruneAction": {
+    "TEXT": [
+      "Exhaust"
     ]
   }
 }

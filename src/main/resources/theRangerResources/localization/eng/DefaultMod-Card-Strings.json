@@ -255,7 +255,8 @@
   },
   "theRanger:ShootingStar": {
   "NAME": "Shooting Star",
-  "DESCRIPTION": "theranger:Shot 3. NL Add a *Star *Fall to the bottom of your draw pile."
+    "DESCRIPTION": "theranger:Shot 3. NL Add a *Star *Fall to the bottom of your draw pile.",
+    "UPGRADE_DESCRIPTION": "Innate. NL theranger:Shot 3. NL Add a *Star *Fall+ to the bottom of your draw pile."
   },
   "theRanger:StarFall": {
     "NAME": "Star Fall",
@@ -304,7 +305,7 @@
   },
   "theRanger:TravelLight": {
     "NAME": "Travel Light",
-    "DESCRIPTION": "Lose ALL theranger:Essence, draw that amount of cards."
+    "DESCRIPTION": "Lose !M! theranger:Essence. NL Draw as many cards as theranger:Essence lost."
   },
   "theRanger:Decoy": {
     "NAME": "Decoy",
@@ -333,7 +334,7 @@
   },
   "theRanger:SuppressPresence": {
     "NAME": "Suppress Presence",
-    "DESCRIPTION": "Lose ALL theranger:Essence. Gain theranger:Camouflage equal to !M! times that amount."
+    "DESCRIPTION": "Lose ALL theranger:Essence. Gain Block equal to !B! times that amount. NL Gain theranger:Camouflage equal to !M! times that amount."
   },
   "theRanger:DrainIvy": {
     "NAME": "Drain Ivy",
@@ -345,7 +346,7 @@
   },
   "theRanger:SoulWave": {
     "NAME": "Soul Wave",
-    "DESCRIPTION": "Use !M! theranger:Essence.NL Each apply !theRanger:I! theranger:Infused to ALL enemies. NL Increase the amount of theranger:Essence used in this card by !theRanger:M2! this combat."
+    "DESCRIPTION": "Use !M! theranger:Essence. NL Gain !B! Block for each and apply !theRanger:I! theranger:Infused to ALL enemies. NL Increase the amount of theranger:Essence used for this card by !theRanger:M2! this combat."
   },
   "theRanger:Overconfidence": {
     "NAME": "Overconfidence",
@@ -395,7 +396,12 @@
     "DESCRIPTION": "Add a random card of the same type of your last card played. It cost 0 this turn. NL Exhaust.",
     "EXTENDED_DESCRIPTION": [
       "NL (Adds a ",
-      " card.)"
+      " card.)",
+      "#yATTACK",
+      "#ySKILL",
+      "#yPOWER",
+      "#rCURSE",
+      "#rSTATUS"
     ]
   },
   "theRanger:Absorption": {

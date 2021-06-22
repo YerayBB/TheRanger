@@ -108,7 +108,7 @@ public class Bloodshed extends AbstractDynamicCard {
         }
     }
 
-
+    @Override
     public void triggerOnGlowCheck() {
         if (AbstractDungeon.player.hasPower(KukriPower.POWER_ID)) {
             int count = 0;

@@ -1,5 +1,6 @@
 package theRanger.cards.Skills;
 
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -7,6 +8,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import theRanger.DefaultMod;
 import theRanger.cards.AbstractDynamicCard;
 import theRanger.characters.TheDefault;
+import theRanger.powers.brown.EssencePower;
 
 import static theRanger.DefaultMod.makeCardPath;
 
@@ -28,12 +30,11 @@ public class NimbleReload extends AbstractDynamicCard {
     public static final CardColor COLOR = TheDefault.Enums.COLOR_BROWN;
 
     private static final int COST = 1;
-    private static final int UPGRADED_COST = 1;
 
-    private static final int ESSENCE = 1;
-    private static final int UPGRADE_PLUS_ESSENCE = 2;
+    private static final int MAGIC = 1;
+    private static final int UPGRADE_PLUS_MAGIC = 2;
 
-    private static final int DRAW = 1;
+    private static final int SECONDMAGIC = 1;
 
 
 
@@ -42,27 +43,26 @@ public class NimbleReload extends AbstractDynamicCard {
 
     public NimbleReload() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        baseMagicNumber = ESSENCE;
-        defaultBaseSecondMagicNumber = DRAW;
+        this.baseMagicNumber = MAGIC;
+        this.defaultBaseSecondMagicNumber = SECONDMAGIC;
     }
 
 
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(
-                new DrawCardAction(p,magicNumber));
+        addToBot(new ApplyPowerAction(p,p,new EssencePower(p, this.magicNumber), this.magicNumber));
+        addToBot(new DrawCardAction(p,this.defaultSecondMagicNumber));
     }
 
 
     // Upgraded stats.
     @Override
     public void upgrade() {
-        if (!upgraded) {
-            upgradeName();
-            upgradeMagicNumber(UPGRADE_PLUS_ESSENCE);
-            //upgradeBaseCost(UPGRADED_COST);
-            initializeDescription();
+        if (!this.upgraded) {
+            this.upgradeName();
+            this.upgradeMagicNumber(UPGRADE_PLUS_MAGIC);
+            this.initializeDescription();
         }
     }
 }

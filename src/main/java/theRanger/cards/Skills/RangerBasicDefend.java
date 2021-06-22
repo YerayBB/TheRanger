@@ -28,7 +28,6 @@ public class RangerBasicDefend extends AbstractDynamicCard {
     public static final CardColor COLOR = TheDefault.Enums.COLOR_BROWN;
 
     private static final int COST = 1;
-    private static final int UPGRADED_COST = 1;
 
     private static final int BLOCK = 5;
     private static final int UPGRADE_PLUS_BLOCK = 3;
@@ -38,7 +37,7 @@ public class RangerBasicDefend extends AbstractDynamicCard {
 
     public RangerBasicDefend() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        baseBlock = BLOCK;
+        this.baseBlock = BLOCK;
 
         this.tags.add(CardTags.STARTER_DEFEND);
     }
@@ -47,18 +46,17 @@ public class RangerBasicDefend extends AbstractDynamicCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(
-                new GainBlockAction(p, p, block));
+        addToBot(new GainBlockAction(p, p, this.block));
     }
 
 
     // Upgraded stats.
     @Override
     public void upgrade() {
-        if (!upgraded) {
-            upgradeName();
-            upgradeBlock(UPGRADE_PLUS_BLOCK);
-            initializeDescription();
+        if (!this.upgraded) {
+            this.upgradeName();
+            this.upgradeBlock(UPGRADE_PLUS_BLOCK);
+            this.initializeDescription();
         }
     }
 }

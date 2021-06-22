@@ -1,11 +1,18 @@
 package theRanger.cards.Skills;
 
+import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.MakeTempCardAtBottomOfDeckAction;
+import com.megacrit.cardcrawl.actions.common.PutOnBottomOfDeckAction;
+import com.megacrit.cardcrawl.actions.unique.AddCardToDeckAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import theRanger.DefaultMod;
+import theRanger.actions.brown.generic.AddTempCardToBottomDrawPile;
+import theRanger.actions.brown.generic.StandardShotAction;
 import theRanger.cards.AbstractDynamicCard;
+import theRanger.cards.Generated.StarFall;
 import theRanger.characters.TheDefault;
 
 import static theRanger.DefaultMod.makeCardPath;
@@ -18,47 +25,44 @@ public class ShootingStar extends AbstractDynamicCard {
     public static final String IMG = makeCardPath("Skill.png");//makeCardPath("ShootingStar.png")
 
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
-    //public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
 
     // /TEXT DECLARATION/
 
 
     // STAT DECLARATION 	
 
-    private static final CardRarity RARITY = CardRarity.COMMON;
+    private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.SELF;
     private static final CardType TYPE = CardType.SKILL;
     public static final CardColor COLOR = TheDefault.Enums.COLOR_BROWN;
 
-    private static final int COST = 15;
-    private static final int UPGRADE_COST = 1;
-    private static final int MAGIC = 0;
-    private static final int UPGRADE_MAGIC = 0;
+    private static final int COST = 1;
+
+    private static final int SHOT = 3;
 
     // /STAT DECLARATION/
 
 
     public ShootingStar() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        magicNumber = baseMagicNumber = MAGIC;
+        this.cardsToPreview = new StarFall();
     }
 
-//TODO
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        //AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p,
-        //new CommonPower(p, p, magicNumber), magicNumber));
+        addToBot(new StandardShotAction(SHOT, new AbstractGameAction[]{new AddTempCardToBottomDrawPile(this.cardsToPreview.makeStatEquivalentCopy())}));
     }
 
     //Upgraded stats.
     @Override
     public void upgrade() {
-        if (!upgraded) {
-            upgradeName();
-            upgradeMagicNumber(UPGRADE_MAGIC);
-            //rawDescription = UPGRADE_DESCRIPTION;
-            initializeDescription();
+        if (!this.upgraded) {
+            this.upgradeName();
+            this.isInnate = true;
+            this.cardsToPreview.upgrade();
+            this.rawDescription = cardStrings.UPGRADE_DESCRIPTION;
+            this.initializeDescription();
         }
     }
 }
