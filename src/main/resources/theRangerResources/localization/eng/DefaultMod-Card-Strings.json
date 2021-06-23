@@ -91,7 +91,8 @@
   },
   "theRanger:Overdraw": {
     "NAME": "Overdraw",
-    "DESCRIPTION": "The first time you theranger:Shot each turn does not consume theranger:Essence. NL Draw 1 less card."
+    "DESCRIPTION": "The first time you theranger:Shot each turn does not consume theranger:Essence. NL Draw 1 less card.",
+    "UPGRADE_DESCRIPTION": "Innate. NL The first time you theranger:Shot each turn does not consume theranger:Essence. NL Draw 1 less card."
   },
   "theRanger:Tuning": {
     "NAME": "Tuning",
@@ -104,7 +105,7 @@
   "theRanger:ForestAid": {
     "NAME": "Forest Aid",
     "DESCRIPTION": "Add !M! *Will-o-Wisp to your Draw pile. NL Whenever you draw a *Will-o-Wisp, draw !theRanger:M2! card.",
-    "UPGRADE_DESCRIPTION": "Add !M! *Will-o-Wisp+ to your Draw pile. NL Whenever you draw a *Will-o-Wisp, draw !theRanger:M2! cards."
+    "UPGRADE_DESCRIPTION": "Add !M! *Will-o-Wisp+ to your Draw pile. NL Whenever you draw a *Will-o-Wisp, draw !theRanger:M2! card."
   },
   "theRanger:Sanctuary": {
     "NAME": "Sanctuary",
@@ -117,7 +118,7 @@
   "theRanger:LeaveNoTrace": {
     "NAME": "Leave No Trace",
     "DESCRIPTION": "Whenever you gain theranger:Camouflage, draw !M! card.",
-    "UPGRADE_DESCRIPTION": "Whenever you gain theranger:Camouflage, draw !M! card."
+    "UPGRADE_DESCRIPTION": "Innate. NL Whenever you gain theranger:Camouflage, draw !M! card."
   },
   "theRanger:Shelter": {
     "NAME": "Shelter",
@@ -376,7 +377,8 @@
   },
   "theRanger:WillOWisp": {
     "NAME": "Will-o-Wisp",
-    "DESCRIPTION": "Unplayable. NL Whenever this card is drawn gain !M! theranger:Essence."
+    "DESCRIPTION": "Unplayable. NL Whenever this card is drawn gain !M! theranger:Essence.",
+    "UPGRADE_DESCRIPTION": "Unplayable. NL Whenever this card is drawn gain !M! theranger:Essence. NL If you can't gain more theranger:Essence, gain [E] instead."
   },
   "theRanger:Quickness": {
     "NAME": "Quickness",

@@ -1,62 +1,59 @@
-package theRanger.cards.Powers;
+package theRanger.cards.Skills;
 
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import theRanger.DefaultMod;
+import theRanger.actions.brown.unique.UncertainManeuverAction;
 import theRanger.cards.AbstractDynamicCard;
 import theRanger.characters.TheDefault;
-import theRanger.powers.brown.TrapPower;
 
 import static theRanger.DefaultMod.makeCardPath;
 
-public class Trap extends AbstractDynamicCard {
+public class UncertainManeuver extends AbstractDynamicCard {
 
-    // TEXT DECLARATION 
+    // TEXT DECLARATION
 
-    public static final String ID = DefaultMod.makeID(Trap.class.getSimpleName());
-    public static final String IMG = makeCardPath("Power.png");//makeCardPath("Trap.png")
-
+    public static final String ID = DefaultMod.makeID(UncertainManeuver.class.getSimpleName());
+    public static final String IMG = makeCardPath("Skill.png");//makeCardPath("UncertainManeuver.png");
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
-    //public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
+
 
     // /TEXT DECLARATION/
 
 
-    // STAT DECLARATION 	
+    // STAT DECLARATION
 
     private static final CardRarity RARITY = CardRarity.RARE;
     private static final CardTarget TARGET = CardTarget.SELF;
-    private static final CardType TYPE = CardType.POWER;
+    private static final CardType TYPE = CardType.SKILL;
     public static final CardColor COLOR = TheDefault.Enums.COLOR_BROWN;
 
-    private static final int COST = 3;
-    private static final int UPGRADE_COST = 2;
-
-    private static final int MAGIC = 1;
+    private static final int COST = -1;
 
     // /STAT DECLARATION/
 
 
-    public Trap() {
+    public UncertainManeuver() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        this.baseMagicNumber = MAGIC;
+        this.exhaust = true;
     }
+
 
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(p,p, new TrapPower(p,p,this.magicNumber), this.magicNumber));
+        addToBot(new UncertainManeuverAction(this.upgraded, this.freeToPlayOnce, this.energyOnUse));
     }
 
-    //Upgraded stats.
+
+    // Upgraded stats.
     @Override
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            this.upgradeBaseCost(UPGRADE_COST);
+            this.rawDescription = cardStrings.UPGRADE_DESCRIPTION;
             this.initializeDescription();
         }
     }

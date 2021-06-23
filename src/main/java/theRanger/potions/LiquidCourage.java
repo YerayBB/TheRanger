@@ -25,15 +25,15 @@ public class LiquidCourage extends CustomPotion {
     public static final String NAME = potionStrings.NAME;
     public static final String[] DESCRIPTIONS = potionStrings.DESCRIPTIONS;
 
-    public static final int MAGIC = 15;
+    public static final int MAGIC = 20;
 
     public LiquidCourage() {
         // The bottle shape and inside is determined by potion size and color. The actual colors are the main DefaultMod.java
         super(NAME, POTION_ID, PotionRarity.RARE, PotionSize.EYE, PotionColor.SMOKE);
 
-        labOutlineColor = DefaultMod.DEFAULT_BROWN;
+        this.labOutlineColor = DefaultMod.DEFAULT_BROWN;
         // Potency is the damage/magic number equivalent of potions.
-        isThrown = false;
+        this.isThrown = false;
 
         /*potency = getPotency();
 
@@ -50,20 +50,20 @@ public class LiquidCourage extends CustomPotion {
     }
 
     public void initializeData() {
-        potency = getPotency();
+        this.potency = getPotency();
         // Initialize the Description
-        description = DESCRIPTIONS[0] + potency + DESCRIPTIONS[1];
+        this.description = DESCRIPTIONS[0] + potency + DESCRIPTIONS[1];
         // Initialize the on-hover name + description
-        tips.clear();
-        tips.add(new PowerTip(name, description));
-        tips.add(new PowerTip(BaseMod.getKeywordTitle("theranger:Vigor"),BaseMod.getKeywordDescription("theranger:Vigor")));
+        this.tips.clear();
+        this.tips.add(new PowerTip(name, description));
+        this.tips.add(new PowerTip(BaseMod.getKeywordTitle("theranger:Vigor"),BaseMod.getKeywordDescription("theranger:Vigor")));
     }
 
     @Override
     public void use(AbstractCreature target) {
         if (AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT) {
             AbstractCreature p = AbstractDungeon.player;
-            this.addToBot(new ApplyPowerAction(p, p, new VigorPower(p, potency), potency));
+            this.addToBot(new ApplyPowerAction(p, p, new VigorPower(p, this.potency), this.potency));
         }
     }
 

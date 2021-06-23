@@ -1,12 +1,19 @@
 package theRanger.cards.Skills;
 
+import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.WeakPower;
 import theRanger.DefaultMod;
+import theRanger.actions.brown.unique.WarningShotAction;
 import theRanger.cards.AbstractDynamicCard;
 import theRanger.characters.TheDefault;
+import theRanger.powers.brown.InfusedPower;
+
+import java.util.Iterator;
 
 import static theRanger.DefaultMod.makeCardPath;
 
@@ -22,42 +29,43 @@ public class WarningShot extends AbstractDynamicCard {
 
     // STAT DECLARATION
 
-    private static final CardRarity RARITY = CardRarity.COMMON;
-    private static final CardTarget TARGET = CardTarget.SELF;
+    private static final CardRarity RARITY = CardRarity.UNCOMMON;
+    private static final CardTarget TARGET = CardTarget.ENEMY;
     private static final CardType TYPE = CardType.SKILL;
     public static final CardColor COLOR = TheDefault.Enums.COLOR_BROWN;
 
-    private static final int COST = 0;
-    private static final int UPGRADED_COST = 0;
+    private static final int COST = 2;
+    private static final int UPGRADED_COST = 1;
 
-    private static final int BLOCK = 0;
-    private static final int UPGRADE_PLUS_BLOCK = 0;
+    private static final int MAGIC = 2;
+    private static final int SECONDMAGIC = 1;
+
+    private static final int SHOT = 1;
 
     // /STAT DECLARATION/
 
 
     public WarningShot() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        baseBlock = BLOCK;
+        this.baseMagicNumber = MAGIC;
+        this.defaultBaseSecondMagicNumber = SECONDMAGIC;
     }
 
 //TODO
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(
-                new GainBlockAction(p, p, block));
+        addToBot(new WarningShotAction(m, this.defaultSecondMagicNumber, this.magicNumber, SHOT));
     }
 
 
     // Upgraded stats.
     @Override
     public void upgrade() {
-        if (!upgraded) {
-            upgradeName();
-            upgradeBlock(UPGRADE_PLUS_BLOCK);
-            upgradeBaseCost(UPGRADED_COST);
-            initializeDescription();
+        if (!this.upgraded) {
+            this.upgradeName();
+            this.upgradeBaseCost(UPGRADED_COST);
+            this.initializeDescription();
         }
     }
 }

@@ -32,9 +32,9 @@ public class BottledSoul extends CustomPotion {
         // The bottle shape and inside is determined by potion size and color. The actual colors are the main DefaultMod.java
         super(NAME, POTION_ID, PotionRarity.UNCOMMON, PotionSize.BOTTLE, PotionColor.SMOKE);
 
-        labOutlineColor = DefaultMod.DEFAULT_BROWN;
+        this.labOutlineColor = DefaultMod.DEFAULT_BROWN;
         // Potency is the damage/magic number equivalent of potions.
-        isThrown = false;
+        this.isThrown = false;
         //initializeData();
        /* potency = getPotency();
 
@@ -50,21 +50,20 @@ public class BottledSoul extends CustomPotion {
     }
 
     public void initializeData() {
-        potency = getPotency();
-        description = DESCRIPTIONS[0] + potency + DESCRIPTIONS[1] + potency + DESCRIPTIONS[2];
-        tips.clear();
-        tips.add(new PowerTip(name, description));
-        tips.add(new PowerTip(BaseMod.getKeywordTitle("theranger:Spirit"), BaseMod.getKeywordDescription("theranger:Spirit")));
-        tips.add(new PowerTip(BaseMod.getKeywordTitle("theranger:Essence"), BaseMod.getKeywordDescription("theranger:Essence")));
+        this.potency = getPotency();
+        this.description = DESCRIPTIONS[0] + potency + DESCRIPTIONS[1] + potency + DESCRIPTIONS[2];
+        this.tips.clear();
+        this.tips.add(new PowerTip(name, description));
+        this.tips.add(new PowerTip(BaseMod.getKeywordTitle("theranger:Spirit"), BaseMod.getKeywordDescription("theranger:Spirit")));
+        this.tips.add(new PowerTip(BaseMod.getKeywordTitle("theranger:Essence"), BaseMod.getKeywordDescription("theranger:Essence")));
     }
 
-        //TODO
     @Override
     public void use(AbstractCreature target) {
         target = AbstractDungeon.player;
         if (AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT) {
-            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(target, AbstractDungeon.player, new SpiritPower(target, potency), potency));
-            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(target, AbstractDungeon.player, new EssencePower(target, potency), potency));
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(target, AbstractDungeon.player, new SpiritPower(target, this.potency), this.potency));
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(target, AbstractDungeon.player, new EssencePower(target, this.potency), this.potency));
         }
     }
 

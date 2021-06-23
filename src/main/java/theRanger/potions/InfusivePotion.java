@@ -36,14 +36,14 @@ public class InfusivePotion extends CustomPotion {
     public static final String NAME = potionStrings.NAME;
     public static final String[] DESCRIPTIONS = potionStrings.DESCRIPTIONS;
 
-    public static final int MAGIC = 10;
+    public static final int MAGIC = 7;
 
     public InfusivePotion() {
         // The bottle shape and inside is determined by potion size and color. The actual colors are the main DefaultMod.java
         super(NAME, POTION_ID, PotionRarity.COMMON, PotionSize.MOON, PotionColor.SMOKE);
 
-        labOutlineColor = DefaultMod.DEFAULT_BROWN;
-        isThrown = true;
+        this.labOutlineColor = DefaultMod.DEFAULT_BROWN;
+        this.isThrown = true;
         //this.initializeData();
 
        /* // Potency is the damage/magic number equivalent of potions.
@@ -62,14 +62,14 @@ public class InfusivePotion extends CustomPotion {
     }
 
     public void initializeData() {
-        potency = getPotency();
-        description = DESCRIPTIONS[0] + potency + DESCRIPTIONS[1];
-        tips.clear();
-        tips.add(new PowerTip(name, description));
-        tips.add(new PowerTip(BaseMod.getKeywordTitle("theranger:Infused"),BaseMod.getKeywordDescription("theranger:Infused")));
+        this.potency = getPotency();
+        this.description = DESCRIPTIONS[0] + potency + DESCRIPTIONS[1];
+        this.tips.clear();
+        this.tips.add(new PowerTip(name, description));
+        this.tips.add(new PowerTip(BaseMod.getKeywordTitle("theranger:Infused"),BaseMod.getKeywordDescription("theranger:Infused")));
     }
 
-    //TODO
+
     @Override
     public void use(AbstractCreature target) {
         if(AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT) {
@@ -88,7 +88,7 @@ public class InfusivePotion extends CustomPotion {
 
             while (var2.hasNext()) {
                 AbstractMonster m = (AbstractMonster) var2.next();
-                this.addToBot(new ApplyPowerAction(m, AbstractDungeon.player, new InfusedPower(m, AbstractDungeon.player, potency), potency));
+                this.addToBot(new ApplyPowerAction(m, AbstractDungeon.player, new InfusedPower(m, AbstractDungeon.player, this.potency), this.potency));
             }
         }
 

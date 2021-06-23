@@ -1,9 +1,12 @@
 package theRanger.cards.Powers;
 
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.DexterityPower;
+import com.megacrit.cardcrawl.powers.StrengthPower;
 import theRanger.DefaultMod;
 import theRanger.cards.AbstractDynamicCard;
 import theRanger.characters.TheDefault;
@@ -25,40 +28,41 @@ public class Shelter extends AbstractDynamicCard {
 
     // STAT DECLARATION 	
 
-    private static final CardRarity RARITY = CardRarity.COMMON;
+    private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.SELF;
     private static final CardType TYPE = CardType.POWER;
     public static final CardColor COLOR = TheDefault.Enums.COLOR_BROWN;
 
-    private static final int COST = 1;
-    private static final int UPGRADE_COST = 1;
-    private static final int MAGIC = 3;
-    private static final int UPGRADE_MAGIC = 1;
+    private static final int COST = 2;
+
+    private static final int MAGIC = 2;
+    private static final int UPGRADE_MAGIC = 2;
+
+    private static final int SECONDMAGIC = 2;
 
     // /STAT DECLARATION/
 
 
     public Shelter() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        magicNumber = baseMagicNumber = MAGIC;
+        this.baseMagicNumber = MAGIC;
+        this.defaultBaseSecondMagicNumber = SECONDMAGIC;
     }
 
-//TODO
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        //AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p,
-        //new CommonPower(p, p, magicNumber), magicNumber));
+        addToBot(new ApplyPowerAction(p,p,new DexterityPower(p,this.magicNumber),this.magicNumber));
+        addToBot(new ApplyPowerAction(p,p,new StrengthPower(p, -this.defaultSecondMagicNumber), -this.defaultSecondMagicNumber));
     }
 
     //Upgraded stats.
     @Override
     public void upgrade() {
-        if (!upgraded) {
-            upgradeName();
-            upgradeMagicNumber(UPGRADE_MAGIC);
-            //rawDescription = UPGRADE_DESCRIPTION;
-            initializeDescription();
+        if (!this.upgraded) {
+            this.upgradeName();
+            this.upgradeMagicNumber(UPGRADE_MAGIC);
+            this.initializeDescription();
         }
     }
 }
