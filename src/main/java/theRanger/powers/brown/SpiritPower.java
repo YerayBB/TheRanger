@@ -34,15 +34,15 @@ public class SpiritPower extends AbstractPower {
     private static final Texture tex32 = TextureLoader.getTexture(makePowerPath("placeholder_power32.png"));
 
     public SpiritPower(final AbstractCreature owner, final int amount) {
-        name = NAME;
-        ID = POWER_ID;
+        this.name = NAME;
+        this.ID = POWER_ID;
 
         this.owner = owner;
         this.amount = amount;
 
         this.priority = 2;
 
-        isTurnBased = false;
+        this.isTurnBased = false;
 
         // We load those txtures here.
         this.region128 = new TextureAtlas.AtlasRegion(tex84, 0, 0, 84, 84);
@@ -56,7 +56,7 @@ public class SpiritPower extends AbstractPower {
     public void updateDescription() {
         if(this.amount < 0) this.type = PowerType.DEBUFF;
         else this.type = PowerType.BUFF;
-            description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[1];
+        this.description = DESCRIPTIONS[0] + this.amount + DESCRIPTIONS[1];
     }
 
     @Override

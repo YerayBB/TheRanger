@@ -39,20 +39,20 @@ public class InfusedPower extends AbstractPower implements HealthBarRenderPower 
     private static final Texture tex84 = TextureLoader.getTexture(makePowerPath("placeholder_power84.png"));
     private static final Texture tex32 = TextureLoader.getTexture(makePowerPath("placeholder_power32.png"));
 
-    private boolean isRefreshed = false;
+    private boolean isRefreshed;
 
     public InfusedPower(final AbstractCreature owner, final AbstractCreature source, final int amount) {
-        name = NAME;
-        ID = POWER_ID;
+        this.name = NAME;
+        this.ID = POWER_ID;
 
         this.owner = owner;
         this.amount = amount;
         this.source = source;
 
-        type = PowerType.DEBUFF;
-        isTurnBased = true;
+        this.type = PowerType.DEBUFF;
+        this.isTurnBased = true;
 
-
+        this.isRefreshed = true;
 
         // We load those txtures here.
         this.region128 = new TextureAtlas.AtlasRegion(tex84, 0, 0, 84, 84);
@@ -65,7 +65,7 @@ public class InfusedPower extends AbstractPower implements HealthBarRenderPower 
     @Override
     public void updateDescription() {
         //if (amount == 1) {
-            description = DESCRIPTIONS[0];
+        this.description = DESCRIPTIONS[0];
         //} else if (amount > 1) {
             //description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[2];
         //}
@@ -75,8 +75,8 @@ public class InfusedPower extends AbstractPower implements HealthBarRenderPower 
     @Override
     public void wasHPLost(DamageInfo info, int damageAmount) {
         if(damageAmount > 0 && (this.owner.currentHealth-damageAmount) <= this.amount){
-            addToBot(new DamageAction(this.owner,new DamageInfo(this.source, this.amount, DamageInfo.DamageType.THORNS)));
-            addToBot(new ReducePowerAction(this.owner, this.source, this, this.amount));
+            this.addToBot(new DamageAction(this.owner,new DamageInfo(this.source, this.amount, DamageInfo.DamageType.THORNS)));
+            this.addToBot(new ReducePowerAction(this.owner, this.source, this, this.amount));
         }
         super.wasHPLost(info, damageAmount);
     }
@@ -86,8 +86,8 @@ public class InfusedPower extends AbstractPower implements HealthBarRenderPower 
         super.stackPower(stackAmount);
         if(stackAmount > 0) this.isRefreshed = true;
         if(!this.owner.isDead && !this.owner.halfDead && !this.owner.isDying && this.owner.currentHealth <= this.amount){
-            addToBot(new DamageAction(owner,new DamageInfo(source, amount, DamageInfo.DamageType.THORNS)));
-            addToBot(new ReducePowerAction(owner, source, this, amount));
+            this.addToBot(new DamageAction(owner,new DamageInfo(source, amount, DamageInfo.DamageType.THORNS)));
+            this.addToBot(new ReducePowerAction(owner, source, this, amount));
         }
     }
 

@@ -36,15 +36,15 @@ public class LeaveNoTracePower extends AbstractPower implements OnReceivePowerPo
     private static final Texture tex32 = TextureLoader.getTexture(makePowerPath("placeholder_power32.png"));
 
     public LeaveNoTracePower(final AbstractCreature owner, final AbstractCreature source, final int amount) {
-        name = NAME;
-        ID = POWER_ID;
+        this.name = NAME;
+        this.ID = POWER_ID;
 
         this.owner = owner;
         this.amount = amount;
         this.source = source;
 
-        type = PowerType.BUFF;
-        isTurnBased = false;
+        this.type = PowerType.BUFF;
+        this.isTurnBased = false;
 
         // We load those txtures here.
         this.region128 = new TextureAtlas.AtlasRegion(tex84, 0, 0, 84, 84);
@@ -57,7 +57,7 @@ public class LeaveNoTracePower extends AbstractPower implements OnReceivePowerPo
     @Override
     public void updateDescription() {
 
-            description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[1];
+            this.description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[1];
 
     }
 
@@ -73,6 +73,11 @@ public class LeaveNoTracePower extends AbstractPower implements OnReceivePowerPo
 
     @Override
     public int onReceivePowerStacks(AbstractPower power, AbstractCreature target, AbstractCreature source, int stackAmount) {
+        if(target == this.owner){
+            if(power instanceof CamouflagePower){
+                this.addToBot(new DrawCardAction(this.amount));
+            }
+        }
         return stackAmount;
     }
 

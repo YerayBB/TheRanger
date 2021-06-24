@@ -42,7 +42,10 @@ public class CourageMedal extends CustomRelic implements BetterOnApplyPowerPower
     @Override
     public int betterOnApplyPowerStacks(AbstractPower power, AbstractCreature target, AbstractCreature source, int stackAmount) {
         if(power instanceof VigorPower){
-            if(target.isPlayer) return stackAmount+EFFECT;
+            if(target.isPlayer){
+                this.flash();
+                return stackAmount+EFFECT;
+            }
         }
         return stackAmount;
     }

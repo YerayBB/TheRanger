@@ -34,41 +34,33 @@ public class TrapPower extends AbstractPower {
     private static final Texture tex84 = TextureLoader.getTexture(makePowerPath("placeholder_power84.png"));
     private static final Texture tex32 = TextureLoader.getTexture(makePowerPath("placeholder_power32.png"));
 
-    private int turnCamo;
 
     public TrapPower(final AbstractCreature owner, final AbstractCreature source, final int amount) {
-        name = NAME;
-        ID = POWER_ID;
+        this.name = NAME;
+        this.ID = POWER_ID;
 
         this.owner = owner;
         this.amount = amount;
         this.source = source;
 
-        type = PowerType.BUFF;
-        isTurnBased = false;
+        this.type = PowerType.BUFF;
+        this.isTurnBased = false;
 
         // We load those txtures here.
         this.region128 = new TextureAtlas.AtlasRegion(tex84, 0, 0, 84, 84);
         this.region48 = new TextureAtlas.AtlasRegion(tex32, 0, 0, 32, 32);
 
-        this.priority = 7;
-        updateDescription();
+        this.priority = 3;
+        this.updateDescription();
     }
 
     // Update the description when you apply this power. (i.e. add or remove an "s" in keyword(s))
     @Override
     public void updateDescription() {
-        if (amount == 1) {
-            description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[1];
+        if (this.amount == 1) {
+            this.description = DESCRIPTIONS[0] + this.amount + DESCRIPTIONS[1];
         } else if (amount > 1) {
-            description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[2];
-        }
-    }
-
-    @Override
-    public void atEndOfTurn(boolean isPlayer) {
-        if(isPlayer){
-            this.turnCamo = AbstractDungeon.player.getPower("theRanger:Camouflage").amount;
+            this.description = DESCRIPTIONS[0] + this.amount + DESCRIPTIONS[2];
         }
     }
 
@@ -77,8 +69,10 @@ public class TrapPower extends AbstractPower {
         if(damageAmount > 0) {
             if (info.type == DamageInfo.DamageType.NORMAL) {
                 this.flash();
-                if(info.output <= this.turnCamo){
-                    this.addToBot(new ApplyPowerAction(info.owner,this.owner,new StunNextTurnPower(info.owner,this.owner,1),1));
+                if(this.owner.hasPower(CamouflagePower.POWER_ID)) {
+                    if (info.output <= this.owner.getPower(CamouflagePower.POWER_ID).amount) {
+                        this.addToBot(new ApplyPowerAction(info.owner, this.owner, new StunNextTurnPower(info.owner, this.owner, 1), 1));
+                    }
                 }
                 this.addToTop(new ReducePowerAction(this.owner,this.owner,this.ID,1));
                 return 0;

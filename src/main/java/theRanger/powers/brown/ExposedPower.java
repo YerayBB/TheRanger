@@ -3,6 +3,7 @@ package theRanger.powers.brown;
 import basemod.interfaces.CloneablePowerInterface;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
+import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.InstantKillAction;
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
@@ -15,6 +16,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.powers.DexterityPower;
+import com.megacrit.cardcrawl.vfx.combat.OfferingEffect;
 import theRanger.DefaultMod;
 import theRanger.util.TextureLoader;
 
@@ -36,32 +38,35 @@ public class ExposedPower extends AbstractPower {
     private static final Texture tex32 = TextureLoader.getTexture(makePowerPath("placeholder_power32.png"));
 
     public ExposedPower(final AbstractCreature owner) {
-        name = NAME;
-        ID = POWER_ID;
+        this.name = NAME;
+        this.ID = POWER_ID;
 
         this.owner = owner;
         this.amount = -1;
 
-        type = PowerType.BUFF;
-        isTurnBased = false;
+        this.type = PowerType.BUFF;
+        this.isTurnBased = false;
 
         // We load those txtures here.
         this.region128 = new TextureAtlas.AtlasRegion(tex84, 0, 0, 84, 84);
         this.region48 = new TextureAtlas.AtlasRegion(tex32, 0, 0, 32, 32);
 
-        updateDescription();
+        this.updateDescription();
     }
 
     // Update the description when you apply this power. (i.e. add or remove an "s" in keyword(s))
     @Override
     public void updateDescription() {
-            description = DESCRIPTIONS[0];
+            this.description = DESCRIPTIONS[0];
     }
 
     @Override
     public void wasHPLost(DamageInfo info, int damageAmount) {
         if (info.owner != null && info.owner != this.owner && info.type == DamageInfo.DamageType.NORMAL && damageAmount > 0) {
             this.flash();
+            this.addToBot(new VFXAction(new OfferingEffect(), 0.1f));
+            this.addToBot(new VFXAction(new OfferingEffect(), 0.1f));
+            this.addToBot(new VFXAction(new OfferingEffect(), 0.1f));
             this.addToBot(new InstantKillAction(this.owner));
         }
     }

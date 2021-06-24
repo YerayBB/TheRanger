@@ -38,28 +38,28 @@ public class ApolloPower extends AbstractPower {
 
 
     public ApolloPower(final AbstractCreature owner, final AbstractCreature source, final int dmg) {
-        name = NAME;
-        ID = POWER_ID;
+        this.name = NAME;
+        this.ID = POWER_ID;
 
         this.owner = owner;
         this.amount = dmg;
         this.source = source;
 
-        type = PowerType.DEBUFF;
-        isTurnBased = true;
+        this.type = PowerType.DEBUFF;
+        this.isTurnBased = true;
 
         // We load those txtures here.
         this.region128 = new TextureAtlas.AtlasRegion(tex84, 0, 0, 84, 84);
         this.region48 = new TextureAtlas.AtlasRegion(tex32, 0, 0, 32, 32);
 
-        updateDescription();
+        this.updateDescription();
     }
 
     // Update the description when you apply this power. (i.e. add or remove an "s" in keyword(s))
     @Override
     public void updateDescription() {
 
-            description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[1];
+            this.description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[1];
 
     }
 

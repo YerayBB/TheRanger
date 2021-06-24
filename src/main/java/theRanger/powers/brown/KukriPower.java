@@ -36,22 +36,22 @@ public class KukriPower extends AbstractPower {
     private static final Texture tex32 = TextureLoader.getTexture(makePowerPath("placeholder_power32.png"));
 
     public KukriPower(final AbstractCreature owner, final AbstractCreature source, final int amount) {
-        name = NAME;
-        ID = POWER_ID;
+        this.name = NAME;
+        this.ID = POWER_ID;
 
         this.priority = 2;
         this.owner = owner;
-        this.amount = amount;
+        this.amount = Math.min(amount, MAX);
         this.source = source;
 
-        type = PowerType.BUFF;
-        isTurnBased = false;
+        this.type = PowerType.BUFF;
+        this.isTurnBased = false;
 
         // We load those txtures here.
         this.region128 = new TextureAtlas.AtlasRegion(tex84, 0, 0, 84, 84);
         this.region48 = new TextureAtlas.AtlasRegion(tex32, 0, 0, 32, 32);
 
-        updateDescription();
+        this.updateDescription();
     }
 
     // Update the description when you apply this power. (i.e. add or remove an "s" in keyword(s))
@@ -65,7 +65,7 @@ public class KukriPower extends AbstractPower {
         super.onInitialApplication();
         if(this.amount > MAX){
             this.amount = MAX;
-            updateDescription();
+            this.updateDescription();
         }
     }
 
@@ -74,7 +74,7 @@ public class KukriPower extends AbstractPower {
         super.stackPower(stackAmount);
         if(this.amount > MAX){
             this.amount = MAX;
-            updateDescription();
+            this.updateDescription();
         }
     }
 

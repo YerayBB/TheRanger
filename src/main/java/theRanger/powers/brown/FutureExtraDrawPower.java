@@ -38,8 +38,8 @@ public class FutureExtraDrawPower extends TwoAmountPower {
     private static final Texture tex32 = TextureLoader.getTexture(makePowerPath("placeholder_power32.png"));
 
     public FutureExtraDrawPower(final AbstractCreature owner, final AbstractCreature source, final int amount) {
-        name = NAME;
-        ID = POWER_ID;
+        this.name = NAME;
+        this.ID = POWER_ID;
 
         this.owner = owner;
         this.amount = amount;
@@ -70,18 +70,18 @@ public class FutureExtraDrawPower extends TwoAmountPower {
     @Override
     public void updateDescription() {
 
-            description = DESCRIPTIONS[0] + this.amount2 + DESCRIPTIONS[2] + DESCRIPTIONS[1] + this.amount2 + DESCRIPTIONS[2];
+        this.description = DESCRIPTIONS[0] + this.amount2 + DESCRIPTIONS[2] + DESCRIPTIONS[1] + this.amount2 + DESCRIPTIONS[2];
 
     }
 
     @Override
     public void atStartOfTurnPostDraw() {
         this.flash();
-        if(this.amount > 0) addToBot(new DrawCardAction(this.owner, this.amount));
+        if(this.amount > 0) this.addToBot(new DrawCardAction(this.owner, this.amount));
         this.amount = this.amount2;
         this.amount2 = 0;
         if(this.amount == 0){
-            addToBot(new RemoveSpecificPowerAction(this.owner, this.source, this.ID));
+            this.addToBot(new RemoveSpecificPowerAction(this.owner, this.source, this.ID));
         }
         else{
             this.updateDescription();

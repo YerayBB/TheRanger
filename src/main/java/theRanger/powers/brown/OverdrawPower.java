@@ -38,15 +38,15 @@ public class OverdrawPower extends AbstractPower implements OnPreShotTrigger, On
     private int shotsTurn;
 
     public OverdrawPower(final AbstractCreature owner, final AbstractCreature source, final int amount) {
-        name = NAME;
-        ID = POWER_ID;
+        this.name = NAME;
+        this.ID = POWER_ID;
 
         this.owner = owner;
         this.amount = amount;
         this.source = source;
 
-        type = PowerType.BUFF;
-        isTurnBased = false;
+        this.type = PowerType.BUFF;
+        this.isTurnBased = false;
 
         this.shotsTurn = 0;
 
@@ -54,29 +54,32 @@ public class OverdrawPower extends AbstractPower implements OnPreShotTrigger, On
         this.region128 = new TextureAtlas.AtlasRegion(tex84, 0, 0, 84, 84);
         this.region48 = new TextureAtlas.AtlasRegion(tex32, 0, 0, 32, 32);
 
-        updateDescription();
+        this.updateDescription();
     }
 
     // Update the description when you apply this power. (i.e. add or remove an "s" in keyword(s))
     @Override
     public void updateDescription() {
-            description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[1] + this.shotsTurn + DESCRIPTIONS[2];
+        this.description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[1] + this.shotsTurn + DESCRIPTIONS[2];
     }
 
     @Override
     public int OnPreShot(int shotCost) {
-        if(this.shotsTurn < this.amount) return 0;
+        if(this.shotsTurn < this.amount){
+            this.flash();
+            return 0;
+        }
         return shotCost;
     }
 
     @Override
-    public void atEndOfRound() {
+    public void atStartOfTurn() {
         this.shotsTurn = 0;
     }
 
     @Override
     public void OnShot() {
         this.shotsTurn += 1;
-        updateDescription();
+        this.updateDescription();
     }
 }

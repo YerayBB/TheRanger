@@ -36,11 +36,11 @@ public class Yazutsu extends CustomRelic {
         flash();
         logger.info("Starting to add");
 
-        AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new EssencePower(AbstractDungeon.player, ESSENCE), ESSENCE));
+        this.addToTop(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new EssencePower(AbstractDungeon.player, ESSENCE), ESSENCE));
         logger.info("Essence In");
-        AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new SpiritPower(AbstractDungeon.player, SPIRIT), SPIRIT));
+        this.addToTop(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new SpiritPower(AbstractDungeon.player, SPIRIT), SPIRIT));
         logger.info("Spirit In");
-        AbstractDungeon.actionManager.addToTop(new RelicAboveCreatureAction(AbstractDungeon.player, this));
+        this.addToTop(new RelicAboveCreatureAction(AbstractDungeon.player, this));
         logger.info("Done with above");
     }
 

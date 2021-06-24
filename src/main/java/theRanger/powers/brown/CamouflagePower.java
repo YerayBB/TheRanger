@@ -37,15 +37,16 @@ public class CamouflagePower extends AbstractPower {
     private static final Texture tex32 = TextureLoader.getTexture(makePowerPath("placeholder_power32.png"));
 
     public CamouflagePower(final AbstractCreature owner, final AbstractCreature source, final int amount) {
-        name = NAME;
-        ID = POWER_ID;
+        this.name = NAME;
+        this.ID = POWER_ID;
+        this.priority = 4;
 
         this.owner = owner;
         this.amount = amount;
         this.source = source;
 
-        type = PowerType.BUFF;
-        isTurnBased = false;
+        this.type = PowerType.BUFF;
+        this.isTurnBased = false;
 
         // We load those txtures here.
         this.region128 = new TextureAtlas.AtlasRegion(tex84, 0, 0, 84, 84);
@@ -58,7 +59,7 @@ public class CamouflagePower extends AbstractPower {
     @Override
     public void updateDescription() {
 
-            description = DESCRIPTIONS[0];
+        this.description = DESCRIPTIONS[0];
 
     }
 
@@ -66,7 +67,7 @@ public class CamouflagePower extends AbstractPower {
     public void onAfterUseCard(AbstractCard card, UseCardAction action) {
         if(card.type == AbstractCard.CardType.ATTACK){
             if(!this.owner.hasPower("theRanger:ShadowFormPower")){
-                this.addToTop(new RemoveSpecificPowerAction(this.owner, this.owner, this.ID));
+                this.addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, this.ID));
             }
         }
     }
@@ -75,7 +76,7 @@ public class CamouflagePower extends AbstractPower {
     public int onAttackedToChangeDamage(DamageInfo info, int damageAmount) {
         if(info.type == DamageInfo.DamageType.NORMAL && damageAmount > 0) {
             if (damageAmount < this.amount) {
-                flash();
+                this.flash();
                 this.addToTop(new RemoveSpecificPowerAction(this.owner, this.owner, this.ID));
                 return 0;
             }

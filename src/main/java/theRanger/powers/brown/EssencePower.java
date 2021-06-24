@@ -37,28 +37,28 @@ public class EssencePower extends TwoAmountPower {
 
 
     public EssencePower(final AbstractCreature owner, final int amount) {
-        name = NAME;
-        ID = POWER_ID;
+        this.name = NAME;
+        this.ID = POWER_ID;
 
         this.amount2 = 1;
         this.owner = owner;
         this.amount = amount;
-        this.priority = 1;
+        this.priority = 2;
 
-        type = PowerType.BUFF;
-        isTurnBased = false;
+        this.type = PowerType.BUFF;
+        this.isTurnBased = false;
 
         // We load those txtures here.
         this.region128 = new TextureAtlas.AtlasRegion(tex84, 0, 0, 84, 84);
         this.region48 = new TextureAtlas.AtlasRegion(tex32, 0, 0, 32, 32);
 
-        updateDescription();
+        this.updateDescription();
     }
 
     // Update the description when you apply this power. (i.e. add or remove an "s" in keyword(s))
     @Override
     public void updateDescription() {
-            description = DESCRIPTIONS[0] + this.amount + DESCRIPTIONS[1] + this.amount2 + DESCRIPTIONS[2];
+        this.description = DESCRIPTIONS[0] + this.amount + DESCRIPTIONS[1] + this.amount2 + DESCRIPTIONS[2];
     }
 
     public void updateMax(int cap){
@@ -66,23 +66,22 @@ public class EssencePower extends TwoAmountPower {
         if(this.amount > this.amount2){
             this.amount = this.amount2;
         }
-        updateDescription();
+        this.updateDescription();
     }
 
     @Override
     public void stackPower(int stackAmount) {
         super.stackPower(stackAmount);
-        AbstractPower p1;
         this.amount2 = 1;
-        if(owner.hasPower(SpiritPower.POWER_ID)){
-            p1 = owner.getPower(SpiritPower.POWER_ID);
-            this.amount2 += p1.amount;
+        if(this.owner.hasPower(SpiritPower.POWER_ID)){
+
+            this.amount2 += this.owner.getPower(SpiritPower.POWER_ID).amount;
         }
         if (this.amount > this.amount2){
             this.amount = this.amount2;
             ShotHelper.TriggerOvercharge();
         }
-        updateDescription();
+        this.updateDescription();
     }
 
     @Override

@@ -27,16 +27,15 @@ public class Quiver extends CustomRelic {
     private static final int ESSENCE = 2;
 
     public Quiver() {
-        super(ID, IMG, OUTLINE, RelicTier.STARTER, LandingSound.MAGICAL);
+        super(ID, IMG, OUTLINE, RelicTier.STARTER, LandingSound.SOLID);
     }
 
     @Override
     public void atBattleStartPreDraw() {
-        flash();
-
-        AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new EssencePower(AbstractDungeon.player, ESSENCE), ESSENCE));
-        AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new SpiritPower(AbstractDungeon.player, SPIRIT), SPIRIT));
-        AbstractDungeon.actionManager.addToTop(new RelicAboveCreatureAction(AbstractDungeon.player, this));
+        this.flash();
+        this.addToTop(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new EssencePower(AbstractDungeon.player, ESSENCE), ESSENCE));
+        this.addToTop(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new SpiritPower(AbstractDungeon.player, SPIRIT), SPIRIT));
+        this.addToTop(new RelicAboveCreatureAction(AbstractDungeon.player, this));
     }
 
     // Description

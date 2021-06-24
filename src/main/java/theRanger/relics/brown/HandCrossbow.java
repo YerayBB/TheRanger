@@ -2,14 +2,17 @@ package theRanger.relics.brown;
 
 import basemod.abstracts.CustomRelic;
 import com.badlogic.gdx.graphics.Texture;
+import com.megacrit.cardcrawl.actions.common.DrawCardAction;
+import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import theRanger.DefaultMod;
+import theRanger.interfaces.OnShotTrigger;
 import theRanger.util.TextureLoader;
 
 import static theRanger.DefaultMod.makeRelicOutlinePath;
 import static theRanger.DefaultMod.makeRelicPath;
 
-public class HandCrossbow extends CustomRelic {
+public class HandCrossbow extends CustomRelic implements OnShotTrigger {
 
     /*
      * https://github.com/daviscook477/BaseMod/wiki/Custom-Relics
@@ -23,26 +26,27 @@ public class HandCrossbow extends CustomRelic {
     private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("placeholder_relic.png"));//TextureLoader.getTexture(makeRelicPath("HandCrossbow_relic.png"));
     private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("placeholder_relic.png"));//TextureLoader.getTexture(makeRelicOutlinePath("HandCrossbow_relic.png"));
 
+    private static final int EFFECT = 1;
+    private boolean active;
+
     public HandCrossbow() {
-        super(ID, IMG, OUTLINE, RelicTier.UNCOMMON, LandingSound.MAGICAL);
+        super(ID, IMG, OUTLINE, RelicTier.UNCOMMON, LandingSound.SOLID);
     }
 
-    // Flash at the start of Battle.
     @Override
-    public void atBattleStartPreDraw() {
-        flash();
+    public void atTurnStart() {
+        this.active = true;
+        this.grayscale = false;
     }
 
-    // Gain 1 energy on equip.
     @Override
-    public void onEquip() {
-        AbstractDungeon.player.energy.energyMaster += 1;
-    }
-
-    // Lose 1 energy on unequip.
-    @Override
-    public void onUnequip() {
-        AbstractDungeon.player.energy.energyMaster -= 1;
+    public void OnShot() {
+        if(this.active){
+            this.addToBot(new RelicAboveCreatureAction(AbstractDungeon.player, this));
+            this.addToBot(new DrawCardAction(EFFECT));
+            this.active = false;
+            this.grayscale = true;
+        }
     }
 
     // Description
