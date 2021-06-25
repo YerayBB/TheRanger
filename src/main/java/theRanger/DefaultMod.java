@@ -31,8 +31,7 @@ import theRanger.relics.BottledPlaceholderRelic;
 import theRanger.relics.DefaultClickableRelic;
 import theRanger.relics.PlaceholderRelic;
 import theRanger.relics.PlaceholderRelic2;
-import theRanger.relics.brown.Quiver;
-import theRanger.relics.brown.Yazutsu;
+import theRanger.relics.brown.*;
 import theRanger.util.IDCheckDontTouchPls;
 import theRanger.util.TextureLoader;
 import theRanger.variables.DefaultCustomVariable;
@@ -94,7 +93,7 @@ public class DefaultMod implements
     //This is for the in-game mod settings panel.
     private static final String MODNAME = "Ranger Mod";
     private static final String AUTHOR = "TorTime"; // And pretty soon - You!
-    private static final String DESCRIPTION = "A base for Slay the Spire to start your own mod from, feat. the Default.";
+    private static final String DESCRIPTION = "A Slay the Spire mod. Adds 1 new character The Ranger. Includes a new set of 75 cards, 9 relics, 3 potions and various new mechanics";
     
     // =============== INPUT TEXTURE LOCATION =================
     
@@ -354,6 +353,7 @@ public class DefaultMod implements
 
         // Create a new event builder
         // Since this is a builder these method calls (outside of create()) can be skipped/added as necessary
+        /*Im not adding events
         AddEventParams eventParams = new AddEventParams.Builder(IdentityCrisisEvent.ID, IdentityCrisisEvent.class) // for this specific event
             .dungeonID(TheCity.ID) // The dungeon (act) this event will appear in
             .playerClass(TheDefault.Enums.THE_DEFAULT) // Character specific event
@@ -361,6 +361,8 @@ public class DefaultMod implements
 
         // Add the event
         BaseMod.addEvent(eventParams);
+
+         */
 
         // =============== /EVENTS/ =================
         logger.info("Done loading badge Image and mod options");
@@ -376,7 +378,9 @@ public class DefaultMod implements
         // Class Specific Potion. If you want your potion to not be class-specific,
         // just remove the player class at the end (in this case the "TheDefaultEnum.THE_DEFAULT".
         // Remember, you can press ctrl+P inside parentheses like addPotions)
+        /*The default Potion
         BaseMod.addPotion(PlaceholderPotion.class, PLACEHOLDER_POTION_LIQUID, PLACEHOLDER_POTION_HYBRID, null, PlaceholderPotion.POTION_ID, TheDefault.Enums.THE_DEFAULT);
+         */
         //MINE
         //BaseMod.addPotion(InfusivePotion.class, PLACEHOLDER_POTION_LIQUID, PLACEHOLDER_POTION_HYBRID, PLACEHOLDER_POTION_SPOTS, InfusivePotion.POTION_ID, TheDefault.Enums.THE_DEFAULT);
         BaseMod.addPotion(InfusivePotion.class,Color.SKY,Color.WHITE,null,InfusivePotion.POTION_ID, TheDefault.Enums.THE_DEFAULT);
@@ -403,20 +407,31 @@ public class DefaultMod implements
         // in order to automatically differentiate which pool to add the relic too.
 
         // This adds a character specific relic. Only when you play with the mentioned color, will you get this relic.
-       /* BaseMod.addRelicToCustomPool(new PlaceholderRelic(), TheDefault.Enums.COLOR_BROWN);
+        /* Default Relics
+        BaseMod.addRelicToCustomPool(new PlaceholderRelic(), TheDefault.Enums.COLOR_BROWN);
         BaseMod.addRelicToCustomPool(new BottledPlaceholderRelic(), TheDefault.Enums.COLOR_BROWN);
         BaseMod.addRelicToCustomPool(new DefaultClickableRelic(), TheDefault.Enums.COLOR_BROWN);
-        *///MINE
+        */
+        //MINE
         BaseMod.addRelicToCustomPool(new Quiver(), TheDefault.Enums.COLOR_BROWN);
         BaseMod.addRelicToCustomPool(new Yazutsu(), TheDefault.Enums.COLOR_BROWN);
+        BaseMod.addRelicToCustomPool(new CourageMedal(), TheDefault.Enums.COLOR_BROWN);
+        BaseMod.addRelicToCustomPool(new EverbloomingFlower(), TheDefault.Enums.COLOR_BROWN);
+        BaseMod.addRelicToCustomPool(new HandCrossbow(), TheDefault.Enums.COLOR_BROWN);
+        BaseMod.addRelicToCustomPool(new HungryFairy(), TheDefault.Enums.COLOR_BROWN);
+        BaseMod.addRelicToCustomPool(new InvisibleCloak(), TheDefault.Enums.COLOR_BROWN);
+        BaseMod.addRelicToCustomPool(new RunicVessel(), TheDefault.Enums.COLOR_BROWN);
+        BaseMod.addRelicToCustomPool(new SiphonersSeal(), TheDefault.Enums.COLOR_BROWN);
 
         // This adds a relic to the Shared pool. Every character can find this relic.
-       // BaseMod.addRelic(new PlaceholderRelic2(), RelicType.SHARED);
+        /* Default shared Relic
+        BaseMod.addRelic(new PlaceholderRelic2(), RelicType.SHARED);
+        */
         
         // Mark relics as seen - makes it visible in the compendium immediately
         // If you don't have this it won't be visible in the compendium until you see them in game
         // (the others are all starters so they're marked as seen in the character file)
-        UnlockTracker.markRelicAsSeen(BottledPlaceholderRelic.ID);
+        ///UnlockTracker.markRelicAsSeen(BottledPlaceholderRelic.ID);
         logger.info("Done adding relics!");
     }
     
