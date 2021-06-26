@@ -47,6 +47,7 @@ public class Mimicry extends AbstractDynamicCard {
         this.baseMagicNumber = MAGIC;
         this.magicNumber = this.baseMagicNumber;
         this.defaultBaseSecondMagicNumber = SECONDMAGIC;
+        this.defaultSecondMagicNumber = this.defaultBaseSecondMagicNumber;
         this.exhaust = true;
     }
 

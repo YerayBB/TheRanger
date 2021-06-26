@@ -46,7 +46,9 @@ public class EnergeticEntrance extends AbstractDynamicCard {
     public EnergeticEntrance() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         this.baseMagicNumber = MAGIC;
+        this.magicNumber = this.baseMagicNumber;
         this.defaultBaseSecondMagicNumber = VIGOR_AMOUNT;
+        this.defaultSecondMagicNumber = this.defaultBaseSecondMagicNumber;
         this.isInnate = true;
         this.exhaust = true;
     }

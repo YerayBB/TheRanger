@@ -43,6 +43,7 @@ public class Tenacity extends AbstractDynamicCard {
     public Tenacity() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         this.baseMagicNumber = MAGIC;
+        this.magicNumber = this.baseMagicNumber;
     }
 
 

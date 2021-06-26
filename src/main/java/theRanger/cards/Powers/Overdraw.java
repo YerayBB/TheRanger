@@ -43,6 +43,7 @@ public class Overdraw extends AbstractDynamicCard {
     public Overdraw() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         this.baseMagicNumber = MAGIC;
+        this.magicNumber = this.baseMagicNumber;
     }
 
 

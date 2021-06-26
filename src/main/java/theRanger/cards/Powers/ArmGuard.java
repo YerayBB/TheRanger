@@ -43,6 +43,7 @@ public class ArmGuard extends AbstractDynamicCard {
     public ArmGuard() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         this.baseMagicNumber = MAGIC;
+        this.magicNumber = this.baseMagicNumber;
     }
 
     // Actions the card should do.

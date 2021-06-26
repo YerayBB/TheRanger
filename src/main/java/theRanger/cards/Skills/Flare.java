@@ -48,6 +48,7 @@ public class Flare extends AbstractInfusedCard {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         this.baseInfuseNumber = INFUSE;
         this.baseMagicNumber = MAGIC;
+        this.magicNumber = this.baseMagicNumber;
     }
 
     // Actions the card should do.

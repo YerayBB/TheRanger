@@ -46,7 +46,9 @@ public class ForestAid extends AbstractDynamicCard {
     public ForestAid() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         this.baseMagicNumber = MAGIC;
+        this.magicNumber = this.baseMagicNumber;
         this.defaultBaseSecondMagicNumber = SECONDMAGIC;
+        this.defaultSecondMagicNumber = this.defaultBaseSecondMagicNumber;
         this.cardsToPreview = new WillOWisp();
     }
 

@@ -43,6 +43,7 @@ public class Tuning extends AbstractDynamicCard {
     public Tuning() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         this.baseMagicNumber = MAGIC;
+        this.magicNumber = this.baseMagicNumber;
     }
 
 

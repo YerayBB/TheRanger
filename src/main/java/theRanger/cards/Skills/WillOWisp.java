@@ -44,6 +44,7 @@ public class WillOWisp extends AbstractDynamicCard {
     public WillOWisp() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         this.baseMagicNumber = MAGIC;
+        this.magicNumber = this.baseMagicNumber;
     }
 
     // Actions the card should do.

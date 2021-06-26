@@ -44,9 +44,9 @@ public class DrainIvy extends AbstractDynamicCard {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         this.baseBlock = BLOCK;
         this.baseMagicNumber = MAGIC;
+        this.magicNumber = this.baseMagicNumber;
     }
 
-//TODO
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {

@@ -62,6 +62,7 @@ public class HeavyRain extends AbstractInfusedCard {
         this.baseDamage = DAMAGE;
         this.baseInfuseNumber = INFUSE;
         this.baseMagicNumber = MAGIC;
+        this.magicNumber = this.baseMagicNumber;
     }
 
     // Actions the card should do.

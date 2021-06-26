@@ -3,6 +3,7 @@ package theRanger.cards.Attacks;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -14,6 +15,7 @@ import theRanger.actions.brown.unique.DirectShotAction;
 import theRanger.cards.AbstractDynamicCard;
 import theRanger.cards.AbstractInfusedCard;
 import theRanger.characters.TheDefault;
+import theRanger.powers.brown.EssencePower;
 import theRanger.powers.brown.InfusedPower;
 
 import static theRanger.DefaultMod.makeCardPath;
@@ -60,6 +62,19 @@ public class DirectShot extends AbstractInfusedCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new DirectShotAction(m, this.damage, this.infuseNumber, this.upgraded, SHOTAMOUNT));
+    }
+
+    @Override
+    public void triggerOnGlowCheck() {
+        if (AbstractDungeon.player.hasPower(EssencePower.POWER_ID)) {
+            if(AbstractDungeon.player.getPower(EssencePower.POWER_ID).amount >= SHOTAMOUNT) {
+                this.glowColor = AbstractCard.GOLD_BORDER_GLOW_COLOR.cpy();
+            } else {
+                this.glowColor = AbstractCard.BLUE_BORDER_GLOW_COLOR.cpy();
+            }
+        } else {
+            this.glowColor = AbstractCard.BLUE_BORDER_GLOW_COLOR.cpy();
+        }
     }
 
 

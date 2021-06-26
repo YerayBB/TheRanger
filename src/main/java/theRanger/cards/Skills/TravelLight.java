@@ -42,6 +42,7 @@ public class TravelLight extends AbstractDynamicCard {
     public TravelLight() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         this.baseMagicNumber = MAGIC;
+        this.magicNumber = this.baseMagicNumber;
     }
 
     // Actions the card should do.

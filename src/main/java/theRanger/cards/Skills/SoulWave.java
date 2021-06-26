@@ -53,8 +53,10 @@ public class SoulWave extends AbstractInfusedCard {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         this.baseBlock = BLOCK;
         this.baseMagicNumber = MAGIC;
+        this.magicNumber = this.baseMagicNumber;
         this.baseInfuseNumber = INFUSE;
         this.defaultBaseSecondMagicNumber = SECONDMAGIC;
+        this.defaultSecondMagicNumber = this.defaultBaseSecondMagicNumber;
     }
 
     // Actions the card should do.

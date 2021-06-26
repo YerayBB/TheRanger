@@ -43,7 +43,9 @@ public class Overconfidence extends AbstractDynamicCard {
     public Overconfidence() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         this.baseMagicNumber = MAGIC;
+        this.magicNumber = this.baseMagicNumber;
         this.defaultBaseSecondMagicNumber = SECONDMAGIC;
+        this.defaultSecondMagicNumber = this.defaultBaseSecondMagicNumber;
     }
 
 //TODO

@@ -49,7 +49,9 @@ public class CrossUp extends AbstractDynamicCard {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         this.baseDamage = DAMAGE;
         this.baseMagicNumber = MAGIC;
+        this.magicNumber = this.baseMagicNumber;
         this.defaultBaseSecondMagicNumber = SECOND_MAGIC;
+        this.defaultSecondMagicNumber = this.defaultBaseSecondMagicNumber;
     }
 
     // Actions the card should do.

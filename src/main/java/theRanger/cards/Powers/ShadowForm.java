@@ -44,6 +44,7 @@ public class ShadowForm extends AbstractDynamicCard {
     public ShadowForm() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         this.baseMagicNumber = MAGIC;
+        this.magicNumber = this.baseMagicNumber;
 
         this.tags.add(BaseModCardTags.FORM);
     }

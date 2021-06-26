@@ -46,7 +46,9 @@ public class Shelter extends AbstractDynamicCard {
     public Shelter() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         this.baseMagicNumber = MAGIC;
+        this.magicNumber = this.baseMagicNumber;
         this.defaultBaseSecondMagicNumber = SECONDMAGIC;
+        this.defaultSecondMagicNumber = this.defaultBaseSecondMagicNumber;
     }
 
     // Actions the card should do.

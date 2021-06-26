@@ -42,10 +42,11 @@ public class BloodHunt extends AbstractDynamicCard {
     public BloodHunt() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         this.baseMagicNumber = MAGIC;
+        this.magicNumber = this.baseMagicNumber;
         this.cardsToPreview = new BloodyCut(false, this.upgraded);
     }
 
-//TODO
+
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {

@@ -42,6 +42,7 @@ public class Resonance extends AbstractDynamicCard {
     public Resonance() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         this.baseMagicNumber = MAGIC;
+        this.magicNumber = this.baseMagicNumber;
         this.exhaust = true;
     }
 
