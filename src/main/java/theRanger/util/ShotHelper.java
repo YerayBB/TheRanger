@@ -1,6 +1,8 @@
 package theRanger.util;
 
 
+import basemod.BaseMod;
+import com.badlogic.gdx.utils.compression.lzma.Base;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
@@ -9,6 +11,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
+import theRanger.DefaultMod;
 import theRanger.interfaces.OnEmptinessTrigger;
 import theRanger.interfaces.OnOverchargeTrigger;
 import theRanger.interfaces.OnPreShotTrigger;
@@ -181,6 +184,7 @@ public class ShotHelper {
     }
 
     public static void TriggerEmptiness(){
+        DefaultMod.logger.info("Emptiness Triggered");
         for(AbstractCard c1: AbstractDungeon.player.hand.group){
             if(c1 instanceof OnEmptinessTrigger){
                 ((OnEmptinessTrigger) c1).OnEmptiness();
@@ -205,6 +209,8 @@ public class ShotHelper {
     }
 
     public static void TriggerOvercharge(){
+        BaseMod.logger.info("Overcharge Triggered");
+
         for(AbstractCard c1: AbstractDungeon.player.hand.group){
             if(c1 instanceof OnOverchargeTrigger){
                 ((OnOverchargeTrigger) c1).OnOvercharge();

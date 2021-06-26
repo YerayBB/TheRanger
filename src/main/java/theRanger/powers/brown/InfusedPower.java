@@ -1,14 +1,17 @@
 package theRanger.powers.brown;
 
+import basemod.BaseMod;
 import basemod.interfaces.CloneablePowerInterface;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.math.MathUtils;
+import com.badlogic.gdx.utils.compression.lzma.Base;
 import com.evacipated.cardcrawl.mod.stslib.powers.interfaces.HealthBarRenderPower;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
+import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
@@ -19,6 +22,7 @@ import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.powers.DexterityPower;
 import theRanger.DefaultMod;
+import theRanger.actions.brown.generic.InfusePowerTurnAction;
 import theRanger.util.TextureLoader;
 
 import static theRanger.DefaultMod.makePowerPath;
@@ -58,7 +62,7 @@ public class InfusedPower extends AbstractPower implements HealthBarRenderPower 
         this.region128 = new TextureAtlas.AtlasRegion(tex84, 0, 0, 84, 84);
         this.region48 = new TextureAtlas.AtlasRegion(tex32, 0, 0, 32, 32);
 
-        updateDescription();
+        this.updateDescription();
     }
 
     // Update the description when you apply this power. (i.e. add or remove an "s" in keyword(s))
@@ -75,8 +79,8 @@ public class InfusedPower extends AbstractPower implements HealthBarRenderPower 
     @Override
     public void wasHPLost(DamageInfo info, int damageAmount) {
         if(damageAmount > 0 && (this.owner.currentHealth-damageAmount) <= this.amount){
-            this.addToBot(new DamageAction(this.owner,new DamageInfo(this.source, this.amount, DamageInfo.DamageType.THORNS)));
-            this.addToBot(new ReducePowerAction(this.owner, this.source, this, this.amount));
+            this.addToTop(new RemoveSpecificPowerAction(this.owner, this.owner, this));
+            this.addToTop(new DamageAction(this.owner,new DamageInfo(this.source, this.amount, DamageInfo.DamageType.THORNS)));
         }
         super.wasHPLost(info, damageAmount);
     }
@@ -86,8 +90,8 @@ public class InfusedPower extends AbstractPower implements HealthBarRenderPower 
         super.stackPower(stackAmount);
         if(stackAmount > 0) this.isRefreshed = true;
         if(!this.owner.isDead && !this.owner.halfDead && !this.owner.isDying && this.owner.currentHealth <= this.amount){
-            this.addToBot(new DamageAction(owner,new DamageInfo(source, amount, DamageInfo.DamageType.THORNS)));
-            this.addToBot(new ReducePowerAction(owner, source, this, amount));
+            this.addToBot(new DamageAction(owner,new DamageInfo(this.source, this.amount, DamageInfo.DamageType.THORNS)));
+            this.addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, this));
         }
     }
 
@@ -96,27 +100,31 @@ public class InfusedPower extends AbstractPower implements HealthBarRenderPower 
         super.onInitialApplication();
         this.isRefreshed = true;
         if(!this.owner.isDead && !this.owner.halfDead && !this.owner.isDying && this.owner.currentHealth <= this.amount){
-            addToBot(new DamageAction(owner,new DamageInfo(source, amount, DamageInfo.DamageType.THORNS)));
-            addToBot(new ReducePowerAction(owner, source, this, amount));
+            addToTop(new RemoveSpecificPowerAction(this.owner, this.owner, this));
+            addToTop(new DamageAction(owner,new DamageInfo(this.source, this.amount, DamageInfo.DamageType.THORNS)));
         }
     }
 
     @Override
-    public void atEndOfRound() {
-        super.atEndOfRound();
-        if(this.isRefreshed){
-            this.reducePower(1);
-        }else{
-            this.reducePower(Math.max(1, MathUtils.floor(amount/2f)));
+    public void reducePower(int reduceAmount) {
+        super.reducePower(reduceAmount);
+        if(this.amount == 0) {
+            this.owner.powers.remove(this);
         }
-        this.isRefreshed = false;
-        if(this.amount == 0) this.owner.powers.remove(this);
+    }
 
+
+
+    @Override
+    public void atStartOfTurn() {
+        boolean aux = this.isRefreshed;
+        addToTop(new InfusePowerTurnAction(this, aux));
+        this.isRefreshed = false;
     }
 
     @Override
     public int getHealthBarAmount() {
-        return this.amount;
+            return this.amount;
     }
 
     @Override

@@ -160,7 +160,7 @@
     "NAME": "Condensed Shot",
     "DESCRIPTION": "theranger:Shot 1. NL Consume ALL theranger:Essence, deal that amount multiplied by your theranger:Density as damage.",
     "EXTENDED_DESCRIPTION": [
-      "NL (Deals !D! damage.)"]
+      " NL (Deals !D! damage.)"]
   },
   "theRanger:ArrowHell": {
     "NAME": "Arrow Hell",
@@ -233,7 +233,7 @@
   },
   "theRanger:AntiAir": {
     "NAME": "Anti Air",
-    "DESCRIPTION": "Deal !D! damage. NL Remove #yFlight from the enemy."
+    "DESCRIPTION": "Deal !D! damage. NL Remove [#ffff00]Flight from the enemy."
   },
   "theRanger:CrossUp": {
     "NAME": "Cross-Up",
@@ -399,11 +399,11 @@
     "EXTENDED_DESCRIPTION": [
       "NL (Adds a ",
       " card.)",
-      "#yATTACK",
-      "#ySKILL",
-      "#yPOWER",
-      "#rCURSE",
-      "#rSTATUS"
+      "[#ffff00]ATTACK",
+      "[#ffff00]SKILL",
+      "[#ffff00]POWER",
+      "[#ff0000]CURSE",
+      "[#ff0000]STATUS"
     ]
   },
   "theRanger:Absorption": {

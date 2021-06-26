@@ -57,34 +57,35 @@ public class Trick extends AbstractDynamicCard {
     @Override
     public void applyPowers() {
         super.applyPowers();
-        AbstractCard c = AbstractDungeon.actionManager.cardsPlayedThisCombat.get(AbstractDungeon.actionManager.cardsPlayedThisCombat.size()-1);
-        if(!c.equals(this)){
-            this.generate = c.type;
-        }
-        else{
-            this.generate = AbstractDungeon.actionManager.cardsPlayedThisCombat.get(AbstractDungeon.actionManager.cardsPlayedThisCombat.size()-2).type;
-        }
+        if(AbstractDungeon.actionManager.cardsPlayedThisCombat.size() > 0) {
+            AbstractCard c = AbstractDungeon.actionManager.cardsPlayedThisCombat.get(AbstractDungeon.actionManager.cardsPlayedThisCombat.size() - 1);
+            if (!c.equals(this)) {
+                this.generate = c.type;
+            } else {
+                this.generate = AbstractDungeon.actionManager.cardsPlayedThisCombat.get(AbstractDungeon.actionManager.cardsPlayedThisCombat.size() - 2).type;
+            }
 
-        this.rawDescription = cardStrings.DESCRIPTION + cardStrings.EXTENDED_DESCRIPTION[0];
-        switch (this.generate){
-            case ATTACK:
-                this.rawDescription += cardStrings.EXTENDED_DESCRIPTION[2];
-                break;
-            case SKILL:
-                this.rawDescription += cardStrings.EXTENDED_DESCRIPTION[3];
-                break;
-            case POWER:
-                this.rawDescription += cardStrings.EXTENDED_DESCRIPTION[4];
-                break;
-            case CURSE:
-                this.rawDescription += cardStrings.EXTENDED_DESCRIPTION[5];
-                break;
-            case STATUS:
-                this.rawDescription += cardStrings.EXTENDED_DESCRIPTION[6];
-                break;
+            this.rawDescription = cardStrings.DESCRIPTION + cardStrings.EXTENDED_DESCRIPTION[0];
+            switch (this.generate) {
+                case ATTACK:
+                    this.rawDescription += cardStrings.EXTENDED_DESCRIPTION[2];
+                    break;
+                case SKILL:
+                    this.rawDescription += cardStrings.EXTENDED_DESCRIPTION[3];
+                    break;
+                case POWER:
+                    this.rawDescription += cardStrings.EXTENDED_DESCRIPTION[4];
+                    break;
+                case CURSE:
+                    this.rawDescription += cardStrings.EXTENDED_DESCRIPTION[5];
+                    break;
+                case STATUS:
+                    this.rawDescription += cardStrings.EXTENDED_DESCRIPTION[6];
+                    break;
+            }
+            this.rawDescription += cardStrings.EXTENDED_DESCRIPTION[1];
+            this.initializeDescription();
         }
-        this.rawDescription += cardStrings.EXTENDED_DESCRIPTION[1];
-        this.initializeDescription();
     }
 
     @Override

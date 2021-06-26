@@ -1,6 +1,7 @@
 package theRanger.cards.Skills;
 
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -51,6 +52,7 @@ public class Quickness extends AbstractDynamicCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new ApplyPowerAction(p, p, new VigorPower(p, this.magicNumber)));
+        addToBot(new DrawCardAction(this.defaultSecondMagicNumber));
     }
 
 
