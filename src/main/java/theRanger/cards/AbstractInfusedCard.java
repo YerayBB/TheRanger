@@ -67,7 +67,7 @@ public abstract class AbstractInfusedCard extends AbstractDefaultCard {
 
         //apply relics
         AbstractRelic r;
-        var = AbstractDungeon.player.powers.iterator();
+        var = AbstractDungeon.player.relics.iterator();
         while (var.hasNext()){
             r = (AbstractRelic) var.next();
             if(r instanceof AtInfuseModifyTrigger) {

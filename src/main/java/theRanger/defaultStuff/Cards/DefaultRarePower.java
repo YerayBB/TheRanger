@@ -1,4 +1,4 @@
-package theRanger.cards;
+package theRanger.defaultStuff.Cards;
 
 import basemod.helpers.BaseModCardTags;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
@@ -6,6 +6,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import theRanger.DefaultMod;
+import theRanger.cards.AbstractDynamicCard;
 import theRanger.characters.TheDefault;
 import theRanger.powers.RarePower;
 

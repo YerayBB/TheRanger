@@ -2,7 +2,9 @@ package theRanger.cards.Skills;
 
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import theRanger.DefaultMod;
 import theRanger.actions.brown.generic.MultiplyInfuseAction;
@@ -17,6 +19,7 @@ public class Resonance extends AbstractDynamicCard {
 
     public static final String ID = DefaultMod.makeID(Resonance.class.getSimpleName());
     public static final String IMG = makeCardPath("Skill.png");//makeCardPath("Resonance.png");
+    private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
 
     // /TEXT DECLARATION/
 
@@ -55,6 +58,7 @@ public class Resonance extends AbstractDynamicCard {
         if (!this.upgraded) {
             this.upgradeName();
             this.upgradeMagicNumber(UPGRADE_PLUS_MAGIC);
+            this.rawDescription = cardStrings.UPGRADE_DESCRIPTION;
             this.initializeDescription();
         }
     }

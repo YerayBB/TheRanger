@@ -29,7 +29,7 @@
         },
         "theRanger:ShadowFormPower": {
                 "NAME": "Shadow Form",
-                "DESCRIPTIONS": ["No longer lose #yCamouflage when using attack cards. NL At the start of your turn gain #b", " #yCamouflage."]
+                "DESCRIPTIONS": ["No longer lose #yCamouflage when using attack cards. NL At the end of your turn gain #b", " #yCamouflage."]
         },
         "theRanger:SpiritPower": {
                 "NAME": "Spirit",

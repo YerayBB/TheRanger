@@ -1,4 +1,4 @@
-package theRanger.cards;
+package theRanger.defaultStuff.Cards;
 
 import basemod.abstracts.CustomCard;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;

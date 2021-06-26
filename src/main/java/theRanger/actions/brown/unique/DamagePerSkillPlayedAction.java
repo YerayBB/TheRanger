@@ -21,25 +21,24 @@ public class DamagePerSkillPlayedAction extends AbstractGameAction{
 
     @Override
     public void update() {
-        this.isDone = true;
-        if (this.target != null && this.target.currentHealth > 0) {
-            int count = 0;
-            Iterator var2 = AbstractDungeon.actionManager.cardsPlayedThisTurn.iterator();
+        if(!this.isDone) {
+            if (this.target != null && this.target.currentHealth > 0) {
+                int count = 0;
+                Iterator var2 = AbstractDungeon.actionManager.cardsPlayedThisTurn.iterator();
 
-            while(var2.hasNext()) {
-                AbstractCard c = (AbstractCard)var2.next();
-                if (c.type == AbstractCard.CardType.SKILL) {
-                    ++count;
+                while (var2.hasNext()) {
+                    AbstractCard c = (AbstractCard) var2.next();
+                    if (c.type == AbstractCard.CardType.SKILL) {
+                        ++count;
+                    }
+                }
+
+                for (int i = 0; i < count; ++i) {
+                    this.addToTop(new DamageAction(this.target, this.info, this.attackEffect));
                 }
             }
-
-            --count;
-
-            for(int i = 0; i < count; ++i) {
-                this.addToTop(new DamageAction(this.target, this.info, this.attackEffect));
-            }
+            this.isDone = true;
         }
-
     }
 
 }

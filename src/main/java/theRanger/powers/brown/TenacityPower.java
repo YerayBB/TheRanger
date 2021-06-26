@@ -69,8 +69,10 @@ public class TenacityPower extends AbstractPower {
     }*/
 
     @Override
-    public int onPlayerGainedBlock(int blockAmount) {
-        if(blockAmount > 0) this.addToBot(new ApplyPowerAction(this.owner,this.owner, new VigorPower(this.owner,this.amount),this.amount));
-        return super.onPlayerGainedBlock(blockAmount);
+    public void onGainedBlock(float blockAmount) {
+        if(blockAmount > 0.0F){
+            this.flash();
+            this.addToBot(new ApplyPowerAction(this.owner,this.owner, new VigorPower(this.owner,this.amount),this.amount));
+        }
     }
 }

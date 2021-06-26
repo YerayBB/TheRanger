@@ -1,4 +1,4 @@
-package theRanger.cards;
+package theRanger.defaultStuff.Cards;
 
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -7,6 +7,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.PoisonPower;
 import com.megacrit.cardcrawl.powers.VulnerablePower;
 import theRanger.DefaultMod;
+import theRanger.cards.AbstractDynamicCard;
 import theRanger.characters.TheDefault;
 
 import static theRanger.DefaultMod.makeCardPath;

@@ -1,4 +1,4 @@
-package theRanger.cards;
+package theRanger.defaultStuff.Cards;
 
 import com.megacrit.cardcrawl.actions.defect.ChannelAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -7,6 +7,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import theRanger.DefaultMod;
+import theRanger.cards.AbstractDynamicCard;
 import theRanger.characters.TheDefault;
 import theRanger.orbs.DefaultOrb;
 

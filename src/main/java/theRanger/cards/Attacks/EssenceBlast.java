@@ -6,7 +6,9 @@ import com.megacrit.cardcrawl.actions.common.ModifyDamageAction;
 import com.megacrit.cardcrawl.actions.utility.DiscardToHandAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import theRanger.DefaultMod;
 import theRanger.cards.AbstractDynamicCard;
@@ -21,6 +23,7 @@ public class EssenceBlast extends AbstractDynamicCard implements OnOverchargeTri
 
     public static final String ID = DefaultMod.makeID(EssenceBlast.class.getSimpleName());
     public static final String IMG = makeCardPath("Attack.png");//makeCardPath("EssenceBlast.png");
+    private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
 
     // /TEXT DECLARATION/
 
@@ -62,6 +65,7 @@ public class EssenceBlast extends AbstractDynamicCard implements OnOverchargeTri
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
+            this.rawDescription = cardStrings.UPGRADE_DESCRIPTION;
             this.upgradeBaseCost(UPGRADED_COST);
             this.initializeDescription();
         }

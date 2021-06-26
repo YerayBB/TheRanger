@@ -54,8 +54,7 @@ public class BlindShot extends AbstractInfusedCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(
-                new StandardShotAction(SHOTAMOUNT, new AbstractGameAction[] {new RandomEnemyDmgWithInfusion(this, this.infuseNumber, AbstractGameAction.AttackEffect.BLUNT_LIGHT)}));
+        addToBot(new StandardShotAction(SHOTAMOUNT, new AbstractGameAction[] {new RandomEnemyDmgWithInfusion(this, this.infuseNumber, AbstractGameAction.AttackEffect.BLUNT_LIGHT)}));
     }
 
 

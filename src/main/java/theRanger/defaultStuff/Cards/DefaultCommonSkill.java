@@ -1,10 +1,11 @@
-package theRanger.cards;
+package theRanger.defaultStuff.Cards;
 
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import theRanger.DefaultMod;
+import theRanger.cards.AbstractDynamicCard;
 import theRanger.characters.TheDefault;
 
 import static theRanger.DefaultMod.makeCardPath;

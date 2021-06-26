@@ -1,4 +1,4 @@
-package theRanger.cards;
+package theRanger.defaultStuff.Cards;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
@@ -9,6 +9,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.combat.WeightyImpactEffect;
 import theRanger.DefaultMod;
+import theRanger.cards.AbstractDynamicCard;
 import theRanger.characters.TheDefault;
 
 import static theRanger.DefaultMod.makeCardPath;

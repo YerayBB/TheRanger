@@ -1,4 +1,4 @@
-package theRanger.cards;
+package theRanger.defaultStuff.Cards;
 
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -8,6 +8,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
 import theRanger.DefaultMod;
 import theRanger.actions.UncommonPowerAction;
+import theRanger.cards.AbstractDynamicCard;
 import theRanger.characters.TheDefault;
 
 import static theRanger.DefaultMod.makeCardPath;

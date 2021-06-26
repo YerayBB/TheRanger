@@ -103,7 +103,7 @@
       "Heavy_wounds",
       "heavy_wounds"
     ],
-    "DESCRIPTION": "Half of the unblocked damage gets stacked on the target. NL Next time the target takes attack damage, would take that amount as additional damage."
+    "DESCRIPTION": "Half of the unblocked damage gets stacked on the target. NL Next time the target takes attack damage, will take that amount as additional damage."
   },
   {
     "NAMES": [

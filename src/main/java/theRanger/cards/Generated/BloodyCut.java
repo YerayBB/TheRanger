@@ -48,7 +48,7 @@ public class BloodyCut extends AbstractDynamicCard {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         this.baseDamage = DAMAGE;
         this.exhaust = true;
-        this.cardsToPreview = new BloodyCut(true, this.upgraded);
+        //this.cardsToPreview = new BloodyCut(true, this.upgraded);
     }
 
     public BloodyCut(boolean ethereal, boolean isUpgrade){
@@ -56,7 +56,7 @@ public class BloodyCut extends AbstractDynamicCard {
         this.baseDamage = DAMAGE;
         this.exhaust = true;
         this.isEthereal = ethereal;
-        this.cardsToPreview = new BloodyCut(true, this.upgraded);
+        //this.cardsToPreview = new BloodyCut(true, this.upgraded);
         if(ethereal){
             this.rawDescription = cardStrings.EXTENDED_DESCRIPTION[0] + cardStrings.DESCRIPTION;
         }
@@ -82,7 +82,7 @@ public class BloodyCut extends AbstractDynamicCard {
             this.upgradeName();
             this.upgradeDamage(UPGRADE_PLUS_DMG);
             this.upgradeBaseCost(UPGRADED_COST);
-            this.cardsToPreview.upgrade();
+            //this.cardsToPreview.upgrade();
             this.initializeDescription();
         }
     }

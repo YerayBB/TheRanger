@@ -1,4 +1,4 @@
-package theRanger.cards.Skills;
+package theRanger.deprecated.cards;
 
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;

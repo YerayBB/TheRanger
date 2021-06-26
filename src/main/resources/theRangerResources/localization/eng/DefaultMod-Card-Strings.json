@@ -75,7 +75,7 @@
   },
   "theRanger:ShadowForm": {
     "NAME": "Shadow Form",
-    "DESCRIPTION": "You no longer lose theranger:Camouflage when Attack. NL Gain !M! theranger:Camouflage at start of your turn."
+    "DESCRIPTION": "You no longer lose theranger:Camouflage when Attack. NL Gain !M! theranger:Camouflage at the end of your turn."
   },
   "theRanger:Vessel": {
     "NAME": "Vessel",
@@ -134,11 +134,11 @@
   },
   "theRanger:ApollosFavor": {
     "NAME": "Apollo's Favor",
-    "DESCRIPTION": "theranger:Shot 5. NL Next turn deal !D!. NL This card damage increases with !M! times your theranger:Density."
+    "DESCRIPTION": "theranger:Shot 5. NL Next turn deal !D! damage. NL This card damage increases with !M! times your theranger:Density."
   },
   "theRanger:Volley": {
     "NAME": "Volley",
-    "DESCRIPTION": "theranger:Shot 1 3 times. NL Each deals !D! and applies !theRanger:I! theranger:Infused to a random enemy."
+    "DESCRIPTION": "theranger:Shot 1 3 times. NL Each deals !D! damage and applies !theRanger:I! theranger:Infused to a random enemy."
   },
   "theRanger:LightRain": {
     "NAME": "Light Rain",
@@ -198,19 +198,19 @@
   },
   "theRanger:EssenceBlast": {
     "NAME": "Essence Blast",
-    "DESCRIPTION": "Deal !D! damage. NL NL theranger:Overcharge: Return this card from the discard pile to your hand.",
-    "UPGRADE_DESCRIPTION": "Deal !D! damage. NL NL theranger:Overcharge: Return this card from the discard pile to your hand. Increase this card's damage by !M! this combat."
+    "DESCRIPTION": "Deal !D! damage. NL theranger:Overcharge: Return this card from the discard pile to your hand.",
+    "UPGRADE_DESCRIPTION": "Deal !D! damage. NL theranger:Overcharge: Return this card from the discard pile to your hand. Increase this card's damage by !M! this combat."
 
   },
   "theRanger:DryFire": {
     "NAME": "Dry Fire",
-    "DESCRIPTION": "Deal !D! damage.NL Whenever you run out of theranger:Essence, return this card from the discard pile to your hand."
+    "DESCRIPTION": "Deal !D! damage. NL Whenever you run out of theranger:Essence, return this card from the discard pile to your hand."
   },
   "theRanger:OutOfNowhere": {
     "NAME": "Out Of Nowhere DEPRECATED",
     "DESCRIPTION": "Deal !D! damage. NL theranger:Stealth: Double the damage."
   },
-  "theRanger: BlindShot": {
+  "theRanger:BlindShot": {
     "NAME": "Blind Shot",
     "DESCRIPTION": "theranger:Shot 1. NL Deal !D! damage and apply !theRanger:I! theranger:Infused to a random enemy."
   },
@@ -237,7 +237,7 @@
   },
   "theRanger:CrossUp": {
     "NAME": "Cross-Up",
-    "DESCRIPTION": "theranger:Stealth: Apply !M! Vulnerable. NL NL Deal !D! damage.NL Draw !theRanger:M2! card. "
+    "DESCRIPTION": "theranger:Stealth: Apply !M! Vulnerable. NL NL Deal !D! damage. NL Draw !theRanger:M2! card. "
   },
   "theRanger:RawPunch": {
     "NAME": "Raw Punch",
@@ -292,7 +292,7 @@
   },
   "theRanger:BloodyCut": {
     "NAME": "Bloody Cut",
-    "DESCRIPTION": "Use 1 theranger:Kukri. NL Deal !D! damage.NL theranger:Multiplay. NL Exhaust.",
+    "DESCRIPTION": "Use 1 theranger:Kukri. NL Deal !D! damage. NL theranger:Multiplay. NL Exhaust.",
     "EXTENDED_DESCRIPTION": ["Ethereal. NL"]
   },
   "theRanger:Arsenal": {
@@ -351,7 +351,7 @@
   },
   "theRanger:Overconfidence": {
     "NAME": "Overconfidence",
-    "DESCRIPTION": "Gain !M! theranger:Vigor.NL Gain !theRanger:M2! Vulnerable."
+    "DESCRIPTION": "Gain !M! theranger:Vigor. NL Gain !theRanger:M2! Vulnerable."
   },
   "theRanger:Blooming": {
     "NAME": "Blooming",
@@ -378,7 +378,7 @@
   "theRanger:WillOWisp": {
     "NAME": "Will-o-Wisp",
     "DESCRIPTION": "Unplayable. NL Whenever this card is drawn gain !M! theranger:Essence.",
-    "UPGRADE_DESCRIPTION": "Unplayable. NL Whenever this card is drawn gain !M! theranger:Essence. NL If you can't gain more theranger:Essence, gain [E] instead."
+    "UPGRADE_DESCRIPTION": "Unplayable. NL Whenever this card is drawn gain !M! theranger:Essence. NL If you can't gain more theranger:Essence, gain [E] ."
   },
   "theRanger:Quickness": {
     "NAME": "Quickness",
@@ -387,7 +387,7 @@
   "theRanger:EnergeticEntrance": {
     "NAME": "Energetic Entrance",
     "DESCRIPTION": "Innate. NL Gain !theRanger:M2! theranger:Vigor. NL Next turn, gain [E]. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Innate. NL Gain !M! theranger:Vigor. NL Next turn, gain [E][E]. NL Exhaust"
+    "UPGRADE_DESCRIPTION": "Innate. NL Gain !theRanger:M2! theranger:Vigor. NL Next turn, gain [E] [E]. NL Exhaust"
   },
   "theRanger:Charity": {
     "NAME": "CharityDEPRECATED",

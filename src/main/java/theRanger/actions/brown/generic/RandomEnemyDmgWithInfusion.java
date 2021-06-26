@@ -36,6 +36,7 @@ public class RandomEnemyDmgWithInfusion extends AbstractGameAction {
                 addToTop(new ApplyPowerAction(this.target, AbstractDungeon.player, new InfusedPower(this.target, AbstractDungeon.player, this.infusion), this.infusion));
                 addToTop(new DamageAction(this.target, new DamageInfo(AbstractDungeon.player, this.card.damage, this.card.damageTypeForTurn), this.attackEffect));
             }
+            this.isDone = true;
         }
     }
 }
